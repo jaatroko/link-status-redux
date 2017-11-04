@@ -1,0 +1,45 @@
+<!ENTITY prefwindow.title "Options de Link Status Redux">
+
+<!ENTITY tabbasic.label "Réglages de base">
+<!ENTITY tabbasic.accesskey "R">
+<!ENTITY tabcustom.label "Format personnalisé">
+<!ENTITY tabcustom.accesskey "F">
+
+<!ENTITY checkshowlastvisited.label "Afficher la date de la dernière visite">
+<!ENTITY checkshowlastvisited.accesskey "d">
+<!ENTITY checkvisitedlinksdisabled.label "Désactiver le style d’affichage des liens visités">
+<!ENTITY checkvisitedlinksdisabled.accesskey "s">
+<!ENTITY checkuseisodate.label "Utiliser le format de date AAAA-MM-JJ">
+<!ENTITY checkuseisodate.accesskey "t">
+<!ENTITY checklastvisitedinfront.label "Afficher la date avant l’adresse du lien">
+<!ENTITY checklastvisitedinfront.accesskey "A">
+<!ENTITY textvisitedprefix.label "Symbole pour les liens visités :">
+<!ENTITY textvisitedprefix.accesskey "v">
+<!ENTITY textbookmarkedprefix.label "Symbole pour les liens marqués :">
+<!ENTITY textbookmarkedprefix.accesskey "m">
+<!ENTITY groupoldervisited.label "Gestion de l’âge des visites récentes">
+<!ENTITY textlastvisitedolderthan.label "Âge de visite de préférence supérieur à :">
+<!ENTITY textlastvisitedolderthan.accesskey "p">
+<!ENTITY textlastvisitedquerylimit.label "Nombre de visites récentes à prendre en compte :">
+<!ENTITY textlastvisitedquerylimit.accesskey "N">
+<!ENTITY textlastvisitedquerylimit.tooltip "0 = prendre en compte toutes les visites">
+<!ENTITY checklastvisitedtwodates.label "Afficher également l’âge de la dernière visite">
+<!ENTITY checklastvisitedtwodates.accesskey "c">
+
+<!ENTITY checkusecustomformat.label "Utiliser un format personnalisé">
+<!ENTITY checkusecustomformat.accesskey "p">
+<!ENTITY textcustomoverlink.label "Format textuel de l’adresse :">
+<!ENTITY textcustomoverlink.accesskey "a">
+<!ENTITY textcustomdatedefault.label "Format de date par défaut :">
+<!ENTITY textcustomdatedefault.accesskey "d">
+<!ENTITY textcustomweekdaynames.label "Dénomination des jours :">
+<!ENTITY textcustomweekdaynames.accesskey "n">
+<!ENTITY textcustommonthnames.label "Dénomination des mois :">
+<!ENTITY textcustommonthnames.accesskey "m">
+<!ENTITY grouplimitformat.label "Formats et limites de temps (dans l’ordre croissant)">
+<!ENTITY textlimit.label "Limite">
+<!ENTITY textlimit.tooltip "en secondes">
+<!ENTITY textformat.label "Format">
+
+<!ENTITY textcustomoverlink.tooltip "Substitutions disponibles : &#37;u &#37;T &#37;t &#37;V &#37;B &#37;&#37; (adresse du lien, âge de visite, deuxième âge de visite, symbole visité, symbole marqué, symbole &#37;) &#37;+( &#37;+) &#37;-( &#37;-) &#37;+[ &#37;+] &#37;-[ &#37;-] &#37;+{ &#37;+} &#37;-{ &#37;-} (blocs conditionnels : visité, non visité, marqué, non marqué, deuxième âge de visite défini, deuxième âge de visite non défini)">
+<!ENTITY textcustomdatedefault.tooltip "Substitutions disponibles : &#37;c &#37;x &#37;X &#37;Y &#37;y &#37;m &#37;b &#37;a &#37;d &#37;H &#37;k &#37;I &#37;l &#37;p &#37;P &#37;z &#37;M &#37;S &#37;&#37; (voir strftime(3)) &#37;Ns &#37;Nm &#37;Nh &#37;Nd &#37;Nw &#37;NM &#37;Ny (secondes,minutes,heures,jours,semaines,mois,ans, N nombre de décimales entre 0 et 9)">

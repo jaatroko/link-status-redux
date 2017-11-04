@@ -1,0 +1,46 @@
+<!-- LOCALIZATION NOTE (prefwindow.title): Used in Firefox 3.0.x -->
+<!ENTITY prefwindow.title "Link Status Redux asetukset">
+
+<!ENTITY tabbasic.label "Perusasetukset">
+<!ENTITY tabbasic.accesskey "p">
+<!ENTITY tabcustom.label "Oma muotoilu">
+<!ENTITY tabcustom.accesskey "O">
+
+<!ENTITY checkshowlastvisited.label "Näytä viimeisin vierailuaika">
+<!ENTITY checkshowlastvisited.accesskey "i">
+<!ENTITY checkvisitedlinksdisabled.label "Estä vierailtujen linkkien visuaalinen erottelu">
+<!ENTITY checkvisitedlinksdisabled.accesskey "E">
+<!ENTITY checkuseisodate.label "Käytä VVVV-KK-PP päiväysmuotoa">
+<!ENTITY checkuseisodate.accesskey "m">
+<!ENTITY checklastvisitedinfront.label "Näytä aika ennen osoitetta">
+<!ENTITY checklastvisitedinfront.accesskey "a">
+<!ENTITY textvisitedprefix.label "Etuliite vierailluille linkeille:">
+<!ENTITY textvisitedprefix.accesskey "v">
+<!ENTITY textbookmarkedprefix.label "Etuliite kirjanmerkityille linkeille:">
+<!ENTITY textbookmarkedprefix.accesskey "k">
+<!ENTITY groupoldervisited.label "Miten äskettäiset vierailuajat käsitellään">
+<!ENTITY textlastvisitedolderthan.label "Vierailuaika mieluiten vanhempi kuin:">
+<!ENTITY textlastvisitedolderthan.accesskey "u">
+<!ENTITY textlastvisitedquerylimit.label "Tarkista N viimeisintä vierailua:">
+<!ENTITY textlastvisitedquerylimit.accesskey "N">
+<!ENTITY textlastvisitedquerylimit.tooltip "0 = tarkista kaikki vierailut">
+<!ENTITY checklastvisitedtwodates.label "Näytä myös viimeisin vierailuaika">
+<!ENTITY checklastvisitedtwodates.accesskey "y">
+
+<!ENTITY checkusecustomformat.label "Käytä omaa muotoilua">
+<!ENTITY checkusecustomformat.accesskey "m">
+<!ENTITY textcustomoverlink.label "Linkin kohteen muoto:">
+<!ENTITY textcustomoverlink.accesskey "L">
+<!ENTITY textcustomdatedefault.label "Päivämäärän muoto:">
+<!ENTITY textcustomdatedefault.accesskey "t">
+<!ENTITY textcustomweekdaynames.label "Viikonpäivien nimet:">
+<!ENTITY textcustomweekdaynames.accesskey "V">
+<!ENTITY textcustommonthnames.label "Kuukausien nimet:">
+<!ENTITY textcustommonthnames.accesskey "K">
+<!ENTITY grouplimitformat.label "Päivämäärän aikarajat ja muotoilut nousevassa järjestyksessä">
+<!ENTITY textlimit.label "Raja">
+<!ENTITY textlimit.tooltip "Sekuntia">
+<!ENTITY textformat.label "Muoto">
+
+<!ENTITY textcustomoverlink.tooltip "Sallitut korvaukset: &#37;u &#37;T &#37;t &#37;V &#37;B &#37;&#37; (linkin URL, vierailuaika, toinen vierailuaika, vierailtu-merkki, kirjanmerkitty-merkki, &#37;-merkki) &#37;+( &#37;+) &#37;-( &#37;-) &#37;+[ &#37;+] &#37;-[ &#37;-] &#37;+{ &#37;+} &#37;-{ &#37;-} (ehdolliset lohkot: vierailtu, ei vierailtu, kirjanmerkitty, ei kirjanmerkitty, toinen vierailuaika määritelty, toinen vierailuaika ei määritelty)">
+<!ENTITY textcustomdatedefault.tooltip "Sallitut korvaukset: &#37;c &#37;x &#37;X &#37;Y &#37;y &#37;m &#37;b &#37;a &#37;d &#37;H &#37;k &#37;I &#37;l &#37;p &#37;P &#37;z &#37;M &#37;S &#37;&#37; (ks. strftime(3)) &#37;Ns &#37;Nm &#37;Nh &#37;Nd &#37;Nw &#37;NM &#37;Ny (sekuntia,minuuttia,tuntia,päivää,viikkoa,kuukautta,vuotta sitten, N on desimaalien määrä 0..9)">

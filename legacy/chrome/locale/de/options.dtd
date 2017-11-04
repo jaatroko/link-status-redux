@@ -1,0 +1,46 @@
+<!-- LOCALIZATION NOTE (prefwindow.title): Used in Firefox 3.0.x -->
+<!ENTITY prefwindow.title "Link Status Redux Optionen">
+
+<!ENTITY tabbasic.label "Basis Einstellungen">
+<!ENTITY tabbasic.accesskey "a">
+<!ENTITY tabcustom.label "Erweiterte Formatierung">
+<!ENTITY tabcustom.accesskey "e">
+
+<!ENTITY checkshowlastvisited.label "Zeige Datum des letzten Besuchs">
+<!ENTITY checkshowlastvisited.accesskey "z">
+<!ENTITY checkvisitedlinksdisabled.label "Abschalten des Stils von besuchten Verweisen">
+<!ENTITY checkvisitedlinksdisabled.accesskey "s">
+<!ENTITY checkuseisodate.label "Benutze JJJJ-MM-TT als Format für Besuchsdatum">
+<!ENTITY checkuseisodate.accesskey "f">
+<!ENTITY checklastvisitedinfront.label "Zeige Datum vor Verweis">
+<!ENTITY checklastvisitedinfront.accesskey "d">
+<!ENTITY textvisitedprefix.label "Prefix für besuchte Verweise:">
+<!ENTITY textvisitedprefix.accesskey "b">
+<!ENTITY textbookmarkedprefix.label "Prefix für Lesezeichen-Verweise:">
+<!ENTITY textbookmarkedprefix.accesskey "l">
+<!ENTITY groupoldervisited.label "Behandlung von Zeiten früherer Besuche">
+<!ENTITY textlastvisitedolderthan.label "Bevorzuge Besuche älter als:">
+<!ENTITY textlastvisitedolderthan.accesskey "o">
+<!ENTITY textlastvisitedquerylimit.label "Prüfe N letzte Besuche:">
+<!ENTITY textlastvisitedquerylimit.accesskey "N">
+<!ENTITY textlastvisitedquerylimit.tooltip "0 = prüfe alle Besuche">
+<!ENTITY checklastvisitedtwodates.label "Zeige auch die vorletzte Besuchszeit">
+<!ENTITY checklastvisitedtwodates.accesskey "v">
+
+<!ENTITY checkusecustomformat.label "Benutze folgende Formatierung:">
+<!ENTITY checkusecustomformat.accesskey "f">
+<!ENTITY textcustomoverlink.label "Verweis-Text Format:">
+<!ENTITY textcustomoverlink.accesskey "V">
+<!ENTITY textcustomdatedefault.label "Standard Datum Format:">
+<!ENTITY textcustomdatedefault.accesskey "D">
+<!ENTITY textcustomweekdaynames.label "Wochentag Namen:">
+<!ENTITY textcustomweekdaynames.accesskey "W">
+<!ENTITY textcustommonthnames.label "Monats Namen:">
+<!ENTITY textcustommonthnames.accesskey "M">
+<!ENTITY grouplimitformat.label "Datums Altersgrenzen und Formate (aufsteigende Ordnung)">
+<!ENTITY textlimit.label "Limit">
+<!ENTITY textlimit.tooltip "Sekunden">
+<!ENTITY textformat.label "Format">
+
+<!ENTITY textcustomoverlink.tooltip "Valide Ersetzungen: &#37;u &#37;T &#37;t &#37;V &#37;B &#37;&#37; (Verweis URL, Besuchszeit, Zweite Besuchszeit, Besuchs-Indikator, Lesezeichen-Indikator, literales &#37;) &#37;+( &#37;+) &#37;-( &#37;-) &#37;+[ &#37;+] &#37;-[ &#37;-] &#37;+{ &#37;+} &#37;-{ &#37;-} (Bedingte Blöcke: Besucht, nicht Besucht, Lesezeichen, nicht Lesezeichen, Zweite Besuchszeit definiert, Zweite Besuchszeit nicht definiert)">
+<!ENTITY textcustomdatedefault.tooltip "Valide Ersetzungen: &#37;c &#37;x &#37;X &#37;Y &#37;y &#37;m &#37;b &#37;a &#37;d &#37;H &#37;k &#37;I &#37;l &#37;p &#37;P &#37;z &#37;M &#37;S &#37;&#37; (siehe strftime(3)) &#37;Ns &#37;Nm &#37;Nh &#37;Nd &#37;Nw &#37;NM &#37;Ny (Sekunden,Minuten,Stunden,Tage,Wochen,Monate,Jahre, N sind Dezimal Stellen 0..9)">

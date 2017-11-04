@@ -1,0 +1,46 @@
+<!-- LOCALIZATION NOTE (prefwindow.title): Used in Firefox 3.0.x -->
+<!ENTITY prefwindow.title "Настройки Link Status Redux">
+
+<!ENTITY tabbasic.label "Общие настройки">
+<!ENTITY tabbasic.accesskey "б">
+<!ENTITY tabcustom.label "Заказной формат">
+<!ENTITY tabcustom.accesskey "ф">
+
+<!ENTITY checkshowlastvisited.label "Показывать дату последнего посещения">
+<!ENTITY checkshowlastvisited.accesskey "щ">
+<!ENTITY checkvisitedlinksdisabled.label "Отключить стиль посещённых ссылок">
+<!ENTITY checkvisitedlinksdisabled.accesskey "п">
+<!ENTITY checkuseisodate.label "Формат даты YYYY-MM-DD">
+<!ENTITY checkuseisodate.accesskey "ы">
+<!ENTITY checklastvisitedinfront.label "Показывать дату перед адресом">
+<!ENTITY checklastvisitedinfront.accesskey "е">
+<!ENTITY textvisitedprefix.label "Знак для посещённых ссылок:">
+<!ENTITY textvisitedprefix.accesskey "ё">
+<!ENTITY textbookmarkedprefix.label "Знак для закладок:">
+<!ENTITY textbookmarkedprefix.accesskey "з">
+<!ENTITY groupoldervisited.label "Учёт времени последнего посещения">
+<!ENTITY textlastvisitedolderthan.label "Предпочитать время старше чем:">
+<!ENTITY textlastvisitedolderthan.accesskey "ч">
+<!ENTITY textlastvisitedquerylimit.label "Учитывать N последних посещений:">
+<!ENTITY textlastvisitedquerylimit.accesskey "х">
+<!ENTITY textlastvisitedquerylimit.tooltip "0 = все посещения">
+<!ENTITY checklastvisitedtwodates.label "Также показывать последнее посещение">
+<!ENTITY checklastvisitedtwodates.accesskey "ж">
+
+<!ENTITY checkusecustomformat.label "Использовать заказной формат">
+<!ENTITY checkusecustomformat.accesskey "п">
+<!ENTITY textcustomoverlink.label "Формат текста:">
+<!ENTITY textcustomoverlink.accesskey "т">
+<!ENTITY textcustomdatedefault.label "Формат даты:">
+<!ENTITY textcustomdatedefault.accesskey "д">
+<!ENTITY textcustomweekdaynames.label "Дни недели:">
+<!ENTITY textcustomweekdaynames.accesskey "и">
+<!ENTITY textcustommonthnames.label "Месяцы:">
+<!ENTITY textcustommonthnames.accesskey "е">
+<!ENTITY grouplimitformat.label "Пределы и форматы в возрастающем порядке">
+<!ENTITY textlimit.label "Предел">
+<!ENTITY textlimit.tooltip "секунды">
+<!ENTITY textformat.label "Формат">
+
+<!ENTITY textcustomoverlink.tooltip "Допустимые подстановки: &#37;u &#37;T &#37;t &#37;V &#37;B &#37;&#37; (URL, время посещения, второе время посещения, признак посещения, признак закладки, литерал &#37;) &#37;+( &#37;+) &#37;-( &#37;-) &#37;+[ &#37;+] &#37;-[ &#37;-] &#37;+{ &#37;+} &#37;-{ &#37;-} (условные блоки: посещено, не посещено, в закладках, не в закладках, есть второе время посещения, нет второго времени посещения)">
+<!ENTITY textcustomdatedefault.tooltip "Допустимые подстановки: &#37;c &#37;x &#37;X &#37;Y &#37;y &#37;m &#37;b &#37;a &#37;d &#37;H &#37;k &#37;I &#37;l &#37;p &#37;P &#37;z &#37;M &#37;S &#37;&#37; (см. strftime(3)) &#37;Ns &#37;Nm &#37;Nh &#37;Nd &#37;Nw &#37;NM &#37;Ny (секунд,минут,часов,дней,недель,месяцев,лет назад, N - число знакомест 0..9)">
