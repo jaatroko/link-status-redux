@@ -1,0 +1,46 @@
+<!-- LOCALIZATION NOTE (prefwindow.title): Used in Firefox 3.0.x -->
+<!ENTITY prefwindow.title "Inställningar för Link Status Redux">
+
+<!ENTITY tabbasic.label "Grundinställningar">
+<!ENTITY tabbasic.accesskey "G">
+<!ENTITY tabcustom.label "Anpassad formatering">
+<!ENTITY tabcustom.accesskey "p">
+
+<!ENTITY checkshowlastvisited.label "Visa senaste besöksdatum">
+<!ENTITY checkshowlastvisited.accesskey "s">
+<!ENTITY checkvisitedlinksdisabled.label "Inaktivera formatering av besökt länk">
+<!ENTITY checkvisitedlinksdisabled.accesskey "f">
+<!ENTITY checkuseisodate.label "Använd datumformatet ÅÅÅÅ-MM-DD">
+<!ENTITY checkuseisodate.accesskey "t">
+<!ENTITY checklastvisitedinfront.label "Visa datum före länkadress">
+<!ENTITY checklastvisitedinfront.accesskey "k">
+<!ENTITY textvisitedprefix.label "Prefix för besökta länkar:">
+<!ENTITY textvisitedprefix.accesskey "x">
+<!ENTITY textbookmarkedprefix.label "Prefix för bokmärkta länkar:">
+<!ENTITY textbookmarkedprefix.accesskey "e">
+<!ENTITY groupoldervisited.label "Hantering av nya besökstider">
+<!ENTITY textlastvisitedolderthan.label "Föredra besökstid äldre än:">
+<!ENTITY textlastvisitedolderthan.accesskey "b">
+<!ENTITY textlastvisitedquerylimit.label "Kontrollera de N senaste besöken:">
+<!ENTITY textlastvisitedquerylimit.accesskey "N">
+<!ENTITY textlastvisitedquerylimit.tooltip "0 = kontrollera alla besök">
+<!ENTITY checklastvisitedtwodates.label "Visa även den senaste besökstiden">
+<!ENTITY checklastvisitedtwodates.accesskey "a">
+
+<!ENTITY checkusecustomformat.label "Använd anpassat format">
+<!ENTITY checkusecustomformat.accesskey "r">
+<!ENTITY textcustomoverlink.label "Textformat vid mushovring:">
+<!ENTITY textcustomoverlink.accesskey "o">
+<!ENTITY textcustomdatedefault.label "Standarddatumformat:">
+<!ENTITY textcustomdatedefault.accesskey "d">
+<!ENTITY textcustomweekdaynames.label "Veckodagar:">
+<!ENTITY textcustomweekdaynames.accesskey "V">
+<!ENTITY textcustommonthnames.label "Månader:">
+<!ENTITY textcustommonthnames.accesskey "M">
+<!ENTITY grouplimitformat.label "Gränser och format för datum/tid, i stigande ordning">
+<!ENTITY textlimit.label "Gräns">
+<!ENTITY textlimit.tooltip "Sekunder">
+<!ENTITY textformat.label "Format">
+
+<!ENTITY textcustomoverlink.tooltip "Giltiga variabler: &#37;u &#37;T &#37;t &#37;V &#37;B &#37;&#37; (länk-URL, besökstid, andra besökstid, antal besök, bokmärkningsindikator, &#37;-tecken) &#37;+( &#37;+) &#37;-( &#37;-) &#37;+[ &#37;+] &#37;-[ &#37;-] &#37;+{ &#37;+} &#37;-{ &#37;-} (villkorsstyrda block: besökt, ej besökt, bokmärkt, ej bokmärkt, andra besökstid angiven, andra besökstid ej angiven)">
+<!ENTITY textcustomdatedefault.tooltip "Giltiga variabler: &#37;c &#37;x &#37;X &#37;Y &#37;y &#37;m &#37;b &#37;a &#37;d &#37;H &#37;k &#37;I &#37;l &#37;p &#37;P &#37;z &#37;M &#37;S &#37;&#37; (se strftime(3)) &#37;Ns &#37;Nm &#37;Nh &#37;Nd &#37;Nw &#37;NM &#37;Ny (sekunder,minuter,timmar,dagar,veckor,månader,år sedan, N är decimaler 0..9)">

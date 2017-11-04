@@ -1,0 +1,9 @@
+content linkstatusredux chrome/content/
+locale linkstatusredux en-US chrome/locale/en-US/
+locale linkstatusredux fi chrome/locale/fi/
+locale linkstatusredux de chrome/locale/de/
+locale linkstatusredux sv-SE chrome/locale/sv-SE/
+locale linkstatusredux fr chrome/locale/fr/
+locale linkstatusredux ru-RU chrome/locale/ru-RU/
+overlay chrome://browser/content/browser.xul chrome://linkstatusredux/content/browserOverlay.xul
+overlay chrome://navigator/content/navigator.xul chrome://linkstatusredux/content/browserOverlay.xul

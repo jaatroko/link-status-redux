@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+  <Description about="urn:mozilla:install-manifest">
+
+    <em:id>linkstatus@jha.iki.fi</em:id>
+    <em:version>2.7</em:version>
+    <em:type>2</em:type>
+    <em:multiprocessCompatible>true</em:multiprocessCompatible>
+
+    <em:creator>Juha Aatrokoski</em:creator>
+    <em:developer>fcp</em:developer>
+
+    <em:name>Link Status Redux</em:name>
+    <em:description>Shows an indicator on the status bar in front of the link address when the mouse cursor is over a link to a page you bookmarked or visited before.</em:description>
+    <em:localized>
+      <Description>
+        <em:locale>fi</em:locale>
+        <em:name>Link Status Redux</em:name>
+        <em:description>Näyttää merkin tilarivillä linkin osoitteen edessä kun hiiren kursori on kirjanmerkityn tai aiemmin vieraillun linkin yllä.</em:description>
+      </Description>
+    </em:localized>
+   
+    <em:localized>
+      <Description>
+        <em:locale>de</em:locale>
+        <em:name>Link Status Redux</em:name>
+        <em:description>Zeigt einen Indikator in der Statusbar vor einer Verweis-Addresse wenn der Maus-Zeiger über einem Verweiss zu einer besuchten oder als Lesezeichen gesetzten Seite ist.</em:description>
+        <em:translator>Michael Foerster</em:translator>
+      </Description>
+    </em:localized>
+
+    <em:localized>
+      <Description>
+        <em:locale>sv-SE</em:locale>
+        <em:name>Link Status Redux</em:name>
+        <em:description>Visar en indikator framför länksdressen som visas i statusfältet när muspekaren förs över en länk, för att meddela om du har bokmärkt eller besökt platsen tidigare.</em:description>
+        <em:translator>Mikael Hiort af Ornäs</em:translator>
+      </Description>
+    </em:localized>
+    
+    <em:localized>
+      <Description>
+        <em:locale>fr</em:locale>
+        <em:name>Link Status Redux</em:name>
+        <em:translator>DenB</em:translator>
+        <em:description>Affiche dans la barre d’état un symbole devant l’adresse du lien survolé par la souris si le lien pointe une page marquée ou précédemment visitée. Peut également afficher la date de la dernière visite.</em:description>
+        <em:translator>DenB</em:translator>
+      </Description>
+    </em:localized>
+    
+    <em:localized>
+      <Description>
+        <em:locale>ru-RU</em:locale>
+        <em:name>Link Status Redux</em:name>
+        <em:description>Выводит индикатор перед адресом ссылки в строке состояния при наведении курсора мыши на ранее посещённую или имеющуюся в закладках ссылку.</em:description>
+        <em:translator>Юрий Пронякин</em:translator>
+      </Description>
+    </em:localized>
+
+    <em:optionsURL>chrome://linkstatusredux/content/options.xul</em:optionsURL>
+    <em:iconURL>chrome://linkstatusredux/content/icon.png</em:iconURL>
+
+    <em:targetApplication>
+      <Description>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- Firefox -->
+        <em:minVersion>3.6</em:minVersion>
+        <em:maxVersion>53.*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+    <em:targetApplication>
+      <Description>
+        <em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id> <!-- SeaMonkey -->
+        <em:minVersion>2.1</em:minVersion>
+        <em:maxVersion>2.40.*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+  </Description>
+
+</RDF>

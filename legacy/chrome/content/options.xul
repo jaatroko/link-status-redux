@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE prefwindow SYSTEM "chrome://linkstatusredux/locale/options.dtd">
+<prefwindow id="linkstatusreduxPreferences" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" title="&prefwindow.title;">
+  <prefpane id="pane1" label="&prefwindow.title;">
+    <preferences>
+      <preference id="visited-links-disabled" name="layout.css.visited_links_enabled" inverted="true" type="bool"/>
+      <preference id="show-last-visited" name="extensions.linkstatusredux.showLastVisited" type="bool"/>
+      <preference id="use-iso-date" name="extensions.linkstatusredux.useISODate" type="bool"/>
+      <preference id="last-visited-in-front" name="extensions.linkstatusredux.lastVisitedInFront" type="bool"/>
+      <preference id="last-visited-older-than" name="extensions.linkstatusredux.lastVisitedOlderThan" type="int"/>
+      <preference id="last-visited-query-limit" name="extensions.linkstatusredux.lastVisitedQueryLimit" type="int"/>
+      <preference id="last-visited-two-dates" name="extensions.linkstatusredux.lastVisitedTwoDates" type="bool"/>
+      <preference id="visited-prefix" name="extensions.linkstatusredux.prefixVisited" type="unichar"/>
+      <preference id="bookmarked-prefix" name="extensions.linkstatusredux.prefixBookmarked" type="unichar"/>
+
+      <preference id="use-custom-format" name="extensions.linkstatusredux.useCustomFormat" type="bool"/>
+      <preference id="custom-over-link" name="extensions.linkstatusredux.customOverLink" type="unichar"/>
+      <preference id="custom-date-default" name="extensions.linkstatusredux.customDateDefault" type="unichar"/>
+      <preference id="custom-weekday-names" name="extensions.linkstatusredux.customWeekdayNames" type="wstring"/>
+      <preference id="custom-month-names" name="extensions.linkstatusredux.customMonthNames" type="wstring"/>
+      <preference id="custom-limit0" name="extensions.linkstatusredux.customLimit0" type="int"/>
+      <preference id="custom-limit1" name="extensions.linkstatusredux.customLimit1" type="int"/>
+      <preference id="custom-limit2" name="extensions.linkstatusredux.customLimit2" type="int"/>
+      <preference id="custom-limit3" name="extensions.linkstatusredux.customLimit3" type="int"/>
+      <preference id="custom-limit4" name="extensions.linkstatusredux.customLimit4" type="int"/>
+      <preference id="custom-limit5" name="extensions.linkstatusredux.customLimit5" type="int"/>
+      <preference id="custom-limit6" name="extensions.linkstatusredux.customLimit6" type="int"/>
+      <preference id="custom-date0" name="extensions.linkstatusredux.customDate0" type="wstring"/>
+      <preference id="custom-date1" name="extensions.linkstatusredux.customDate1" type="wstring"/>
+      <preference id="custom-date2" name="extensions.linkstatusredux.customDate2" type="wstring"/>
+      <preference id="custom-date3" name="extensions.linkstatusredux.customDate3" type="wstring"/>
+      <preference id="custom-date4" name="extensions.linkstatusredux.customDate4" type="wstring"/>
+      <preference id="custom-date5" name="extensions.linkstatusredux.customDate5" type="wstring"/>
+      <preference id="custom-date6" name="extensions.linkstatusredux.customDate6" type="wstring"/>
+
+    </preferences>
+    <tabbox id="tabbox1">
+
+      <tabs>
+	<tab label="&tabbasic.label;" accesskey="&tabbasic.accesskey;" />
+	<tab label="&tabcustom.label;" accesskey="&tabcustom.accesskey;"/>
+      </tabs>
+
+      <tabpanels>
+	<vbox>
+	  <checkbox id="check-show-last-visited" preference="show-last-visited" label="&checkshowlastvisited.label;" accesskey="&checkshowlastvisited.accesskey;"/>
+	  <checkbox id="check-use-iso-date" preference="use-iso-date" label="&checkuseisodate.label;" accesskey="&checkuseisodate.accesskey;"/>
+	  <checkbox id="check-last-visited-in-front" preference="last-visited-in-front" label="&checklastvisitedinfront.label;" accesskey="&checklastvisitedinfront.accesskey;"/>
+	  <checkbox id="check-visited-links-disabled" preference="visited-links-disabled" label="&checkvisitedlinksdisabled.label;" accesskey="&checkvisitedlinksdisabled.accesskey;"/>
+
+	  <grid>
+	    <columns>
+	      <column/>
+	      <column/>
+	    </columns>
+	    <rows>
+	      <row align="center">
+		<label control="text-bookmarked-prefix" value="&textbookmarkedprefix.label;" accesskey="&textbookmarkedprefix.accesskey;"/>
+		<textbox id="text-bookmarked-prefix" size="5" preference="bookmarked-prefix"/>
+	      </row>
+	      <row align="center">
+		<label control="text-visited-prefix" value="&textvisitedprefix.label;" accesskey="&textvisitedprefix.accesskey;"/>
+		<textbox id="text-visited-prefix" size="5" preference="visited-prefix"/>
+	      </row>
+	    </rows>
+	  </grid>
+
+	  <groupbox>
+	    <caption label="&groupoldervisited.label;"/>
+	    <grid>
+	      <columns>
+		<column/>
+		<column/>
+	      </columns>
+	      <rows>
+		<row align="center">
+		  <label control="text-last-visited-older-than" value="&textlastvisitedolderthan.label;" accesskey="&textlastvisitedolderthan.accesskey;"/>
+		  <textbox id="text-last-visited-older-than" size="5" preference="last-visited-older-than" tooltiptext="&textlimit.tooltip;"/>
+		</row>
+		<row align="center">
+		  <label control="text-last-visited-query-limit" value="&textlastvisitedquerylimit.label;" accesskey="&textlastvisitedquerylimit.accesskey;"/>
+		  <textbox id="text-last-visited-query-limit" size="5" preference="last-visited-query-limit" tooltiptext="&textlastvisitedquerylimit.tooltip;"/>
+		</row>
+	      </rows>
+	    </grid>
+	    
+	    <checkbox id="check-last-visited-two-dates" preference="last-visited-two-dates" label="&checklastvisitedtwodates.label;" accesskey="&checklastvisitedtwodates.accesskey;"/>
+	  </groupbox>
+
+	</vbox>
+
+	<vbox>
+	  <checkbox id="check-use-custom-format" preference="use-custom-format" label="&checkusecustomformat.label;" accesskey="&checkusecustomformat.accesskey;"/>
+	  <grid>
+	    <columns>
+	      <column/>
+	      <column flex="1"/>
+	    </columns>
+	    <rows>
+	      <row align="center">
+		<label control="text-custom-over-link" value="&textcustomoverlink.label;" accesskey="&textcustomoverlink.accesskey;"/>
+		<textbox id="text-custom-over-link" flex="1" preference="custom-over-link" tooltiptext="&textcustomoverlink.tooltip;"/>
+	      </row>
+	      <row align="center">
+		<label control="text-custom-date-default" value="&textcustomdatedefault.label;" accesskey="&textcustomdatedefault.accesskey;"/>
+		<textbox id="text-custom-date-default" flex="1" preference="custom-date-default" tooltiptext="&textcustomdatedefault.tooltip;"/>
+	      </row>
+	      
+	      <row align="center">
+		<label control="text-custom-weekday-names" value="&textcustomweekdaynames.label;" accesskey="&textcustomweekdaynames.accesskey;"/>
+		<textbox id="text-custom-weekday-names" flex="1" preference="custom-weekday-names"/>
+	      </row>
+	      <row align="center">
+		<label control="text-custom-month-names" value="&textcustommonthnames.label;" accesskey="&textcustommonthnames.accesskey;"/>
+		<textbox id="text-custom-month-names" flex="1" preference="custom-month-names"/>
+	      </row>
+	    </rows>
+	  </grid>
+
+	  <groupbox>
+	    <caption label="&grouplimitformat.label;"/>
+	    <grid>
+	      <columns>
+		<column/>
+		<column flex="1"/>
+	      </columns>
+	      <rows>
+		<row align="center">
+		  <description value="&textlimit.label;"/>
+		  <description value="&textformat.label;"/>
+		</row>
+		<row align="center">
+		  <textbox id="limit0" size="6" preference="custom-limit0" tooltiptext="&textlimit.tooltip;"/>
+		  <textbox id="format0" flex="1" preference="custom-date0" tooltiptext="&textcustomdatedefault.tooltip;"/>
+		</row>
+		<row align="center">
+		  <textbox id="limit1" size="6" preference="custom-limit1" tooltiptext="&textlimit.tooltip;"/>
+		  <textbox id="format1" flex="1" preference="custom-date1" tooltiptext="&textcustomdatedefault.tooltip;"/>
+		</row>
+		<row align="center">
+		  <textbox id="limit2" size="6" preference="custom-limit2" tooltiptext="&textlimit.tooltip;"/>
+		  <textbox id="format2" flex="1" preference="custom-date2" tooltiptext="&textcustomdatedefault.tooltip;"/>
+		</row>
+		<row align="center">
+		  <textbox id="limit3" size="6" preference="custom-limit3" tooltiptext="&textlimit.tooltip;"/>
+		  <textbox id="format3" flex="1" preference="custom-date3" tooltiptext="&textcustomdatedefault.tooltip;"/>
+		</row>
+		<row align="center">
+		  <textbox id="limit4" size="6" preference="custom-limit4" tooltiptext="&textlimit.tooltip;"/>
+		  <textbox id="format4" flex="1" preference="custom-date4" tooltiptext="&textcustomdatedefault.tooltip;"/>
+		</row>
+		<row align="center">
+		  <textbox id="limit5" size="6" preference="custom-limit5" tooltiptext="&textlimit.tooltip;"/>
+		  <textbox id="format5" flex="1" preference="custom-date5" tooltiptext="&textcustomdatedefault.tooltip;"/>
+		</row>
+		<row align="center">
+		  <textbox id="limit6" size="6" preference="custom-limit6" tooltiptext="&textlimit.tooltip;"/>
+		  <textbox id="format6" flex="1" preference="custom-date6" tooltiptext="&textcustomdatedefault.tooltip;"/>
+		</row>
+	      </rows>
+	    </grid>
+	  </groupbox>
+
+	</vbox>
+
+      </tabpanels>
+    </tabbox>
+  </prefpane>
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="options-strings" src="chrome://linkstatusredux/locale/options.properties"/>
+  </stringbundleset>
+  <script src="options.js" type="application/javascript"/>
+</prefwindow>

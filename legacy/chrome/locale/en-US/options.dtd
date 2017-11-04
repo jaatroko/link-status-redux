@@ -1,0 +1,46 @@
+<!-- LOCALIZATION NOTE (prefwindow.title): Used in Firefox 3.0.x -->
+<!ENTITY prefwindow.title "Link Status Redux Options">
+
+<!ENTITY tabbasic.label "Basic Settings">
+<!ENTITY tabbasic.accesskey "a">
+<!ENTITY tabcustom.label "Custom Format">
+<!ENTITY tabcustom.accesskey "u">
+
+<!ENTITY checkshowlastvisited.label "Show last visited date">
+<!ENTITY checkshowlastvisited.accesskey "l">
+<!ENTITY checkvisitedlinksdisabled.label "Disable visited link styling">
+<!ENTITY checkvisitedlinksdisabled.accesskey "s">
+<!ENTITY checkuseisodate.label "Use YYYY-MM-DD date format">
+<!ENTITY checkuseisodate.accesskey "f">
+<!ENTITY checklastvisitedinfront.label "Show date before link address">
+<!ENTITY checklastvisitedinfront.accesskey "d">
+<!ENTITY textvisitedprefix.label "Prefix for visited links:">
+<!ENTITY textvisitedprefix.accesskey "v">
+<!ENTITY textbookmarkedprefix.label "Prefix for bookmarked links:">
+<!ENTITY textbookmarkedprefix.accesskey "b">
+<!ENTITY groupoldervisited.label "How to handle recent visit times">
+<!ENTITY textlastvisitedolderthan.label "Prefer visit time older than:">
+<!ENTITY textlastvisitedolderthan.accesskey "o">
+<!ENTITY textlastvisitedquerylimit.label "Check N most recent visits:">
+<!ENTITY textlastvisitedquerylimit.accesskey "N">
+<!ENTITY textlastvisitedquerylimit.tooltip "0 = check all visits">
+<!ENTITY checklastvisitedtwodates.label "Show also the latest visit time">
+<!ENTITY checklastvisitedtwodates.accesskey "w">
+
+<!ENTITY checkusecustomformat.label "Use custom format">
+<!ENTITY checkusecustomformat.accesskey "c">
+<!ENTITY textcustomoverlink.label "Link target text format:">
+<!ENTITY textcustomoverlink.accesskey "L">
+<!ENTITY textcustomdatedefault.label "Default date format:">
+<!ENTITY textcustomdatedefault.accesskey "d">
+<!ENTITY textcustomweekdaynames.label "Weekday names:">
+<!ENTITY textcustomweekdaynames.accesskey "W">
+<!ENTITY textcustommonthnames.label "Month names:">
+<!ENTITY textcustommonthnames.accesskey "M">
+<!ENTITY grouplimitformat.label "Date time limits and formats in ascending order">
+<!ENTITY textlimit.label "Limit">
+<!ENTITY textlimit.tooltip "Seconds">
+<!ENTITY textformat.label "Format">
+
+<!ENTITY textcustomoverlink.tooltip "Valid substitutions: &#37;u &#37;T &#37;t &#37;V &#37;B &#37;&#37; (link URL, visit time, second visit time, visited indicator, bookmarked indicator, literal &#37;) &#37;+( &#37;+) &#37;-( &#37;-) &#37;+[ &#37;+] &#37;-[ &#37;-] &#37;+{ &#37;+} &#37;-{ &#37;-} (conditional blocks: visited, not visited, bookmarked, not bookmarked, second visit time defined, second visit time not defined)">
+<!ENTITY textcustomdatedefault.tooltip "Valid substitutions: &#37;c &#37;x &#37;X &#37;Y &#37;y &#37;m &#37;b &#37;a &#37;d &#37;H &#37;k &#37;I &#37;l &#37;p &#37;P &#37;z &#37;M &#37;S &#37;&#37; (see strftime(3)) &#37;Ns &#37;Nm &#37;Nh &#37;Nd &#37;Nw &#37;NM &#37;Ny (seconds,minutes,hours,days,weeks,months,years ago, N is decimal places 0..9)">

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://linkstatusredux/content/browserOverlay.css" type="text/css"?>
+<!DOCTYPE overlay>
+<overlay id="linkstatusredux-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="chrome://linkstatusredux/content/browserOverlay.js" type="application/javascript;version=1.7"/>
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="linkstatusredux-strings" src="chrome://linkstatusredux/locale/linkstatusredux.properties"/>
+  </stringbundleset>
+</overlay>
