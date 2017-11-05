@@ -96,6 +96,101 @@ var linkstatusredux = {};
 	}
 	
 	this.s4e_install();
+
+	// Embedded WebExtension (EWE) **************************************
+	// This code is modified from
+	// https://github.com/mdn/webextensions-examples
+	// => embedded-webextension-overlay
+	// and https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Embedded_WebExtensions#Connection-oriented_messaging
+	linkstatusredux.ewe_port = null;
+	linkstatusredux.send_prefs = function(name, force) {
+	    let user_prefs = {};
+	    let preflist = [];
+	    if (name !== null) {
+		preflist = [name];
+	    } else {
+		preflist = ["showLastVisited","useISODate",
+			      "lastVisitedInFront","prefixVisited",
+			      "prefixBookmarked","lastVisitedOlderThan",
+			      "lastVisitedTwoDates","useCustomFormat",
+			      "customOverLink","customDateDefault",
+			      "customWeekdayNames","customMonthNames",
+			      "customLimit0","customDate0",
+			      "customLimit1","customDate1",
+			      "customLimit2","customDate2",
+			      "customLimit3","customDate3",
+			      "customLimit4","customDate4",
+			      "customLimit5","customDate5",
+			      "customLimit6","customDate6"
+			   ];
+	    }
+	    for (let pref of preflist) {
+		if (!force && !linkstatusredux.prefs.prefHasUserValue(pref))
+		    continue;
+		let type = linkstatusredux.prefs.getPrefType(pref);
+		let value = null;
+		switch(type) {
+		case Components.interfaces.nsIPrefBranch2.PREF_STRING:
+		    if (pref === "customWeekdayNames"
+			|| pref === "customMonthNames"
+			|| (pref.length === 11
+			    && pref.substr(0, 10) === "customDate"))
+		    {
+			value = linkstatusredux.prefs.getComplexValue(pref, Components.interfaces.nsIPrefLocalizedString).data
+		    } else {
+			value = linkstatusredux.prefs.getComplexValue(pref, Components.interfaces.nsISupportsString).data;
+		    }
+		    break;
+		case Components.interfaces.nsIPrefBranch2.PREF_INT:
+		    value = linkstatusredux.prefs.getIntPref(pref);
+		    break;
+		case Components.interfaces.nsIPrefBranch2.PREF_BOOL:
+		    value = linkstatusredux.prefs.getBoolPref(pref);
+		    break;
+		}
+		if (value !== null)
+		    user_prefs[pref] = value;
+	    }
+	    linkstatusredux.ewe_port.postMessage({ prefs: user_prefs });
+	};
+	// Embedded WebExtension (EWE) startup ******************************
+	{
+	    const addonId = "linkstatus@jha.iki.fi";
+	    const {
+		AddonManager,
+	    } = Components.utils.import("resource://gre/modules/AddonManager.jsm", {});
+
+	    AddonManager.getAddonByID(addonId, addon => {
+		const baseURI = addon.getResourceURI("/");
+
+		const {
+		    LegacyExtensionsUtils,
+		} = Components.utils.import("resource://gre/modules/LegacyExtensionsUtils.jsm");
+
+		const ewe
+		      = LegacyExtensionsUtils.getEmbeddedExtensionFor({
+		    id: addonId, resourceURI: baseURI,
+		});
+
+		ewe.startup().then(({browser}) => {
+		    console.log("linkstatusredux: migrator startup");
+		    browser.runtime.onConnect.addListener((port) => {
+			if (port.name !== "linkstatusredux") return;
+			linkstatusredux.ewe_port = port;
+			port.onMessage.addListener(function(msg) {
+			    if (msg.send_prefs) {
+				linkstatusredux.send_prefs(null, false);
+			    }
+			});
+		    });
+		}).catch(err => {
+		    Components.utils.reportError(
+			`${addonId} - embedded webext startup failed: ${err.message} ${err.stack}\n`
+		    );
+		});
+	    });
+	}
+	// Embedded WebExtension (EWE) **************************************
     };
 
     linkstatusredux.s4e_detect = function() {
@@ -385,6 +480,13 @@ var linkstatusredux = {};
     linkstatusredux.observe = function(subject, topic, data) {
 	if (topic != "nsPref:changed")
 	    return;
+
+	// The preference is stored whether it is now the default
+	// value or not. This is easier than trying to detect returns
+	// to default and remove it from storage.local. And the user
+	// won't have this version installed very long so they
+	// probably won't change any preferences.
+	this.send_prefs(data, true);
 	
 	if (data.substr(0, 11) == "customLimit") {
 	    var n = data.substr(11, 1);

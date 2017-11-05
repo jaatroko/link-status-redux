@@ -31,3 +31,5 @@ chrome/content/browserOverlay.xul
 chrome.manifest
 defaults/preferences/linkstatusredux.js
 install.rdf
+webextension/background.js
+webextension/manifest.json
