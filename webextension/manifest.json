@@ -1,0 +1,42 @@
+{
+    "description": "__MSG_extensionDescription__",
+    "manifest_version": 2,
+    "default_locale": "en",
+    "name": "Link Status Redux",
+    "version": "3.0alpha",
+    "author": "Juha Aatrokoski",
+    "icons": {
+	"32": "icon.png"
+    },
+    "applications": {
+	"gecko": {
+	    "id": "linkstatus@jha.iki.fi"
+	}
+    },
+    "permissions": [
+	"bookmarks",
+	"history",
+	"storage"
+    ],
+    "background": {
+	"scripts": [ "defaults.js", "background.js" ]
+    },
+    "content_scripts": [
+	{
+	    "matches": [ "<all_urls>" ],
+	    "js": [ "content.js" ],
+	    "run_at": "document_end",
+	    "match_about_blank": true,
+	    "all_frames": true
+	}
+    ],
+    "web_accessible_resources": [
+	"overlay.css",
+	"overlay.html",
+	"overlay.js"
+    ],
+    "options_ui": {
+	"page": "options.html",
+	"open_in_tab": true
+    }
+}

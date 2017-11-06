@@ -1,0 +1,11 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/*
+ This rule hides the popup that shows when hovering over a link. For
+ information on how to find/create userChrome.css, see:
+   http://kb.mozillazine.org/index.php?title=UserChrome.css
+*/
+statuspanel[type=overLink]
+{
+    display: none;
+}

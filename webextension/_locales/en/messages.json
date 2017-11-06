@@ -1,0 +1,76 @@
+{
+    "translator": {"message": "Juha Aatrokoski"},
+    
+    "extensionDescription": {"message": "Shows an indicator on a popup panel along with the link address when the mouse cursor is over a link to a page you bookmarked or visited before."},
+    
+    "minutesAgo": {"message": "$minutesAgo$ minute ago;$minutesAgo$ minutes ago", "placeholders": {"minutesAgo": {"content": "$1"}}},
+    "hoursAgo": {"message": "$hoursAgo$ hour ago;$hoursAgo$ hours ago", "placeholders": {"hoursAgo": {"content": "$1"}}},
+    "daysAgo": {"message": "$daysAgo$ day ago;$daysAgo$ days ago", "placeholders": {"daysAgo": {"content": "$1"}}},
+
+    "__basicSettings_h1" : {"message": "Basic settings"},
+    "__showLastVisited_label": {"message": "Show last visited date"},
+    "__useISODate_label": {"message": "Use YYYY-MM-DD date format"},
+    "__lastVisitedInFront_label": {"message": "Show date before link adress"},
+    "__prefixBookmarked_label": {"message": "Prefix for bookmarked links:"},
+    "__prefixVisited_label": {"message": "Prefix for visited links:"},
+
+    "__recentVisits_h2": {"message": "How to handle recent visit times"},
+    "__lastVisitedOlderThen_label": {"message": "Prefer visit time older than:"},
+    "__lastVisitedTwoDates_label": {"message": "Show also the latest visit time"},
+
+    "__customFormat_h1": {"message": "Custom format"},
+    "_customFormatDescription_html": {"message": "<p>Specify what to show on the popup panel with <i>printf</i>-style expansions (hover over the inputs to see available expansions). The popup panel is divided into three parts: prefix, URL, and postfix. Prefix and postfix are one-line and non-shrinkable, URL is (possibly) multi-line and shrinkable. Normally the URL should contain just <b>%u</b>.</p><p> If you had a custom overlink text specified in version 2.8, then that was copied to the URL format and the prefix and postfix were cleared, and the maximum lines was set to 1 (see below). You should move the appropriate parts to prefix and postfix and adjust maximum lines according to your preference.</p>"},
+    "__useCustomFormat_label": {"message": "Use custom format"},
+    "__customPrefix_label": {"message": "Prefix format:"},
+    "__customURL_label": {"message": "URL format:"},
+    "__customPostfix_label": {"message": "Postfix format:"},
+    "__customDateDefault_label": {"message": "Default date format:"},
+    "__customWeekdayNames_label": {"message": "Weekday names:"},
+    "__customMonthNames_label": {"message": "Month names:"},
+
+    "__dateLimitsAndFormats_h2": {"message": "Date time limits and formats in ascending order"},
+    "__customLimit_th": {"message": "Limit"},
+    "__customFormat_th": {"message": "Format"},
+    
+    "__appearance_h1": {"message": "Appearance"},
+    "__position_h2": {"message": "Position of the popup"},
+    "__modeCorner_label": {"message": "Bottom-left corner"},
+    "_modeCornerNotes_html": {"message": "The browser's native overlink panel should be disabled via <a href='userChrome.css'>userChrome.css</a>, otherwise it will obscure the extension popup."},
+    "__modeHybrid_label": {"message": "Above browser's native overlink panel (with no URL shown by default)"},
+    "__bottomOffset_label": {"message": "Offset from bottom:"},
+    "__modeMouse_label": {"message": "At mouse pointer"},
+    "__mouseOrigin_label": {"message": "X reference:"},
+    "__mouseOriginLeft_option": {"message": "Left"},
+    "__mouseOriginCenter_option": {"message": "Center"},
+    "__mouseOriginRight_option": {"message": "Right"},
+    "__mouseOffsetX_label": {"message": "X offset:"},
+    "__mouseOffsetY_label": {"message": "Y offset:"},
+
+    "__longURLs_h2": {"message": "Wrapping and clipping of long URLs"},
+    "__maxLines_label": {"message": "Maximum number of lines to show for URL:"},
+
+    "__colors_h2": {"message": "Colors"},
+    "__colorText_label": {"message": "Text:"},
+    "__colorBackground_label": {"message": "Background:"},
+    "__colorBorder_label": {"message": "Border:"},
+
+    "__customCSS_h2": {"message": "Custom CSS"},
+    "_customCSSDescription_html": {"message": "<p>You can specify your own CSS rules on top of the <a href='overlay.css'>built-in CSS</a> (see the top of the file for important instructions). There are also some <a href='examples.css'>examples</a> you can copy-paste from. You may also want to take a look at the structure of the <a href='overlay.html'>overlay HTML</a> (select <i>View page source</i> from the context menu).</p>"},
+    "__useCustomCSS_label": {"message": "Use custom CSS"},
+    "_customCSSWarning_html": {"message": "<b>Note:</b> After editing you need to click outside of the text area for the changes to be saved and take effect. Also, validity of the code is not checked in any way before injecting it to the overlay document."},
+
+    "__seconds_tooltip": {"message": "Seconds"},
+    "__pixels_tooltip": {"message": "Pixels"},
+    "__textSubstitutions_tooltip": {"message": "Valid substitutions: %u %T %t %V %B %% (link URL, visit time, older visit time, visited indicator, bookmarked indicator, literal %) %+( %+) %-( %-) %+[ %+] %-[ %-] %+{ %+} %-{ %-} (conditional blocks: visited, not visited, bookmarked, not bookmarked, older visit time defined, older visit time not defined)"},
+    "__timeSubstitutions_tooltip": {"message": "Valid substitutions: %c %x %X %Y %y %m %b %a %d %H %k %I %l %p %P %z %M %S %% (see strftime(3)) %Ns %Nm %Nh %Nd %Nw %NM %Ny (seconds,minutes,hours,days,weeks,months,years ago, N is decimal places 0..9)"},
+
+    "customWeekdayNames_default": {"message": "Sun,Mon,Tue,Wed,Thu,Fri,Sat"},
+    "customMonthNames_default": {"message": "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec"},
+    "customDate0_default": {"message": "%0s seconds ago"},
+    "customDate1_default": {"message": "%0m minutes ago"},
+    "customDate2_default": {"message": "%1h hours ago"},
+    "customDate3_default": {"message": "%a, %1d days ago"},
+    "customDate4_default": {"message": ""},
+    "customDate5_default": {"message": ""},
+    "customDate6_default": {"message": ""}
+}
