@@ -1,0 +1,14 @@
+_locales/en/messages.json
+_locales/fi/messages.json
+background.js
+content.js
+defaults.js
+examples.css
+icon.png
+manifest.json
+options.html
+options.js
+overlay.css
+overlay.html
+overlay.js
+userChrome.css

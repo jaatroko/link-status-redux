@@ -1,0 +1,76 @@
+{
+    "translator": {"message": "Juha Aatrokoski"},
+    
+    "extensionDescription": {"message": "Näyttää merkin infopaneelissa linkin osoitteen edessä kun hiiren kursori on kirjanmerkityn tai aiemmin vieraillun linkin yllä."},
+    
+    "minutesAgo": {"message": "$minutesAgo$ minuutti sitten;$minutesAgo$ minuuttia sitten", "placeholders": {"minutesAgo": {"content": "$1"}}},
+    "hoursAgo": {"message": "$hoursAgo$ tunti sitten;$hoursAgo$ tuntia sitten", "placeholders": {"hoursAgo": {"content": "$1"}}},
+    "daysAgo": {"message": "$daysAgo$ päivä sitten;$daysAgo$ päivää sitten", "placeholders": {"daysAgo": {"content": "$1"}}},
+
+    "__basicSettings_h1" : {"message": "Perusasetukset"},
+    "__showLastVisited_label": {"message": "Näytä viimeisin vierailuaika"},
+    "__useISODate_label": {"message": "Käytä VVVV-KK-PP päiväysmuotoa"},
+    "__lastVisitedInFront_label": {"message": "Näytä aika ennen osoitetta"},
+    "__prefixBookmarked_label": {"message": "Etuliite kirjanmerkityille linkeille:"},
+    "__prefixVisited_label": {"message": "Etuliite vierailluille linkeille:"},
+
+    "__recentVisits_h2": {"message": "Miten äskettäiset vierailuajat käsitellään"},
+    "__lastVisitedOlderThen_label": {"message": "Vierailuaika mieluiten vanhempi kuin:"},
+    "__lastVisitedTwoDates_label": {"message": "Näytä myös viimeisin vierailuaika"},
+
+    "__customFormat_h1": {"message": "Oma muotoilu"},
+    "_customFormatDescription_html": {"message": "<p>Määritä mitä infopaneelissa näytetään <i>printf</i>-tyylisillä korvauksilla (vie hiiri tekstikentän päälle nähdäksesi mahdolliset korvaukset). Infopaneeli on jaettu kolmeen osaan: etuliite, URL, ja jälkiliite. Etu- ja jälkiliite ovat yksirivisiä eivätkä kutistu, URL on mahdollisesti monirivinen ja kutistuu vaakasuunnassa tarpeen vaatiessa. Normaalisti URL:ssa tulisi olla vain <b>%u</b>.</p><p>Jos sinulla oli määritelty oma linkin kohteen muoto versiossa 2.8, se kopioitiin URL:iin ja etu- ja jälkiliite tyhjennettiin, sekä maksimirivit asetettiin arvoon 1 (ks. alla). Siirrä soveltuvat osat etu- ja jälkiliitteeseen, ja säädä maksimirivit mieleiseksesi.</p>"},
+    "__useCustomFormat_label": {"message": "Käytä omaa muotoilua"},
+    "__customPrefix_label": {"message": "Etuliitteen muoto:"},
+    "__customURL_label": {"message": "URL:n muoto:"},
+    "__customPostfix_label": {"message": "Jälkiliitteen muoto:"},
+    "__customDateDefault_label": {"message": "Päivämäärän oletusmuoto:"},
+    "__customWeekdayNames_label": {"message": "Viikonpäivien nimet:"},
+    "__customMonthNames_label": {"message": "Kuukausien nimet:"},
+
+    "__dateLimitsAndFormats_h2": {"message": "Päivämäärän aikarajat ja muotoilut nousevassa järjestyksessä"},
+    "__customLimit_th": {"message": "Raja"},
+    "__customFormat_th": {"message": "Muoto"},
+    
+    "__appearance_h1": {"message": "Ulkoasu"},
+    "__position_h2": {"message": "Infopaneelin paikka"},
+    "__modeCorner_label": {"message": "Vasen alakulma"},
+    "_modeCornerNotes_html": {"message": "Selaimen oma linkki-infopaneeli tulisi poistaa käytöstä <a href='userChrome.css'>userChrome.css</a>:n avulla, muuten se peittää lisäosan infopaneelin."},
+    "__modeHybrid_label": {"message": "Selaimen oman linkki-infon yllä (URLia ei näytetä oletuksena)"},
+    "__bottomOffset_label": {"message": "Etäisyys alareunasta:"},
+    "__modeMouse_label": {"message": "Hiiren kursorin kohdalla"},
+    "__mouseOrigin_label": {"message": "X-referenssikohta:"},
+    "__mouseOriginLeft_option": {"message": "Vasemmalla"},
+    "__mouseOriginCenter_option": {"message": "Keskellä"},
+    "__mouseOriginRight_option": {"message": "Oikealla"},
+    "__mouseOffsetX_label": {"message": "X-etäisyys:"},
+    "__mouseOffsetY_label": {"message": "Y-etäisyys:"},
+
+    "__longURLs_h2": {"message": "Pitkien URL:ien rivitys ja katkaisu"},
+    "__maxLines_label": {"message": "Maksimimäärä rivejä URLin näyttämiseen:"},
+
+    "__colors_h2": {"message": "Värit"},
+    "__colorText_label": {"message": "Teksti:"},
+    "__colorBackground_label": {"message": "Tausta:"},
+    "__colorBorder_label": {"message": "Reuna:"},
+
+    "__customCSS_h2": {"message": "Oma CSS"},
+    "_customCSSDescription_html": {"message": "<p>Voit määrittää omat CSS-sääntösi <a href='overlay.css'>sisäänrakennetun CSS:n</a> päälle (ks. tärkeät ohjeet (englanniksi) tiedoston alussa). Voit myös kopioida muutamista <a href='examples.css'>esimerkkisäännöistä</a>. Haluat ehkä myös tutustua <a href='overlay.html'>infopaneelin HTML-sivun</a> rakenteeseen (valitse <i>Näytä sivun lähdekoodi</i> kontekstivalikosta).</p>"},
+    "__useCustomCSS_label": {"message": "Käytä omia CSS-sääntöjä"},
+    "_customCSSWarning_html": {"message": "<b>Huom:</b> Muokkauksen jälkeen pitää klikata tekstialueen ulkopuolelle jotta muutokset tallentuvat ja tulevat voimaan. CSS-koodin oikeellisuutta ei myöskään tarkisteta mitenkään ennen käyttöönottoa."},
+
+    "__seconds_tooltip": {"message": "Sekuntia"},
+    "__pixels_tooltip": {"message": "Pikseliä"},
+    "__textSubstitutions_tooltip": {"message": "Sallitut korvaukset: %u %T %t %V %B %% (linkin URL, vierailuaika, vanhempi vierailuaika, vierailtu-merkki, kirjanmerkitty-merkki, %-merkki) %+( %+) %-( %-) %+[ %+] %-[ %-] %+{ %+} %-{ %-} (ehdolliset lohkot: vierailtu, ei vierailtu, kirjanmerkitty, ei kirjanmerkitty, vanhempi vierailuaika määritelty, vanhempi vierailuaika ei määritelty)"},
+    "__timeSubstitutions_tooltip": {"message": "Sallitut korvaukset: %c %x %X %Y %y %m %b %a %d %H %k %I %l %p %P %z %M %S %% (ks. strftime(3)) %Ns %Nm %Nh %Nd %Nw %NM %Ny (sekuntia,minuuttia,tuntia,päivää,viikkoa,kuukautta,vuotta sitten, N on desimaalien määrä 0..9)"},
+
+    "customWeekdayNames_default": {"message": "su,ma,ti,ke,to,pe,la"},
+    "customMonthNames_default": {"message": "tammi,helmi,maalis,huhti,touko,kesä,heinä,elo,syys,loka,marras,joulu"},
+    "customDate0_default": {"message": "%0s sekuntia sitten"},
+    "customDate1_default": {"message": "%0m minuuttia sitten"},
+    "customDate2_default": {"message": "%1h tuntia sitten"},
+    "customDate3_default": {"message": "%a, %1d päivää sitten"},
+    "customDate4_default": {"message": ""},
+    "customDate5_default": {"message": ""},
+    "customDate6_default": {"message": ""}
+}

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+  input[type=number] {
+  width: 5em;
+  }
+  input[type=text] {
+  width: 20em;
+  }
+  div {
+  max-width: 40em; /* long lines are hard to read */
+  }
+  .helptext {
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin: 1em;
+  }
+  .indent {
+  margin-left: 4em;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  }
+</style>
+
+
+<h1 id="__basicSettings_h1">Basic settings</h1>
+
+<div>
+  <input type="checkbox" id="showLastVisited">
+  <label for="showLastVisited" id="__showLastVisited_label">Show last visited date</label>
+</div>
+<div>
+  <input type="checkbox" id="useISODate">
+  <label for="useISODate" id="__useISODate_label">Use YYYY-MM-DD date format</label>
+</div>
+<div>
+  <input type="checkbox" id="lastVisitedInFront">
+  <label for="lastVisitedInFront" id="__lastVisitedInFront_label">Show date before link address</label>
+</div>
+
+<table>
+  <tr>
+    <td><label for="prefixBookmarked" id="__prefixBookmarked_label">Prefix for bookmarked links:</label></td>
+    <td><input type="text" id="prefixBookmarked" style="width:5em;"></td>
+  </tr><tr>
+    <td><label for="prefixVisited" id="__prefixVisited_label">Prefix for visited links:</label></td>
+    <td><input type="text" id="prefixVisited" style="width:5em;"></td>
+  </tr>
+</table>
+
+<h2 id="__recentVisits_h2">How to handle recent visit times</h2>
+
+<div>
+    <label for="lastVisitedOlderThan" id="__lastVisitedOlderThen_label">Prefer visit time older than:</label>
+    <input type="number" id="lastVisitedOlderThan" min="0" title="__seconds_tooltip">
+</div>
+<div>
+  <input type="checkbox" id="lastVisitedTwoDates">
+  <label for="lastVisitedTwoDates" id="__lastVisitedTwoDates_label">Show also the latest visit time</label>
+</div>
+
+
+<h1 id="__customFormat_h1">Custom format</h1>
+
+<div id="_customFormatDescription_html" class="html_replace helptext">
+  <p>
+    Specify what to show on the popup panel with <i>printf</i>-style
+    expansions (hover over the inputs to see available
+    expansions). The popup panel is divided into three parts: prefix,
+    URL, and postfix. Prefix and postfix are one-line and
+    non-shrinkable, URL is (possibly) multi-line and
+    shrinkable. Normally the URL should contain just <b>%u</b>.
+  </p>
+  <p>
+    If you had a custom overlink text specified in version 2.8, then
+    that was copied to the URL format and the prefix and postfix were
+    cleared, and the maximum lines was set to 1 (see below). You
+    should move the appropriate parts to prefix and postfix and adjust
+    maximum lines according to your preference.
+  </p>
+</div>
+
+<div>
+  <input type="checkbox" id="useCustomFormat">
+  <label for="useCustomFormat" id="__useCustomFormat_label">Use custom format</label>
+</div>
+
+<table>
+  <tr>
+    <td><label for="customPrefix" id="__customPrefix_label">Prefix format:</label></td>
+    <td><input type="text" id="customPrefix" title="__textSubstitutions_tooltip"></td>
+  </tr><tr>
+    <td><label for="customURL" id="__customURL_label">URL format:</label></td>
+    <td><input type="text" id="customURL" title="__textSubstitutions_tooltip"></td>
+  </tr><tr>
+    <td><label for="customPostfix" id="__customPostfix_label">Postfix format:</label></td>
+    <td><input type="text" id="customPostfix" title="__textSubstitutions_tooltip"></td>
+  </tr><tr>
+    <td><label for="customDateDefault" id="__customDateDefault_label">Default date format:</label></td>
+    <td><input type="text" id="customDateDefault" title="__timeSubstitutions_tooltip"></td>
+  </tr><tr>
+    <td><label for="customWeekdayNames" id="__customWeekdayNames_label">Weekday names:</label></td>
+    <td><input type="text" id="customWeekdayNames"></td>
+  </tr><tr>
+    <td><label for="customMonthNames" id="__customMonthNames_label">Month names:</label></td>
+    <td><input type="text" id="customMonthNames"></td>
+  </tr>
+</table>
+
+<h2 id="__dateLimitsAndFormats_h2">Date time limits and formats in ascending order</h2>
+
+<table>
+  <tr>
+    <th id="__customLimit_th">Limit</th>
+    <th id="__customFormat_th">Format</th>
+  </tr><tr>
+    <td><input type="number" id="customLimit0" min="0" title="__seconds_tooltip"></td>
+    <td><input type="text" id="customDate0" title="__timeSubstitutions_tooltip"></td>
+  </tr><tr>
+    <td><input type="number" id="customLimit1" min="0" title="__seconds_tooltip"></td>
+    <td><input type="text" id="customDate1" title="__timeSubstitutions_tooltip"></td>
+  </tr><tr>
+    <td><input type="number" id="customLimit2" min="0" title="__seconds_tooltip"></td>
+    <td><input type="text" id="customDate2" title="__timeSubstitutions_tooltip"></td>
+  </tr><tr>
+    <td><input type="number" id="customLimit3" min="0" title="__seconds_tooltip"></td>
+    <td><input type="text" id="customDate3" title="__timeSubstitutions_tooltip"></td>
+  </tr><tr>
+    <td><input type="number" id="customLimit4" min="0" title="__seconds_tooltip"></td>
+    <td><input type="text" id="customDate4" title="__timeSubstitutions_tooltip"></td>
+  </tr><tr>
+    <td><input type="number" id="customLimit5" min="0" title="__seconds_tooltip"></td>
+    <td><input type="text" id="customDate5" title="__timeSubstitutions_tooltip"></td>
+  </tr><tr>
+    <td><input type="number" id="customLimit6" min="0" title="__seconds_tooltip"></td>
+    <td><input type="text" id="customDate6" title="__timeSubstitutions_tooltip"></td>
+  </tr>
+</table>
+
+
+<h1 id="__appearance_h1">Appearance</h1>
+
+<h2 id="__position_h2">Position of the popup</h2>
+
+<div>
+  <input id="radio1" type="radio" name="mode" value="bottom_left">
+  <label for="radio1" id="__modeCorner_label">Bottom-left corner</label>
+</div>
+<div class="html_replace indent" id="_modeCornerNotes_html">
+  Browser overlink panel should be disabled
+  via <a href='userChrome.css'>userChrome.css</a>.
+</div>
+<div>
+  <input id="radio2" type="radio" name="mode" value="left" checked>
+  <label for="radio2" id="__modeHybrid_label">Above browser overlink panel (with no URL shown by default)</label>
+</div>
+<div class="indent">
+  <label for="bottomOffset" id="__bottomOffset_label">Offset from bottom:</label>
+  <input id="bottomOffset" type="number" value="24" min="0" title="__pixels_tooltip">
+</div>
+<div>
+  <input id="radio3" type="radio" name="mode" value="float"><label for="radio3" id="__modeMouse_label">At mouse pointer</label>
+</div>
+<div class="indent">
+  <table>
+    <tr>
+      <td><label for="mouseOrigin" id="__mouseOrigin_label">X reference:</label></td>
+      <td>
+	<select id="mouseOrigin">
+	  <option value="0" id="__mouseOriginLeft_option" selected>Left</option>
+	  <option value="1" id="__mouseOriginCenter_option">Center</option>
+	  <option value="2" id="__mouseOriginRight_option">Right</option>
+	</select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="mouseOffsetX" id="__mouseOffsetX_label">X offset:</label></td>
+      <td><input id="mouseOffsetX" type="number" value="0" title="__pixels_tooltip"></td>
+    </tr><tr>
+      <td><label for="mouseOffsetY" id="__mouseOffsetY_label">Y offset:</label></td>
+      <td><input id="mouseOffsetY" type="number" value="30" title="__pixels_tooltip"></td>
+    </tr>
+  </table>
+</div>
+
+<h2 id="__longURLs_h2">Long URL clipping</h2>
+
+<label for="maxLines" id="__maxLines_label">Maximum number of lines to show for URL:</label>
+<input id="maxLines" type="number" value="2" min="1">
+
+<h2 id="__colors_h2">Colors</h2>
+
+<table>
+  <tr>
+    <td><label for="colorText" id="__colorText_label">Text:</label></td>
+    <td><input id="colorText" type="color" value="#444444"></td>
+  </tr><tr>
+    <td><label for="colorBackground" id="__colorBackground_label">Background:</label></td>
+    <td><input id="colorBackground" type="color" value="#dddddd"></td>
+  </tr><tr>
+    <td><label for="colorBorder" id="__colorBorder_label">Border:</label></td>
+    <td><input id="colorBorder" type="color" value="#aaaaaa"></td>
+  </tr>
+</table>
+
+<h2 id="__customCSS_h2">Custom CSS</h2>
+
+
+<div id="_customCSSDescription_html" class="html_replace helptext">
+  <p>
+    You can specify your own CSS rules on top of
+    the <a href="overlay.css">built-in CSS</a> (see the top of the
+    file for important instructions). There are also
+    some <a href="examples.css">examples</a> you can copy-paste from.
+    You may also want to take a look at the structure of
+    the <a href="overlay.html">overlay HTML</a> (select "View page
+    source" from the context menu).
+  </p>
+</div>
+
+<div>
+  <input id="useCustomCSS" type="checkbox">
+  <label for="useCustomCSS" id="__useCustomCSS_label">Use custom CSS</label>
+</div>
+<div style="margin-top:0.5em;" id="_customCSSWarning_html" class="html_replace">
+  <b>Note:</b> After editing you need to click outside of the text area for the changes to be saved and take effect. Also, validity of the code is not checked in any way before injecting it to the overlay document.
+</div>
+<textarea id="customCSS" cols="80" rows="25"></textarea>
+
+<script src="defaults.js"></script>
+<script src="options.js"></script>

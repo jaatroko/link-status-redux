@@ -1,0 +1,69 @@
+/* Example 1: limit popup width to 50% of window width */
+#panel {
+    max-width: 50%;
+}
+
+
+/* Example 2: reduce panel padding */
+#panel {
+    padding: 1px;
+}
+
+
+/* Example 3: add rounded corners */
+.bottom_left #panel {
+    border-top-right-radius: 3px;
+}
+.left #panel, .bottom_left.evaded #panel {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+.float #panel {
+    border-radius: 3px;
+}
+
+
+/* Example 4: set background color according to visited/bookmarked/both */
+.visited div {
+    background: #aaf;
+    border-color: #77c;
+}
+.visited #overflow_begin {
+    background: linear-gradient(to right, transparent, #aaf);
+}
+.visited #overflow_end {
+    background: linear-gradient(to left, transparent, #aaf);
+}
+.bookmarked div {
+    background: #faa;
+    border-color: #c77;
+}
+.bookmarked #overflow_begin {
+    background: linear-gradient(to right, transparent, #faa);
+}
+.bookmarked #overflow_end {
+    background: linear-gradient(to left, transparent, #faa);
+}
+.visited.bookmarked div {
+    background: #faf;
+    border-color: #c7c;
+}
+.visited.bookmarked #overflow_begin {
+    background: linear-gradient(to right, transparent, #faf);
+}
+.visited.bookmarked #overflow_end {
+    background: linear-gradient(to left, transparent, #faf);
+}
+
+
+/* Example 5: indicate visited link with an image in the prefix. With
+   this you should use custom formatting and set the prefix to an
+   empty string. */
+.visited #prefix {
+    width: 16px;
+    height: 16px;
+    margin-right: 3px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4QsFEh8AgzraJAAAAAh0RVh0Q29tbWVudAD2zJa/AAACz0lEQVQ4y22TPYicVRSGn3u+e7+fmXEmC+NKCosthEXQIBYj2GwjbEBD/AHtXMTiCybVirpWKSQEdJHV4EQF2UZMtNIIq42ZcrWyFYvtBAmzk8x8M9/vvddiSdyEnO7A+z6cA++reGBef35rYH1vw7nltZPVYqUflhyq5qAfdUeP3Va76Z/p78f1cnw5/fjmUIJ4v3Qu9aJWlXORNxI5o1YzVaQzU+xfe2pn+FDAa098vCetIG28UPqAIAzRgBePp6FSJXnbcSiSXn9mZ+8+wAvPfjaUebEuLU9eOSROQIQACDxogcaVFJLzby/jDqz/8PTRJfLqyqeDzuEkLU/kkLRYSMze6AJ6MSNSIK5h5+YWVcuQ65ycObeSKf+E8/SrwScDbWW2IbHCxgmFN+h4CYBeAzFC44++LK0HMbRNyYQ500DhldrQxVKyVorFak0Udum4+AhABS3HzFgAtBZKZ1Bhg5cGZyy1cWtq/dSVQoUqinREi5jENvRtThKXjGXKPIFur0VZ12SFw1ET6BofNdjElfrR0oAKMARENCRmjokrDu0dFpFG9QwTcZg4RuoCVELZmqO6QpAIorsc6LChHTm++ONNCDPGdkzeBrtkmClPZTQzZ9n9+QNmjyjybgwnMvoniwMpuoyKuGbiMwC2b77H7XaPSafD2HiyxDLXFdeubwJQm5owgX5S0886I3X2xa8HIexb11AHlh9/eudeyl46f5EbVy7+n9T0Ek48UXvMk8sNrb9PPacAzr78+dC6MvXUKGp8qLnx/dY945nNy3hvQTmapiIwNavLt65uv//NOXVX9MZbX+6poFy3xKjQoBJPpaZYXZO0DCqogYY8r8gX+S+/bl8+DaCOF+OVC78NjS5StEeZCq/n4GqMsVimOBZIW65+9+6H5+561IN1PvP2XwOU25CwXNNRvhIFGYFeHHg1GTnJdr/96Px9df4Peuw4/pv/YN8AAAAASUVORK5CYII=);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}

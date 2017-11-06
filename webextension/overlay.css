@@ -1,0 +1,173 @@
+/*
+  The overlay document is structured as follows:
+ 
+  #wrapper.wrapper
+      #panel
+          #prefix.affix
+          #url_wrapper.wrapper
+              #url_begin_wrapper.wrapper
+                  #url_begin.url
+              #overflow_begin.overflow
+              #overflow_end.overflow
+              #url_end_wrapper.wrapper
+                  #url_end.url
+          #postfix.affix 
+
+  The important thing to know is that the CSS classes that describe
+  state are assigned ONLY to #wrapper, which should not be styled in
+  custom CSS, so you should use descendant selectors with the
+  state-describing class as the ancestor to style the overlay, e.g.:
+     
+    .visited div { background: #f00; }
+ 
+  The classes expressing state are the following:
+
+    One of [bottom_left,left,float]: describes the mode of the panel
+
+    One of [multiline,oneline]: whether maxLines is 1 or not
+
+    Some of [visited,bookmarked,recently_visited,two_visit_times]:
+      visit and bookmarked status
+
+    One or none of [evaded]: the panel was moved because the mouse
+      pointer was too close
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+div {
+    color: #404040;
+    background: #cecece;
+    font: caption;
+    border-style: solid;
+    border-width: 0;
+    border-color: #909090;
+    line-height: 1.2em; /* hard-coded into JS, do not override */
+}
+.wrapper {
+    /* common for wrapper,url_wrapper,url_begin_wrapper,url_end_wrapper */
+    background: none !important;
+}
+#panel {
+    position: fixed;
+    display: flex;
+    align-items: flex-start;
+    padding: 3px;
+    max-width: 100%;
+}
+.affix {
+    /* common for prefix,postfix */
+    align-self: center;
+    white-space: pre;
+}
+#url_wrapper {
+    position: relative;
+    overflow: hidden;
+    align-self: center;
+    flex-shrink: 1;
+}
+.url {
+    /* common for url_begin,url_end */
+}
+.multiline #url_begin {
+    position: relative;
+    max-height: 2.4em; /* N * line-height, overridden by preferences */
+    white-space: pre-wrap;
+    word-break: break-all;
+    z-index: 0;
+}
+.oneline #url_begin_wrapper {
+    position: relative;
+    overflow: hidden;
+}
+.oneline #url_begin {
+    position: relative;
+    white-space: pre;
+    z-index: 0;
+    height: 1.2em; /* 1*line-height */
+    overflow: hidden;
+}
+.multiline #url_end {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-top: 2px dashed #f44;
+    height: 1.2em; /* 1*line-height */
+    white-space: pre;
+    text-align: right;
+    z-index: 1;
+}
+.oneline #url_end_wrapper {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 1.2em; /* 1*line-height */
+    overflow: hidden;
+}
+.oneline #url_end {
+    position: absolute;
+    right: 0;
+    top: 0;
+    white-space: pre;
+    z-index: 1;
+    height: 1.2em; /* 1*line-height */
+    text-align: right;
+}
+.overflow {
+    /* common for overflow_begin,overflow_end */
+    position: absolute;
+    z-index: 2;
+    width: 3em;
+    height: 1.2em; /* 1*line-height */
+}
+#overflow_begin {
+    background: linear-gradient(to right, transparent, #cecece);
+}
+.multiline #overflow_begin {
+    bottom: 1.2em;
+    right: 0;
+}
+.oneline #overflow_begin {
+    bottom: 0;
+    right: 50%;
+}
+#overflow_end {
+    background: linear-gradient(to left, transparent, #cecece);
+}
+.multiline #overflow_end {
+    bottom: 0;
+    left: 0;
+}
+.oneline #overflow_end {
+    bottom: 0;
+    left: 50%;
+    border-left: 2px dotted #f44;
+    margin-left: -2px;
+    z-index: 3;
+}
+
+
+/* styles for operating modes */
+.bottom_left #panel { /* "normal" */
+    bottom: 0px; /* overridden by JS */
+    left: 0px; /* do not override, otherwise evasion won't work */
+    border-top-width: 1px;
+    border-right-width: 1px;
+}
+.left #panel, .bottom_left.evaded #panel {
+    /* "hybrid"/diverted upwards from under mouse pointer */
+    bottom: 25px; /* overridden by preferences and evasion */
+    left: 0px; /* do not override, otherwise evasion won't work */
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-right-width: 1px;
+}
+.float #panel { /* "tooltip" */
+    top: 0px;  /* overridden by mouse position */
+    left: 0px; /* overridden by mouse position */
+    border-width: 1px;
+}
