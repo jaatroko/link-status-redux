@@ -1,5 +1,6 @@
 _locales/en/messages.json
 _locales/fi/messages.json
+_locales/ja/messages.json
 background.js
 content.js
 defaults.js
