@@ -38,7 +38,8 @@ Places to copy-paste UTF-8 symbols from:
 Custom formatting allows expert users to more freely specify the text
 that is shown when hovering the mouse over a link (the "link target
 text"). The specification is done with _printf_-style substitutions,
-and the following are valid for the link target text:
+and the following are valid for the link target text
+(prefix/URL/postfix in version 3.0):
 
 Code | Substitution
 -----|-------------
@@ -100,7 +101,36 @@ Code | Substitution
 The following is only applicable to the WebExtension version (version
 3.0 and later) of the extension.
 
-_Coming soon..._
+In addition to the features in the legacy version, version 3.0 adds
+appearance customization options. You can:
+
+* Choose where the overlink popup is shown: bottom-left corner (see
+  caveat below), above the browser's native popup, or offset from the
+  mouse pointer (warning: may make page mouseover popups
+  difficult/impossible to see).
+* Choose to how many lines a very long link URL is wrapped.
+* Choose the colors of the overlink popup.
+* Write your own CSS rules to style the overlink popup.
+
+The WebExtension API does not allow creating proper UI elements or
+changing existing ones. This means that the browser's native overlink
+popup cannot be modified or hidden by the extension. For this reason,
+the default mode of 3.0 is to show an additional popup above the
+browser's native one, that shows only the visited/bookmarked
+indicators and visit time(s). You can configure the extension popup to
+show "normally" at the bottom-left corner, but you will then have to
+hide the browser's native popup by editing your
+[userChrome.css](http://kb.mozillazine.org/index.php?title=UserChrome.css). In
+addition to this, there are other
+[issues](https://github.com/jaatroko/link-status-redux/issues?utf8=%E2%9C%93&q=is%3Aissue%20label%3Awebextension%20label%3A%22known%20issue%22)
+which make the WebExtension version not as good functionally as the
+legacy version. This is why version 3.0 is marked as requiring Firefox
+57 or later on
+[AMO](https://addons.mozilla.org/en-US/firefox/addon/link-status-redux/):
+for Firefox 57 users it is better than nothing, but in the author's
+opinion the legacy version is the better one for earlier Firefox
+versions. (You can still force-install 3.0 on an earlier Firefox if
+you want.)
 
 ## Legacy version for Firefox 56 and earlier
 
