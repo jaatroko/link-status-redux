@@ -1,0 +1,76 @@
+{
+    "translator": {"message": "Masatoshi Kimura"},
+    
+    "extensionDescription": {"message": "リンクにカーソルを乗せたときポップアップパネルに表示されるURLの隣に、訪問またはブックマークしたことがあるかどうかを示す印を表示します。"},
+    
+    "minutesAgo": {"message": "$minutesAgo$分前;$minutesAgo$分前", "placeholders": {"minutesAgo": {"content": "$1"}}},
+    "hoursAgo": {"message": "$hoursAgo$時間前;$hoursAgo$時間前", "placeholders": {"hoursAgo": {"content": "$1"}}},
+    "daysAgo": {"message": "$daysAgo$日前;$daysAgo$日前", "placeholders": {"daysAgo": {"content": "$1"}}},
+
+    "__basicSettings_h1" : {"message": "基本設定"},
+    "__showLastVisited_label": {"message": "最終訪問日を表示する"},
+    "__useISODate_label": {"message": "YYYY-MM-DD形式の日付を使用する"},
+    "__lastVisitedInFront_label": {"message": "URLの前に日付を表示する"},
+    "__prefixBookmarked_label": {"message": "ブックマークされたリンクの接頭辞:"},
+    "__prefixVisited_label": {"message": "訪問済みリンクの接頭辞:"},
+
+    "__recentVisits_h2": {"message": "最近の訪問時刻を処理する方法"},
+    "__lastVisitedOlderThen_label": {"message": "次の秒数より古い訪問時刻を優先:"},
+    "__lastVisitedTwoDates_label": {"message": "最新の訪問時刻も表示する"},
+
+    "__customFormat_h1": {"message": "カスタム書式"},
+    "_customFormatDescription_html": {"message": "<p>ポップアップパネルに表示するものを<i>printf</i>方式で書式指定します(使用可能な書式指定を見るには入力欄にマウスカーソルを合わせます)。ポップアップパネルは3つの部分に分けられています: 接頭辞、URL、接尾辞です。接頭辞と接尾辞は一行のみで、短縮できません。URLは複数行になる場合があり、短縮できます。通常URLは<b>%u</b>だけを含むべきです。</p><p>もしバージョン2.8でカスタムリンク先テキストを指定していたなら、それはURL書式にコピーされて接頭辞と接尾辞はクリアされ、最大行数は1に設定されます(以下参照)。適切な部分を接頭辞と接尾辞に移動して、最大行数を好みに応じて修正してください。</p>"},
+    "__useCustomFormat_label": {"message": "カスタム書式を使用する"},
+    "__customPrefix_label": {"message": "接頭辞の書式:"},
+    "__customURL_label": {"message": "URLの書式:"},
+    "__customPostfix_label": {"message": "接尾辞の書式:"},
+    "__customDateDefault_label": {"message": "既定の日付書式:"},
+    "__customWeekdayNames_label": {"message": "曜日名:"},
+    "__customMonthNames_label": {"message": "月名:"},
+
+    "__dateLimitsAndFormats_h2": {"message": "日時の上限と書式(昇順)"},
+    "__customLimit_th": {"message": "上限"},
+    "__customFormat_th": {"message": "書式"},
+    
+    "__appearance_h1": {"message": "表示"},
+    "__position_h2": {"message": "ポップアップの位置"},
+    "__modeCorner_label": {"message": "左下隅"},
+    "_modeCornerNotes_html": {"message": "ブラウザー標準のリンク先パネルを<a href='userChrome.css'>userChrome.css</a>で非表示にしてください。さもないと拡張機能のポップアップを覆い隠します。"},
+    "__modeHybrid_label": {"message": "ブラウザー標準パネルの上に表示(既定でURLは表示されません)"},
+    "__bottomOffset_label": {"message": "最下部からの距離:"},
+    "__modeMouse_label": {"message": "マウスカーソルの位置"},
+    "__mouseOrigin_label": {"message": "配置:"},
+    "__mouseOriginLeft_option": {"message": "左"},
+    "__mouseOriginCenter_option": {"message": "中央"},
+    "__mouseOriginRight_option": {"message": "右"},
+    "__mouseOffsetX_label": {"message": "横方向の距離:"},
+    "__mouseOffsetY_label": {"message": "縦方向の距離:"},
+
+    "__longURLs_h2": {"message": "長いURLを折り返してクリップする"},
+    "__maxLines_label": {"message": "URLを表示する最大行数:"},
+
+    "__colors_h2": {"message": "色"},
+    "__colorText_label": {"message": "文字:"},
+    "__colorBackground_label": {"message": "背景:"},
+    "__colorBorder_label": {"message": "枠線:"},
+
+    "__customCSS_h2": {"message": "カスタムCSS"},
+    "_customCSSDescription_html": {"message": "<p><a href='overlay.css'>組み込みCSS</a>の上に独自のCSSルールを指定できます(ファイル先頭の重要な説明をご覧ください)。コピーアンドペーストで使える<a href='examples.css'>例</a>がいくつかあります。<a href='overlay.html'>オーバーレイHTML</a>の構造を見ることもできます(<i>ページのソースを表示</i>をコンテキストメニューから選択してください)。</p>"},
+    "__useCustomCSS_label": {"message": "カスタムCSSを使用する"},
+    "_customCSSWarning_html": {"message": "<b>注意:</b> 変更を保存して有効にするには、編集した後でテキストボックスの外をクリックする必要があります。また、コードの妥当性はオーバーレイ文書に注入するまでいかなる形でもチェックされません。"},
+
+    "__seconds_tooltip": {"message": "秒"},
+    "__pixels_tooltip": {"message": "ピクセル"},
+    "__textSubstitutions_tooltip": {"message": "有効な書式指定: %u %T %t %V %B %% (リンクURL、訪問時刻、古い訪問時刻、訪問済みの印、ブックマーク済みの印、%自体) %+( %+) %-( %-) %+[ %+] %-[ %-] %+{ %+} %-{ %-} (条件ブロック: 訪問済み、未訪問、ブックマーク済み、未ブックマーク、古い訪問時刻が存在、古い訪問時刻が未定義)"},
+    "__timeSubstitutions_tooltip": {"message": "有効な書式指定: %c %x %X %Y %y %m %b %a %d %H %k %I %l %p %P %z %M %S %% (strftime(3)を参照) %Ns %Nm %Nh %Nd %Nw %NM %Ny (秒前、分前、時間前、日前、週前、月前、年前、Nは十進桁数0..9)"},
+
+    "customWeekdayNames_default": {"message": "日,月,火,水,木,金,土"},
+    "customMonthNames_default": {"message": "1月,2月,3月,4月,5月,6月,7月,8月,9月,10月,11月,12月"},
+    "customDate0_default": {"message": "%0s秒前"},
+    "customDate1_default": {"message": "%0m分前"},
+    "customDate2_default": {"message": "%1h時間前"},
+    "customDate3_default": {"message": "%1d日前(%a)"},
+    "customDate4_default": {"message": ""},
+    "customDate5_default": {"message": ""},
+    "customDate6_default": {"message": ""}
+}
