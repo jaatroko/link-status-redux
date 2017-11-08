@@ -1,0 +1,77 @@
+{
+    "translator": {"message": "Юрий Пронякин"},
+
+    "extensionDescription": {"message": "Выводит индикатор с адресом ссылки, который показывается при наведении курсора мыши на ранее посещённую или имеющуюся в закладках ссылку."},
+
+    "minutesAgo": {"message": "$minutesAgo$ минуту назад;$minutesAgo$ минут назад", "placeholders": {"minutesAgo": {"content": "$1"}}},
+    "hoursAgo": {"message": "$hoursAgo$ час назад;$hoursAgo$ часов назад", "placeholders": {"hoursAgo": {"content": "$1"}}},
+    "daysAgo": {"message": "$daysAgo$ день назад;$daysAgo$ дней назад", "placeholders": {"daysAgo": {"content": "$1"}}},
+
+    "__basicSettings_h1" : {"message": "Общие настройки"},
+    "__showLastVisited_label": {"message": "Показывать дату последнего посещения"},
+    "__useISODate_label": {"message": "Формат даты ГГГГ-ММ-ДД"},
+    "__lastVisitedInFront_label": {"message": "Показывать дату перед адресом"},
+    "__prefixBookmarked_label": {"message": "Знак для закладок:"},
+    "__prefixVisited_label": {"message": "Знак для посещённых ссылок:"},
+
+    "__recentVisits_h2": {"message": "Учёт времени последнего посещения"},
+    "__lastVisitedOlderThen_label": {"message": "Предпочитать время старше чем:"},
+    "__lastVisitedTwoDates_label": {"message": "Также показывать последнее посещение"},
+
+    "__customFormat_h1": {"message": "Заказной формат"},
+    "_customFormatDescription_html": {"message": "<p>Задайте, что показывать во всплывающей панели (индикаторе) с применением макроподстановок в стиле <i>printf</i>. Панель состоит из трёх частей: префикса, URL и окончания. Префикс и окончание - однострочные и несокращаемые. URL - (возможно) многострочный и сокращаемый.</p><p>Обычно в поле URL находится только <b>%u</b>, но если вы в версии 2.8 использовали заказной формат текста, то он будет помещён в URL, поля префикса и окончания будут пустыми, а максимальное число строк будет установлено в 1 (см. ниже). Вам надо будет перенести соответствующие части строки формата в префикс и окончание и задать желаемое ограничение для числа строк."},
+    "__useCustomFormat_label": {"message": "Использовать заказной формат"},
+    "__customPrefix_label": {"message": "Формат префикса:"},
+    "__customURL_label": {"message": "Формат URL:"},
+    "__customPostfix_label": {"message": "Формат окончания:"},
+    "__customDateDefault_label": {"message": "Формат даты:"},
+    "__customWeekdayNames_label": {"message": "Дни недели:"},
+    "__customMonthNames_label": {"message": "Месяцы:"},
+
+    "__dateLimitsAndFormats_h2": {"message": "Пределы и форматы в возрастающем порядке"},
+    "__customLimit_th": {"message": "Предел"},
+    "__customFormat_th": {"message": "Формат"},
+
+    "__appearance_h1": {"message": "Вид"},
+    "__position_h2": {"message": "Позиция индикатора"},
+    "__modeCorner_label": {"message": "Левый нижний угол"},
+    "_modeCornerNotes_html": {"message": "Собственный индикатор браузера должен быть отключён через <a href='userChrome.css'>userChrome.css</a>, иначе он будет заслонять собой индикатор расширения."},
+    "__modeHybrid_label": {"message": "Над собственным индикатором браузера (по умолчанию без URL)"},
+    "__bottomOffset_label": {"message": "Смещение от низа:"},
+    "__modeMouse_label": {"message": "Возле указателя мыши"},
+    "__mouseOrigin_label": {"message": "Точка отсчёта по X:"},
+    "__mouseOriginLeft_option": {"message": "Слева"},
+    "__mouseOriginCenter_option": {"message": "По центру"},
+    "__mouseOriginRight_option": {"message": "Справа"},
+    "__mouseOffsetX_label": {"message": "Смещение по X:"},
+    "__mouseOffsetY_label": {"message": "Смещение по Y:"},
+
+    "__longURLs_h2": {"message": "Перенос и обрезание длинных URL"},
+    "__maxLines_label": {"message": "Максимальное число строк для вывода URL:"},
+
+    "__colors_h2": {"message": "Цвета"},
+    "__colorText_label": {"message": "Текст:"},
+    "__colorBackground_label": {"message": "Фон:"},
+    "__colorBorder_label": {"message": "Рамка:"},
+
+    "__customCSS_h2": {"message": "Заказной CSS"},
+    "_customCSSDescription_html": {"message": "<p>Можно задать свои собственные правила CSS в дополнение к <a href='overlay.css'>встроенным</a> (важные инструкции находятся в начале файла). Есть несколько <a href='examples.css'>примеров</a>, откуда можно позаимствовать текст. Также можно посмотреть структуру <a href='overlay.html'>используемого HTML</a> (выберите <b>Исходный код страницы</b> в контекстном меню).</p>"},
+
+    "__useCustomCSS_label": {"message": "Использовать заказной CSS"},
+    "_customCSSWarning_html": {"message": "<b>Внимание:</b> После редактирования нужно щёлкнуть мышкой вне окошка с текстом, чтобы сделанные изменения сохранились и вступили в силу. Правильность кода никак не проверяется."},
+
+    "__seconds_tooltip": {"message": "Секунды"},
+    "__pixels_tooltip": {"message": "Пикселы"},
+    "__textSubstitutions_tooltip": {"message": "Допустимые подстановки: %u %T %t %V %B %% (URL ссылки, время посещения, другое время посещения, признак посещения, признак закладки, литерал %) %+( %+) %-( %-) %+[ %+] %-[ %-] %+{ %+} %-{ %-} (условные блоки: посещено, не посещено, в закладках, не в закладках, есть другое время посещения, нет другого времени посещения)"},
+    "__timeSubstitutions_tooltip": {"message": "Допустимые подстановки: %c %x %X %Y %y %m %b %a %d %H %k %I %l %p %P %z %M %S %% (см. strftime(3)) %Ns %Nm %Nh %Nd %Nw %NM %Ny (секунд,минут,часов,дней,недель,месяцев,лет назад, N - число знакомест 0..9)"},
+
+    "customWeekdayNames_default": {"message": "Вск,Пнд,Втр,Срд,Чтв,Птн,Сбт"},
+    "customMonthNames_default": {"message": "Янв,Фев,Мар,Апр,Май,Июн,Июл,Авг,Сен,Окт,Ноя,Дек"},
+    "customDate0_default": {"message": "%0s секунд назад"},
+    "customDate1_default": {"message": "%0m минут назад"},
+    "customDate2_default": {"message": "%1h часов назад"},
+    "customDate3_default": {"message": "%a, %1d дней назад"},
+    "customDate4_default": {"message": ""},
+    "customDate5_default": {"message": ""},
+    "customDate6_default": {"message": ""}
+}
