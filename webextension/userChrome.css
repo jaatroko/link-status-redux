@@ -1,11 +1,29 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /*
- This rule hides the popup that shows when hovering over a link. For
- information on how to find/create userChrome.css, see:
+ This file contains CSS rules that you can add to your own
+ userChrome.css to achieve the described effect. For information on
+ how to find/create userChrome.css, see:
    http://kb.mozillazine.org/index.php?title=UserChrome.css
+*/
+
+
+
+/*
+ This rule hides the popup that shows when hovering over a link. 
 */
 statuspanel[type=overLink]
 {
-    display: none;
+    display: none !important;
+}
+
+
+
+/*
+ This rule disables the fading in/out of the overlink popup. You may
+ also wish to set browser.overlink-delay = 0 in about:config
+*/
+statuspanel[type=overLink], statuspanel[inactive][previoustype=overLink]
+{
+    -moz-transition: none !important;
 }
