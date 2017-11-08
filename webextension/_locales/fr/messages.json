@@ -1,0 +1,76 @@
+{
+    "translator": {"message": "DenB"},
+    
+    "extensionDescription": {"message": "Affiche dans un panneau contextuel un indicateur devant l’adresse du lien quand la souris survole un lien pointant une page marquée ou précédemment visitée."},
+    
+    "minutesAgo": {"message": "il y a $minutesAgo$ minute;il y a $minutesAgo$ minutes", "placeholders": {"minutesAgo": {"content": "$1"}}},
+    "hoursAgo": {"message": "il y a $hoursAgo$ heure;il y a $hoursAgo$ heures", "placeholders": {"hoursAgo": {"content": "$1"}}},
+    "daysAgo": {"message": "il y a $daysAgo$ jour;il y a $daysAgo$ jours", "placeholders": {"daysAgo": {"content": "$1"}}},
+
+    "__basicSettings_h1" : {"message": "Réglages de base"},
+    "__showLastVisited_label": {"message": "Afficher la date de la dernière visite"},
+    "__useISODate_label": {"message": "Utiliser le format de date AAAA-MM-JJ"},
+    "__lastVisitedInFront_label": {"message": "Afficher la date avant l’URL"},
+    "__prefixBookmarked_label": {"message": "Préfixe pour les liens marqués :"},
+    "__prefixVisited_label": {"message": "Préfixe pour les liens visités :"},
+
+    "__recentVisits_h2": {"message": "Gestion de l’âge des visites récentes"},
+    "__lastVisitedOlderThen_label": {"message": "Âge de visite de préférence supérieur à :"},
+    "__lastVisitedTwoDates_label": {"message": "Afficher également l’âge de la dernière visite"},
+
+    "__customFormat_h1": {"message": "Format personnalisé"},
+    "_customFormatDescription_html": {"message": "<p>Spécifiez ce qu’il faut afficher dans le panneau contextuel à l’aide de chaînes de style <i>printf</i> (passez la souris au-dessus des entrées pour voir les chaînes disponibles). Le panneau contextuel est divisé en trois parties : le préfixe, l’URL et le suffixe. Le préfixe et le suffixe sont d’une seule ligne et ne sont pas réductibles, l’URL est éventuellement multiligne et réductible. Normalement, l’URL ne doit contenir que <b>%u</b>.</p><p> Si vous aviez ajouté un texte personnalisé dans la version 2.8, il a été copié dans la chaîne de l’URL, le préfixe et le suffixe ont été effacés et le nombre maximum de lignes a été établi à 1 (voir ci-dessous). Vous devez déplacer dans le préfixe et le suffixe la partie adéquate et ajuster le nombre maximum de lignes à votre convenance.</p>"},
+    "__useCustomFormat_label": {"message": "Utiliser un format personnalisé"},
+    "__customPrefix_label": {"message": "Format du préfixe :"},
+    "__customURL_label": {"message": "Format de l’URL :"},
+    "__customPostfix_label": {"message": "Format du suffixe :"},
+    "__customDateDefault_label": {"message": "Format de date par défaut :"},
+    "__customWeekdayNames_label": {"message": "Dénomination des jours :"},
+    "__customMonthNames_label": {"message": "Dénomination des mois :"},
+
+    "__dateLimitsAndFormats_h2": {"message": "Formats et limites de temps (dans l’ordre croissant)"},
+    "__customLimit_th": {"message": "Limite"},
+    "__customFormat_th": {"message": "Format"},
+    
+    "__appearance_h1": {"message": "Apparence"},
+    "__position_h2": {"message": "Position du panneau contextuel"},
+    "__modeCorner_label": {"message": "Angle inférieur gauche"},
+    "_modeCornerNotes_html": {"message": "Le panneau d’origine du navigateur doit être désactivé par l’intermédiaire de <a href='userChrome.css'>userChrome.css</a> pour ne pas masquer le panneau de l’extension."},
+    "__modeHybrid_label": {"message": "Au-dessus du panneau d’origine du navigateur (sans URL affichée par défaut)"},
+    "__bottomOffset_label": {"message": "Décalage à partir du bas :"},
+    "__modeMouse_label": {"message": "Au curseur de la souris"},
+    "__mouseOrigin_label": {"message": "Référence horizontale :"},
+    "__mouseOriginLeft_option": {"message": "Gauche"},
+    "__mouseOriginCenter_option": {"message": "Centre"},
+    "__mouseOriginRight_option": {"message": "Droite"},
+    "__mouseOffsetX_label": {"message": "Décalage horizontal :"},
+    "__mouseOffsetY_label": {"message": "Décalage vertical :"},
+
+    "__longURLs_h2": {"message": "Découpage des URL longues"},
+    "__maxLines_label": {"message": "Nombre maximal de lignes à afficher :"},
+
+    "__colors_h2": {"message": "Couleurs"},
+    "__colorText_label": {"message": "Texte :"},
+    "__colorBackground_label": {"message": "Fond :"},
+    "__colorBorder_label": {"message": "Bord :"},
+
+    "__customCSS_h2": {"message": "CSS personnalisée"},
+    "_customCSSDescription_html": {"message": "<p>Vous pouvez spécifier vos propres règles CSS au début de la <a href='overlay.css'>CSS intégrée</a> (voir les instructions importantes au début du fichier). Il y a aussi quelques <a href='examples.css'>exemples</a> que vous pouvez copier et coller. Vous pouvez également jeter un œil sur la structure du <a href='overlay.html'>HTML superposé</a> (sélectionner <i>Code source de la page</i> dans le menu contextuel).</p>"},
+    "__useCustomCSS_label": {"message": "Utiliser une CSS personnalisée"},
+    "_customCSSWarning_html": {"message": "<b>Note :</b> après édition, il faudra cliquer en dehors de la zone de texte pour que les modifications soient enregistrées et prennent effet ; par ailleurs, la validité du code n’est en aucune manière vérifiée avant son injection dans le document superposé."},
+
+    "__seconds_tooltip": {"message": "en secondes"},
+    "__pixels_tooltip": {"message": "en pixels"},
+    "__textSubstitutions_tooltip": {"message": "Substitutions disponibles : %u %T %t %V %B %% (adresse du lien, âge de visite, âge de visite antérieure, symbole visité, symbole marqué, symbole %) %+( %+) %-( %-) %+[ %+] %-[ %-] %+{ %+} %-{ %-} (blocs conditionnels : visité, non visité, marqué, non marqué, âge de visite antérieure défini, âge de visite antérieure non défini)"},
+    "__timeSubstitutions_tooltip": {"message": "Substitutions disponibles : %c %x %X %Y %y %m %b %a %d %H %k %I %l %p %P %z %M %S %% (voir strftime(3)) %Ns %Nm %Nh %Nd %Nw %NM %Ny (secondes,minutes,heures,jours,semaines,mois,ans, N nombre de décimales entre 0 et 9)"},
+
+    "customWeekdayNames_default": {"message": "dim.,lun.,mar.,mer.,jeu.,ven.,sam."},
+    "customMonthNames_default": {"message": "janv.,févr.,mars,avr.,mai,juin,juil.,août,sept.,oct.,nov.,déc."},
+    "customDate0_default": {"message": "il y a %0s secondes"},
+    "customDate1_default": {"message": "il y a %0m minutes"},
+    "customDate2_default": {"message": "il y a %1h heures"},
+    "customDate3_default": {"message": "%a, il y a %1d jours"},
+    "customDate4_default": {"message": ""},
+    "customDate5_default": {"message": ""},
+    "customDate6_default": {"message": ""}
+}
