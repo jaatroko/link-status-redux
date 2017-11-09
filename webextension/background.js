@@ -59,16 +59,32 @@ function generate_css() {
 	+ "em; }\n";
     generated_css = css;
 }
-function send_css(tab_id) {
+function send_css(tab_id, iframe_css) {
+    // Insert user-origin CSS to the tab so the style cannot be
+    // overridden by a page script changing the style property of the
+    // iframe. Requires Firefox 53+. The goal is to not insert the CSS
+    // multiple times per tab. This is done by having iframe_css==true
+    // only when the overlay script requests CSS (i.e. overlay startup
+    // =~ tab startup), and on background script startup when
+    // preferences are read and CSS is broadcast to all tabs. This
+    // results in 1-2 inserts per tab (per extension startup, e.g. on
+    // reload/upgrade), depending on timing.
+    if (iframe_css) {
+	try { // throws on Firefox <53
+	    browser.tabs.insertCSS(tab_id,
+				   { code: overlay_iframe_css,
+				     cssOrigin: "user" });
+	} catch(e) {}
+    }
     browser.tabs.sendMessage(tab_id,
 			     { generated_css: generated_css,
 			       user_css: prefs.useCustomCSS ?
 			                 prefs.customCSS : "" });
 }
-function broadcast_css() {
+function broadcast_css(iframe_css) {
     browser.tabs.query({}, function(tabs) {
 	for (let tab of tabs)
-	    send_css(tab.id);
+	    send_css(tab.id, iframe_css);
     });
 }
 
@@ -80,7 +96,8 @@ browser.storage.local.get(null, function(result) {
 	}
     }
     generate_css();
-    broadcast_css();
+    // initial broadcast of CSS to all tabs => also insert iframe CSS
+    broadcast_css(true);
 });
 browser.storage.onChanged.addListener(function(changes, area) {
     for (let key of Object.keys(changes)) {
@@ -91,7 +108,7 @@ browser.storage.onChanged.addListener(function(changes, area) {
 	}
     }
     generate_css();
-    broadcast_css();
+    broadcast_css(false);
 });
 
 
@@ -334,9 +351,10 @@ function formatCustom(customformat, url, flags, visit_time, visit2_time) {
 
 
 browser.runtime.onMessage.addListener(function(msg, sender) {
-    // content script requesting CSS data:
     if (msg.overlay_need_css) {
-	send_css(sender.tab.id);
+	// content script requesting CSS data == no CSS sent to the
+	// tab yet (barring race conditions) => also insert iframe CSS
+	send_css(sender.tab.id, true);
 	return;
     }
 
