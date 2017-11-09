@@ -1,0 +1,76 @@
+{
+    "translator": {"message": "Michael Förster"},
+
+    "extensionDescription": {"message": "Zeigt einen zusätzlichen Indikator in einem Popup-Feld zusammen mit der Linkadresse an, wenn der Maus-Zeiger über einem Link ist den Sie als Lesezeichen gesetzt, oder bereits früher besucht haben."},
+
+    "minutesAgo": {"message": "vor $minutesAgo$ Minute;vor $minutesAgo$ Minuten", "placeholders": {"minutesAgo": {"content": "$1"}}},
+    "hoursAgo": {"message": "vor $hoursAgo$ Stunde;vor $hoursAgo$ Stunden", "placeholders": {"hoursAgo": {"content": "$1"}}},
+    "daysAgo": {"message": "vor $daysAgo$ Tag;vor $daysAgo$ Tagen", "placeholders": {"daysAgo": {"content": "$1"}}},
+
+    "__basicSettings_h1" : {"message": "Basis Einstellungen"},
+    "__showLastVisited_label": {"message": "Zeige Datum des letzten Besuchs"},
+    "__useISODate_label": {"message": "Benutze JJJJ-MM-TT als Format für Besuchsdatum"},
+    "__lastVisitedInFront_label": {"message": "Zeige Datum vor Verweis"},
+    "__prefixBookmarked_label": {"message": "Prefix für Lesezeichen-Verweise:"},
+    "__prefixVisited_label": {"message": "Prefix für besuchte Verweise:"},
+
+    "__recentVisits_h2": {"message": "Behandlung von Zeiten früherer Besuche"},
+    "__lastVisitedOlderThen_label": {"message": "Bevorzuge Besuche älter als:"},
+    "__lastVisitedTwoDates_label": {"message": "Zeige auch die vorletzte Besuchszeit"},
+
+    "__customFormat_h1": {"message": "Individualisiertes Format"},
+    "_customFormatDescription_html": {"message": "<p>Geben Sie an, was im Popup-Fenster angezeigt werden soll mit Ersetzungen im <i>printf</i>-Stil ('hover'/schweben Sie über den Eingabe-Feldern um verfügbare Ersetzungen anzuzeigen). Das Popup-Feld ist in drei Bereiche gegliedert: Prefix, URL, und Postfix. Prefix und Postfix sind einzeilig und nicht schrumpfbar, URL ist (möglicherweise) mehrzeilig und schrumpfbar. Normalerweise sollte die URL  nur <b>%u</b> sein.</p><p>Falls Sie in Version 2.8 einen individualisierten Verweis-Text hatten, dann wurde dieser Eintrag in den Bereich des URL-Formats kopiert, Prefix- + Postfix-Feld sind ohne Inhalt, und die Zahl der maximalen Zeilen wurde auf 1 gesetzt (siehe unten). Sie sollten die entsprechenden Teile der Prefix und Postfix in die jeweiligen Felder verschieben und die Zahl der maximalen Zeilen Ihrem Bedarf anpassen.</p>"},
+    "__useCustomFormat_label": {"message": "Benutze folgende Formatierung:"},
+    "__customPrefix_label": {"message": "Prefix Format:"},
+    "__customURL_label": {"message": "URL Format:"},
+    "__customPostfix_label": {"message": "Postfix format:"},
+    "__customDateDefault_label": {"message": "Standard Datum format:"},
+    "__customWeekdayNames_label": {"message": "Wochentag Namen:"},
+    "__customMonthNames_label": {"message": "Monats namen:"},
+
+    "__dateLimitsAndFormats_h2": {"message": "Datums Altersgrenzen und Formate (aufsteigende Ordnung)"},
+    "__customLimit_th": {"message": "Limit"},
+    "__customFormat_th": {"message": "Format"},
+    
+    "__appearance_h1": {"message": "Erscheinung"},
+    "__position_h2": {"message": "Position des Popups"},
+    "__modeCorner_label": {"message": "Ecke links unten"},
+    "_modeCornerNotes_html": {"message": "Die native Browser Link Anzeige sollte deaktivert werden via <a href='userChrome.css'>userChrome.css</a>, anderfalls wird das Popup der Erweiteung verdeckt."},
+    "__modeHybrid_label": {"message": "Oberhalb der nativen Browser Link Anzeige (Vorgabe: ohne Anzeige der URL)"},
+    "__bottomOffset_label": {"message": "Abstand von unten:"},
+    "__modeMouse_label": {"message": "Beim Maus-Zeiger"},
+    "__mouseOrigin_label": {"message": "X Referenz:"},
+    "__mouseOriginLeft_option": {"message": "Links"},
+    "__mouseOriginCenter_option": {"message": "Mitte"},
+    "__mouseOriginRight_option": {"message": "Rechts"},
+    "__mouseOffsetX_label": {"message": "X Versatz:"},
+    "__mouseOffsetY_label": {"message": "Y Versatz:"},
+
+    "__longURLs_h2": {"message": "Umbruch und Kürzung langer URLs"},
+    "__maxLines_label": {"message": "Maximale Anzahl der Zeilen für die Anzeige von URLs:"},
+
+    "__colors_h2": {"message": "Farben"},
+    "__colorText_label": {"message": "Text:"},
+    "__colorBackground_label": {"message": "Hintergrund:"},
+    "__colorBorder_label": {"message": "Rand:"},
+
+    "__customCSS_h2": {"message": "Individualisiertes CSS"},
+    "_customCSSDescription_html": {"message": "<p>Sie können eigene CSS Regeln zusätzlich zu dem <a href='overlay.css'>eingebauten CSS</a> festlegen (siehe Kopf der Datei für wichtige Hinweise). Es gibt auch einige <a href='examples.css'>Beispiele</a> von denen Sie kopieren können. Vielleicht möchten Sie auch einen Blick auf die Struktur der <a href='overlay.html'>overlay HTML Datei</a> werfen (Wählen sie <i>Seitenquelltext anzeigen</i> aus dem Kontext-Menü).</p>"},
+    "__useCustomCSS_label": {"message": "Benutze folgendes CSS:"},
+    "_customCSSWarning_html": {"message": "<b>Hinweis:</b> Nach Veränderungen müssen sie außerhalb des Text-Feldes klicken um die Veränderungen zu speichern und anzuwenden. Auch wird der Code in keiner Weise geprüft bevor er in das Überlagerungs-Dokument eingefügt wird."},
+
+    "__seconds_tooltip": {"message": "Sekunden"},
+    "__pixels_tooltip": {"message": "Pixel"},
+    "__textSubstitutions_tooltip": {"message": "Valide Ersetzungen: %u %T %t %V %B %% (Verweis URL, Besuchszeit, Zweite Besuchszeit, Besuchs-Indikator, Lesezeichen-Indikator, literales %) %+( %+) %-( %-) %+[ %+] %-[ %-] %+{ %+} %-{ %-} (Bedingte Blöcke: Besucht, nicht Besucht, Lesezeichen, nicht Lesezeichen, Zweite Besuchszeit definiert, Zweite Besuchszeit nicht definiert)"},
+    "__timeSubstitutions_tooltip": {"message": "Valide Ersetzungen: %c %x %X %Y %y %m %b %a %d %H %k %I %l %p %P %z %M %S %% (siehe strftime(3)) %Ns %Nm %Nh %Nd %Nw %NM %Ny (Sekunden,Minuten,Stunden,Tage,Wochen,Monate,Jahre , N sind Dezimale Stellen 0..9)"},
+
+    "customWeekdayNames_default": {"message": "So,Mo,Di,Mi,Do,Fr,Sa"},
+    "customMonthNames_default": {"message": "Jan,Feb,Mär,Apr,Mai,Jun,Jul,Aug,Sep,Okt,Nov,Dez"},
+    "customDate0_default": {"message": "vor %0s Sekunden"},
+    "customDate1_default": {"message": "vor %0m Minuten"},
+    "customDate2_default": {"message": "vor %1h Stunden"},
+    "customDate3_default": {"message": "vor %1d Tagen (%a)"},
+    "customDate4_default": {"message": ""},
+    "customDate5_default": {"message": ""},
+    "customDate6_default": {"message": ""}
+}
