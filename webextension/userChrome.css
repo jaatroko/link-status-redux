@@ -5,6 +5,9 @@
  userChrome.css to achieve the described effect. For information on
  how to find/create userChrome.css, see:
    http://kb.mozillazine.org/index.php?title=UserChrome.css
+
+ Note that you have to restart Firefox for any changes to the file to
+ take effect.
 */
 
 
