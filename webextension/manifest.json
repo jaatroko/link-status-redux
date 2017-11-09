@@ -16,15 +16,16 @@
     "permissions": [
 	"bookmarks",
 	"history",
-	"storage"
+	"storage",
+	"<all_urls>"
     ],
     "background": {
-	"scripts": [ "defaults.js", "background.js" ]
+	"scripts": [ "defaults.js", "iframe.js", "background.js" ]
     },
     "content_scripts": [
 	{
 	    "matches": [ "<all_urls>" ],
-	    "js": [ "content.js" ],
+	    "js": [ "iframe.js", "content.js" ],
 	    "run_at": "document_end",
 	    "match_about_blank": true,
 	    "all_frames": true
