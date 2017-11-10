@@ -3,9 +3,9 @@
 
     "extensionDescription": {"message": "Zeigt einen zusätzlichen Indikator in einem Popup-Feld zusammen mit der Linkadresse an, wenn der Maus-Zeiger über einem Link ist den Sie als Lesezeichen gesetzt, oder bereits früher besucht haben."},
 
-    "minutesAgo": {"message": "vor $minutesAgo$ Minute;vor $minutesAgo$ Minuten", "placeholders": {"minutesAgo": {"content": "$1"}}},
-    "hoursAgo": {"message": "vor $hoursAgo$ Stunde;vor $hoursAgo$ Stunden", "placeholders": {"hoursAgo": {"content": "$1"}}},
-    "daysAgo": {"message": "vor $daysAgo$ Tag;vor $daysAgo$ Tagen", "placeholders": {"daysAgo": {"content": "$1"}}},
+    "minutesAgo": {"message": "1;vor $minutesAgo$ Minute;vor $minutesAgo$ Minuten", "placeholders": {"minutesAgo": {"content": "$1"}}},
+    "hoursAgo": {"message": "1;vor $hoursAgo$ Stunde;vor $hoursAgo$ Stunden", "placeholders": {"hoursAgo": {"content": "$1"}}},
+    "daysAgo": {"message": "1;vor $daysAgo$ Tag;vor $daysAgo$ Tagen", "placeholders": {"daysAgo": {"content": "$1"}}},
 
     "__basicSettings_h1" : {"message": "Basis Einstellungen"},
     "__showLastVisited_label": {"message": "Zeige Datum des letzten Besuchs"},

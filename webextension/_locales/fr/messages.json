@@ -3,9 +3,9 @@
     
     "extensionDescription": {"message": "Affiche dans un panneau contextuel un indicateur devant l’adresse du lien quand la souris survole un lien pointant une page marquée ou précédemment visitée."},
     
-    "minutesAgo": {"message": "il y a $minutesAgo$ minute;il y a $minutesAgo$ minutes", "placeholders": {"minutesAgo": {"content": "$1"}}},
-    "hoursAgo": {"message": "il y a $hoursAgo$ heure;il y a $hoursAgo$ heures", "placeholders": {"hoursAgo": {"content": "$1"}}},
-    "daysAgo": {"message": "il y a $daysAgo$ jour;il y a $daysAgo$ jours", "placeholders": {"daysAgo": {"content": "$1"}}},
+    "minutesAgo": {"message": "2;il y a $minutesAgo$ minute;il y a $minutesAgo$ minutes", "placeholders": {"minutesAgo": {"content": "$1"}}},
+    "hoursAgo": {"message": "2;il y a $hoursAgo$ heure;il y a $hoursAgo$ heures", "placeholders": {"hoursAgo": {"content": "$1"}}},
+    "daysAgo": {"message": "2;il y a $daysAgo$ jour;il y a $daysAgo$ jours", "placeholders": {"daysAgo": {"content": "$1"}}},
 
     "__basicSettings_h1" : {"message": "Réglages de base"},
     "__showLastVisited_label": {"message": "Afficher la date de la dernière visite"},

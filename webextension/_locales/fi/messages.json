@@ -3,9 +3,9 @@
     
     "extensionDescription": {"message": "Näyttää merkin infopaneelissa linkin osoitteen edessä kun hiiren kursori on kirjanmerkityn tai aiemmin vieraillun linkin yllä."},
     
-    "minutesAgo": {"message": "$minutesAgo$ minuutti sitten;$minutesAgo$ minuuttia sitten", "placeholders": {"minutesAgo": {"content": "$1"}}},
-    "hoursAgo": {"message": "$hoursAgo$ tunti sitten;$hoursAgo$ tuntia sitten", "placeholders": {"hoursAgo": {"content": "$1"}}},
-    "daysAgo": {"message": "$daysAgo$ päivä sitten;$daysAgo$ päivää sitten", "placeholders": {"daysAgo": {"content": "$1"}}},
+    "minutesAgo": {"message": "1;$minutesAgo$ minuutti sitten;$minutesAgo$ minuuttia sitten", "placeholders": {"minutesAgo": {"content": "$1"}}},
+    "hoursAgo": {"message": "1;$hoursAgo$ tunti sitten;$hoursAgo$ tuntia sitten", "placeholders": {"hoursAgo": {"content": "$1"}}},
+    "daysAgo": {"message": "1;$daysAgo$ päivä sitten;$daysAgo$ päivää sitten", "placeholders": {"daysAgo": {"content": "$1"}}},
 
     "__basicSettings_h1" : {"message": "Perusasetukset"},
     "__showLastVisited_label": {"message": "Näytä viimeisin vierailuaika"},

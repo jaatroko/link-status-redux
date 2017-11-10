@@ -20,7 +20,7 @@
 	"<all_urls>"
     ],
     "background": {
-	"scripts": [ "defaults.js", "iframe.js", "background.js" ]
+	"scripts": [ "defaults.js", "iframe.js", "plurals.js", "background.js" ]
     },
     "content_scripts": [
 	{
