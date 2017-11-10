@@ -3,9 +3,9 @@
     
     "extensionDescription": {"message": "Shows an indicator on a popup panel along with the link address when the mouse cursor is over a link to a page you bookmarked or visited before."},
     
-    "minutesAgo": {"message": "$minutesAgo$ minute ago;$minutesAgo$ minutes ago", "placeholders": {"minutesAgo": {"content": "$1"}}},
-    "hoursAgo": {"message": "$hoursAgo$ hour ago;$hoursAgo$ hours ago", "placeholders": {"hoursAgo": {"content": "$1"}}},
-    "daysAgo": {"message": "$daysAgo$ day ago;$daysAgo$ days ago", "placeholders": {"daysAgo": {"content": "$1"}}},
+    "minutesAgo": {"message": "1;$minutesAgo$ minute ago;$minutesAgo$ minutes ago", "placeholders": {"minutesAgo": {"content": "$1"}}},
+    "hoursAgo": {"message": "1;$hoursAgo$ hour ago;$hoursAgo$ hours ago", "placeholders": {"hoursAgo": {"content": "$1"}}},
+    "daysAgo": {"message": "1;$daysAgo$ day ago;$daysAgo$ days ago", "placeholders": {"daysAgo": {"content": "$1"}}},
 
     "__basicSettings_h1" : {"message": "Basic settings"},
     "__showLastVisited_label": {"message": "Show last visited date"},

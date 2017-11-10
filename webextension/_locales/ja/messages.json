@@ -3,9 +3,9 @@
     
     "extensionDescription": {"message": "リンクにカーソルを乗せたときポップアップパネルに表示されるURLの隣に、訪問またはブックマークしたことがあるかどうかを示す印を表示します。"},
     
-    "minutesAgo": {"message": "$minutesAgo$分前;$minutesAgo$分前", "placeholders": {"minutesAgo": {"content": "$1"}}},
-    "hoursAgo": {"message": "$hoursAgo$時間前;$hoursAgo$時間前", "placeholders": {"hoursAgo": {"content": "$1"}}},
-    "daysAgo": {"message": "$daysAgo$日前;$daysAgo$日前", "placeholders": {"daysAgo": {"content": "$1"}}},
+    "minutesAgo": {"message": "0;$minutesAgo$分前", "placeholders": {"minutesAgo": {"content": "$1"}}},
+    "hoursAgo": {"message": "0;$hoursAgo$時間前", "placeholders": {"hoursAgo": {"content": "$1"}}},
+    "daysAgo": {"message": "0;$daysAgo$日前", "placeholders": {"daysAgo": {"content": "$1"}}},
 
     "__basicSettings_h1" : {"message": "基本設定"},
     "__showLastVisited_label": {"message": "最終訪問日を表示する"},

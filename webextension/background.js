@@ -127,19 +127,13 @@ function formatTime(date) {
     let elapsed = (Date.now() - date) / 1000; // in seconds
     if (elapsed < 60 * 60) {
         let minutes = Math.round(elapsed / 60);
-        let minutesAgo =
-	    browser.i18n.getMessage("minutesAgo", minutes).split(";");
-	return minutes == 1 ? minutesAgo[0] : minutesAgo[1];
+        return i18n_plural("minutesAgo", minutes);
     } else if (elapsed < 60 * 60 * 24) {
         let hours = Math.round(elapsed / (60 * 60));
-        let hoursAgo =
-	    browser.i18n.getMessage("hoursAgo", hours).split(";");
-	return hours == 1 ? hoursAgo[0] : hoursAgo[1];
+        return i18n_plural("hoursAgo", hours);
     } else if (elapsed < 60 * 60 * 24 * 7.5) {
         let days = Math.round(elapsed / (60 * 60 * 24));
-        let daysAgo =
-	    browser.i18n.getMessage("daysAgo", days).split(";");
-	return days == 1 ? daysAgo[0] : daysAgo[1];
+        return i18n_plural("daysAgo", days);
     } else if (prefs.useISODate) {
         let d = new Date(date);
         function pad(n) { return n < 10 ? '0' + n : n; }

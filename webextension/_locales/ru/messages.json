@@ -3,9 +3,9 @@
 
     "extensionDescription": {"message": "Выводит индикатор с адресом ссылки, который показывается при наведении курсора мыши на ранее посещённую или имеющуюся в закладках ссылку."},
 
-    "minutesAgo": {"message": "$minutesAgo$ минуту назад;$minutesAgo$ минут назад", "placeholders": {"minutesAgo": {"content": "$1"}}},
-    "hoursAgo": {"message": "$hoursAgo$ час назад;$hoursAgo$ часов назад", "placeholders": {"hoursAgo": {"content": "$1"}}},
-    "daysAgo": {"message": "$daysAgo$ день назад;$daysAgo$ дней назад", "placeholders": {"daysAgo": {"content": "$1"}}},
+    "minutesAgo": {"message": "7;$minutesAgo$ минуту назад;$minutesAgo$ минуты назад;$minutesAgo$ минут назад", "placeholders": {"minutesAgo": {"content": "$1"}}},
+    "hoursAgo": {"message": "7;$hoursAgo$ час назад;$hoursAgo$ часа назад;$hoursAgo$ часов назад", "placeholders": {"hoursAgo": {"content": "$1"}}},
+    "daysAgo": {"message": "7;$daysAgo$ день назад;$daysAgo$ дня назад;$daysAgo$ дней назад", "placeholders": {"daysAgo": {"content": "$1"}}},
 
     "__basicSettings_h1" : {"message": "Общие настройки"},
     "__showLastVisited_label": {"message": "Показывать дату последнего посещения"},
