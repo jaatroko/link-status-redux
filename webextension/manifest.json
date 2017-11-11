@@ -3,7 +3,7 @@
     "manifest_version": 2,
     "default_locale": "en",
     "name": "Link Status Redux",
-    "version": "3.0alpha",
+    "version": "3.0",
     "author": "Juha Aatrokoski",
     "icons": {
 	"32": "icon.png"
