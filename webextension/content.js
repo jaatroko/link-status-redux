@@ -7,9 +7,9 @@ function create_overlay() {
 	iframe.id = overlay_uuid;
 	iframe.frameBorder = 0;
 	iframe.scrolling = 0;
-	iframe.src = browser.extension.getURL("overlay.html");
 	iframe.setAttribute("style", overlay_iframe_css_rules);
 	document.documentElement.appendChild(iframe);
+	iframe.contentWindow.location = browser.extension.getURL("overlay.html");
     }
 }
 
