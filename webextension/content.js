@@ -18,7 +18,7 @@ function create_overlay() {
 let e = document.getElementById(overlay_uuid);
 if (e !== null) e.parentNode.removeChild(e);
 
-if (self === top) {
+if (self === top && document instanceof HTMLDocument) {
     create_overlay();
     browser.runtime.sendMessage({});
 }
