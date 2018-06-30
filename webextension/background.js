@@ -372,6 +372,11 @@ browser.runtime.onMessage.addListener(function(msg, sender) {
 			       flags, visit_time, visit2_time);
 	    postfix = formatCustom(prefs.customPostfix, pretty_url,
 				   flags, visit_time, visit2_time);
+	    if (prefix === "" && url === "" && postfix === "") {
+		// all elements empty => hide panel
+		browser.tabs.sendMessage(sender.tab.id, { show: false });
+		return;
+	    }
 	} else {
 	    let timestr = "";
 	    let spaces = "";
