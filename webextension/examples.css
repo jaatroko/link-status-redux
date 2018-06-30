@@ -58,7 +58,11 @@
 
 /* Example 5: indicate visited link with an image in the prefix. With
    this you should use custom formatting and set the prefix to an
-   empty string. */
+   empty string. Note that if prefix,url,postfix are all empty when
+   using custom formatting, the popup panel will not be shown. If you
+   want to use only images and/or colors in the panel, you must make
+   one of these strings non-empty (e.g. one whitespace, possibly in a
+   very small font size) to get the panel to show. */
 .visited #prefix {
     width: 16px;
     height: 16px;
