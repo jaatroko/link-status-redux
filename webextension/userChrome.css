@@ -13,9 +13,17 @@
 
 
 /*
+ Note: 'statuspanel' works in Firefox 60 and earlier, '#statuspanel'
+ works in Firefox 61 and later.
+*/
+
+
+
+/*
  This rule hides the popup that shows when hovering over a link. 
 */
-statuspanel[type=overLink]
+statuspanel[type=overLink],
+#statuspanel[type=overLink]
 {
     display: none !important;
 }
@@ -26,7 +34,10 @@ statuspanel[type=overLink]
  This rule disables the fading in/out of the overlink popup. You may
  also wish to set browser.overlink-delay = 0 in about:config
 */
-statuspanel[type=overLink], statuspanel[inactive][previoustype=overLink]
+statuspanel[type=overLink],
+statuspanel[inactive][previoustype=overLink],
+#statuspanel[type=overLink],
+#statuspanel[inactive][previoustype=overLink]
 {
     -moz-transition: none !important;
 }
