@@ -25,6 +25,10 @@ browser.runtime.onMessage.addListener(function(msg) {
 	user_css.textContent = msg.user_css;	
 	initial_css = true;
     }
+    if (msg.hasOwnProperty("generated_css") || msg.hasOwnProperty("user_css")) {
+	// CSS messages do not contain any show commands
+	return;
+    }
     if (!initial_css)
 	browser.runtime.sendMessage({ overlay_need_css: true });
 
