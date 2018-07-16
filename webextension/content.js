@@ -40,7 +40,8 @@ document.addEventListener("mouseover", function(e) {
 	return;
     }
     anchor = a;
-    if (self === top) create_overlay();
+    if (self === top && document instanceof HTMLDocument)
+	create_overlay();
     browser.runtime.sendMessage({ url: a.href,
 				  x: e.screenX,
 				  y: e.screenY });
