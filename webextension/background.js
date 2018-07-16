@@ -59,6 +59,8 @@ function generate_css() {
 	+ "em; }\n";
     generated_css = css;
 }
+// tabs.insertCSS replay causes an exception, so keep track of it here:
+let css_inserted = {};
 function send_css(tab_id, iframe_css) {
     // Insert user-origin CSS to the tab so the style cannot be
     // overridden by a page script changing the style property of the
@@ -69,7 +71,8 @@ function send_css(tab_id, iframe_css) {
     // preferences are read and CSS is broadcast to all tabs. This
     // results in 1-2 inserts per tab (per extension startup, e.g. on
     // reload/upgrade), depending on timing.
-    if (iframe_css) {
+    if (iframe_css && !css_inserted[tab_id]) {
+	css_inserted[tab_id] = true;
 	try { // throws on Firefox <53
 	    browser.tabs.insertCSS(tab_id,
 				   { code: overlay_iframe_css,
@@ -343,22 +346,48 @@ function formatCustom(customformat, url, flags, visit_time, visit2_time) {
 }
 
 
+// Maps tabId => true/untrue, based on whether the overlay has
+// finished loading (indicated by the reception of the need_css
+// message)
+let overlay_ready = {};
+// Storage for latest message sent to non-ready overlays, maps tabId => Object
+let deferred_message = {};
+// Send a (show/hide) message to overlay in a tab, and also defer it
+// if the overlay is not yet ready so it will be resent when the
+// overlay becomes ready. Sending the message regardless of readiness
+// prevents a situation where no messages are ever sent to the overlay
+// due to a race condition with messages.
+function send_to_overlay(id, msg) {
+    if (!overlay_ready[id]) {
+	deferred_message[id] = msg;
+    }
+    browser.tabs.sendMessage(id, msg);
+}
+
 
 browser.runtime.onMessage.addListener(function(msg, sender) {
     if (msg.overlay_need_css) {
-	// content script requesting CSS data == no CSS sent to the
-	// tab yet (barring race conditions) => also insert iframe CSS
+	// Content script requesting CSS data == no CSS sent to the
+	// tab yet (barring race conditions) => also insert iframe CSS.
+	// Reception of this message also means that the overlay has
+	// finished loading i.e. is ready.
+	overlay_ready[sender.tab.id] = true;
 	send_css(sender.tab.id, true);
+	if (deferred_message[sender.tab.id]) {
+	    let msg = deferred_message[sender.tab.id];
+	    delete deferred_message[sender.tab.id];
+	    browser.tabs.sendMessage(sender.tab.id, msg);
+	}
 	return;
     }
 
     // mouseout event:
     if (!msg.url) {
-	browser.tabs.sendMessage(sender.tab.id, { show: false });
+	send_to_overlay(sender.tab.id, { show: false });
 	return;
     }
 
-    // otherwise it's mousover event:
+    // otherwise it's mouseover event:
 
     function set_overlink(flags, visit_time, visit2_time) {
 	let prefix = "";
@@ -385,7 +414,7 @@ browser.runtime.onMessage.addListener(function(msg, sender) {
 		url = pretty_url;
 	    } else if (!(flags & (VISITED | BOOKMARKED))) {
 		// don't show empty panel (the URL part is hidden)
-		browser.tabs.sendMessage(sender.tab.id, { show: false });
+		send_to_overlay(sender.tab.id, { show: false });
 		return;
 	    }
 	    if (flags & VISITED) {
@@ -419,23 +448,23 @@ browser.runtime.onMessage.addListener(function(msg, sender) {
 	let bottom = 0;
 	if (prefs.mode === "left")
 	    bottom = prefs.bottomOffset;
-    	browser.tabs.sendMessage(sender.tab.id,
-				 { show: true,
-				   mode: prefs.mode,
-				   visited: flags & VISITED,
-				   recently_visited: flags & RECENTLY_VISITED,
-				   two_visit_times: flags & VISITED2,
-				   bookmarked: flags & BOOKMARKED,
-				   prefix: prefix,
-				   url: url,
-				   multiline: prefs.maxLines > 1,
-				   postfix: postfix,
-				   bottom: bottom,
-				   mousex: msg.x,
-				   mousey: msg.y,
-				   offsetx: prefs.mouseOffsetX,
-				   offsety: prefs.mouseOffsetY,
-				   origin: prefs.mouseOrigin });
+	send_to_overlay(sender.tab.id,
+			{ show: true,
+			  mode: prefs.mode,
+			  visited: flags & VISITED,
+			  recently_visited: flags & RECENTLY_VISITED,
+			  two_visit_times: flags & VISITED2,
+			  bookmarked: flags & BOOKMARKED,
+			  prefix: prefix,
+			  url: url,
+			  multiline: prefs.maxLines > 1,
+			  postfix: postfix,
+			  bottom: bottom,
+			  mousex: msg.x,
+			  mousey: msg.y,
+			  offsetx: prefs.mouseOffsetX,
+			  offsety: prefs.mouseOffsetY,
+			  origin: prefs.mouseOrigin });
     }
 
     function check_visited(flags) {
@@ -493,4 +522,14 @@ browser.runtime.onMessage.addListener(function(msg, sender) {
 	check_visited(BOOKMARK_ERROR);
     }
     
+});
+
+
+browser.tabs.onUpdated.addListener(function(id, changeinfo, tab) {
+    // reset overlay readiness and tab CSS status on page (re)load
+    if (changeinfo.hasOwnProperty("status") && changeinfo.status === "loading")
+    {
+	css_inserted[id] = false;
+	overlay_ready[id] = false;
+    }
 });
