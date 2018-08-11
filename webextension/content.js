@@ -8,6 +8,7 @@ function create_overlay() {
 	iframe.frameBorder = 0;
 	iframe.scrolling = 0;
 	iframe.setAttribute("style", overlay_iframe_css_rules);
+	iframe.src = "moz-extension://none/";
 	document.documentElement.appendChild(iframe);
 	iframe.contentWindow.location = browser.extension.getURL("overlay.html");
     }
