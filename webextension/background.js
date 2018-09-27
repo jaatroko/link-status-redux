@@ -462,6 +462,7 @@ browser.runtime.onMessage.addListener(function(msg, sender) {
 			  bottom: bottom,
 			  mousex: msg.x,
 			  mousey: msg.y,
+			  mainwindow_height: msg.win_h,
 			  offsetx: prefs.mouseOffsetX,
 			  offsety: prefs.mouseOffsetY,
 			  origin: prefs.mouseOrigin });

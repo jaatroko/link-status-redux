@@ -45,6 +45,7 @@ document.addEventListener("mouseover", function(e) {
 	create_overlay();
     browser.runtime.sendMessage({ url: a.href,
 				  x: e.screenX,
-				  y: e.screenY });
+				  y: e.screenY,
+				  win_h: window.innerHeight });
 
 }, true);
