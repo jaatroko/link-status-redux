@@ -352,6 +352,8 @@ function formatCustom(customformat, url, flags, visit_time, visit2_time) {
 let overlay_ready = {};
 // Storage for latest message sent to non-ready overlays, maps tabId => Object
 let deferred_message = {};
+// innerHeight of main/top window, maps tabId => int
+let window_height = {};
 // Send a (show/hide) message to overlay in a tab, and also defer it
 // if the overlay is not yet ready so it will be resent when the
 // overlay becomes ready. Sending the message regardless of readiness
@@ -361,11 +363,16 @@ function send_to_overlay(id, msg) {
     if (!overlay_ready[id]) {
 	deferred_message[id] = msg;
     }
+    if (window_height[id]) // add latest known height
+	msg.mainwindow_height = window_height[id];
     browser.tabs.sendMessage(id, msg);
 }
 
 
 browser.runtime.onMessage.addListener(function(msg, sender) {
+    if (msg.win_h)
+	window_height[sender.tab.id] = msg.win_h;
+
     if (msg.overlay_need_css) {
 	// Content script requesting CSS data == no CSS sent to the
 	// tab yet (barring race conditions) => also insert iframe CSS.
@@ -376,6 +383,8 @@ browser.runtime.onMessage.addListener(function(msg, sender) {
 	if (deferred_message[sender.tab.id]) {
 	    let msg = deferred_message[sender.tab.id];
 	    delete deferred_message[sender.tab.id];
+	    if (window_height[sender.tab.id]) // add latest known height
+		msg.mainwindow_height = window_height[sender.tab.id];
 	    browser.tabs.sendMessage(sender.tab.id, msg);
 	}
 	return;
@@ -462,7 +471,6 @@ browser.runtime.onMessage.addListener(function(msg, sender) {
 			  bottom: bottom,
 			  mousex: msg.x,
 			  mousey: msg.y,
-			  mainwindow_height: msg.win_h,
 			  offsetx: prefs.mouseOffsetX,
 			  offsety: prefs.mouseOffsetY,
 			  origin: prefs.mouseOrigin });

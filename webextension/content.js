@@ -21,7 +21,10 @@ if (e !== null) e.parentNode.removeChild(e);
 
 if (self === top && document instanceof HTMLDocument) {
     create_overlay();
-    browser.runtime.sendMessage({});
+    self.addEventListener("resize", function(e) {
+	browser.runtime.sendMessage({ win_h: self.innerHeight });
+    }, true);
+    browser.runtime.sendMessage({ win_h: self.innerHeight });
 }
 
 
@@ -43,9 +46,12 @@ document.addEventListener("mouseover", function(e) {
     anchor = a;
     if (self === top && document instanceof HTMLDocument)
 	create_overlay();
+    let win_h = 0;
+    if (self === top)
+	win_h = self.innerHeight;
     browser.runtime.sendMessage({ url: a.href,
 				  x: e.screenX,
 				  y: e.screenY,
-				  win_h: window.innerHeight });
+				  win_h: win_h });
 
 }, true);
