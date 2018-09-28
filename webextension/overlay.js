@@ -57,10 +57,12 @@ browser.runtime.onMessage.addListener(function(msg) {
     // scrollbar and the page area, so this should always work. (As
     // long as the innerHeight is taken in the content script which
     // has access to the top/main window; here it is the iframe window
-    // which has the height of win_h.)
+    // which has the height of win_h, and the unprivileged iframe has
+    // no access to window.top.innerHeight.)
     let win_w = document.documentElement.clientWidth;
     let win_h = document.documentElement.clientHeight;
-    msg.bottom -= (msg.mainwindow_height - win_h);
+    if (msg.mainwindow_height > win_h)
+	msg.bottom -= (msg.mainwindow_height - win_h);
     if (msg.bottom < 0) msg.bottom = 0;
 
     // floating coordinates:
