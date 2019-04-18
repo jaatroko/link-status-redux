@@ -544,8 +544,8 @@ browser.tabs.onUpdated.addListener(function(id, changeinfo, tab) {
 });
 
 browser.tabs.onRemoved.addListener(function(removedTabId) {
-    // delete from overlay readiness, tab CSS status and window_height
+	// delete from overlay readiness, tab CSS status and window_height
 	delete css_inserted[removedTabId];
-    delete overlay_ready[removedTabId];
-    delete window_height[removedTabId];
+	delete overlay_ready[removedTabId];
+	delete window_height[removedTabId];
 });
