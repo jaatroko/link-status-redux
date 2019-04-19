@@ -82,10 +82,10 @@ function send_css(tab_id, iframe_css) {
     browser.tabs.sendMessage(tab_id,
 			     { generated_css: generated_css,
 			       user_css: prefs.useCustomCSS ?
-			                 prefs.customCSS : "" });
+			                 prefs.customCSS : "" }).catch(e => {});
 }
 function broadcast_css(iframe_css) {
-    browser.tabs.query({}, function(tabs) {
+    browser.tabs.query({url: "<all_urls>"}, function(tabs) {
 	for (let tab of tabs)
 	    send_css(tab.id, iframe_css);
     });
@@ -365,7 +365,7 @@ function send_to_overlay(id, msg) {
     }
     if (window_height[id]) // add latest known height
 	msg.mainwindow_height = window_height[id];
-    browser.tabs.sendMessage(id, msg);
+    browser.tabs.sendMessage(id, msg).catch(e => {});
 }
 
 
@@ -385,7 +385,7 @@ browser.runtime.onMessage.addListener(function(msg, sender) {
 	    delete deferred_message[sender.tab.id];
 	    if (window_height[sender.tab.id]) // add latest known height
 		msg.mainwindow_height = window_height[sender.tab.id];
-	    browser.tabs.sendMessage(sender.tab.id, msg);
+	    browser.tabs.sendMessage(sender.tab.id, msg).catch(e => {});
 	}
 	return;
     }
@@ -412,7 +412,7 @@ browser.runtime.onMessage.addListener(function(msg, sender) {
 				   flags, visit_time, visit2_time);
 	    if (prefix === "" && url === "" && postfix === "") {
 		// all elements empty => hide panel
-		browser.tabs.sendMessage(sender.tab.id, { show: false });
+		browser.tabs.sendMessage(sender.tab.id, { show: false }).catch(e => {});
 		return;
 	    }
 	} else {
@@ -541,4 +541,11 @@ browser.tabs.onUpdated.addListener(function(id, changeinfo, tab) {
 	css_inserted[id] = false;
 	overlay_ready[id] = false;
     }
+});
+
+browser.tabs.onRemoved.addListener(function(removedTabId) {
+    // delete from overlay readiness, tab CSS status and window_height
+    delete css_inserted[removedTabId];
+    delete overlay_ready[removedTabId];
+    delete window_height[removedTabId];
 });

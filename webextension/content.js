@@ -22,9 +22,9 @@ if (e !== null) e.parentNode.removeChild(e);
 if (self === top && document instanceof HTMLDocument) {
     create_overlay();
     self.addEventListener("resize", function(e) {
-	browser.runtime.sendMessage({ win_h: self.innerHeight });
+	browser.runtime.sendMessage({ win_h: self.innerHeight }).catch(e => {});
     }, true);
-    browser.runtime.sendMessage({ win_h: self.innerHeight });
+    browser.runtime.sendMessage({ win_h: self.innerHeight }).catch(e => {});
 }
 
 
@@ -36,7 +36,7 @@ document.addEventListener("mouseover", function(e) {
 	}
     }
     if (a === null) {
-	browser.runtime.sendMessage({});
+	browser.runtime.sendMessage({}).catch(e => {});
 	anchor = null;
 	return;
     }
@@ -52,6 +52,6 @@ document.addEventListener("mouseover", function(e) {
     browser.runtime.sendMessage({ url: a.href,
 				  x: e.screenX,
 				  y: e.screenY,
-				  win_h: win_h });
+				  win_h: win_h }).catch(e => {});
 
 }, true);
