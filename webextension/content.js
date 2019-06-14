@@ -31,7 +31,7 @@ if (self === top && document instanceof HTMLDocument) {
 document.addEventListener("mouseover", function(e) {
     let a;
     for (a = e.target; a !== null; a = a.parentElement) {
-	if (a.tagName === "A") {
+	if (a.tagName === "A" || a.tagName === "AREA") {
 	    break;
 	}
     }
