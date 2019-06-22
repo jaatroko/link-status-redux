@@ -35,15 +35,14 @@ document.addEventListener("mouseover", function(e) {
 	    break;
 	}
     }
-    if (a === null) {
-	browser.runtime.sendMessage({}).catch(e => {});
-	anchor = null;
-	return;
-    }
     if (a === anchor) {
 	return;
     }
     anchor = a;
+    if (a === null) {
+        browser.runtime.sendMessage({}).catch(e => {});
+        return;
+    }
     if (self === top && document instanceof HTMLDocument)
 	create_overlay();
     let win_h = 0;
