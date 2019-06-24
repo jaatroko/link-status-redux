@@ -1,15 +1,31 @@
 let anchor = null;
 
 function create_overlay() {
-    let iframe = document.getElementById(overlay_uuid);
-    if (iframe === null) {
-	iframe = document.createElement("iframe");
+    let overlay = document.getElementById(overlay_uuid);
+    if (overlay === null) {
+        let iframe = document.createElement("iframe");
 	iframe.id = overlay_uuid;
 	iframe.frameBorder = 0;
 	iframe.scrolling = 0;
 	iframe.setAttribute("style", overlay_iframe_css_rules);
 	iframe.src = "moz-extension://none/";
-	document.documentElement.appendChild(iframe);
+        // Encapsulate the iframe in a shadow DOM if shadow DOMs are
+        // supported:
+        if (document.documentElement.attachShadow) {
+            let div = document.createElement("div");
+            let shadowroot = div.attachShadow({ mode: "closed" });
+            // The UUID is mainly for preventing accidental ID
+            // clashes, not obfuscation, thus not needed inside a
+            // shadow DOM; make the iframe ID descriptive for people
+            // using the browser's inspector:
+            iframe.id = "link_status_redux_popup_overlay";
+            div.id = overlay_uuid;
+            div.setAttribute("style", overlay_iframe_css_rules);
+            shadowroot.appendChild(iframe);
+            document.documentElement.appendChild(div);
+        } else {
+            document.documentElement.appendChild(iframe);
+        }
 	iframe.contentWindow.location = browser.extension.getURL("overlay.html");
     }
 }
