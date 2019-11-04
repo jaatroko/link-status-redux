@@ -346,6 +346,11 @@ function formatCustom(customformat, url, flags, visit_time, visit2_time) {
 }
 
 
+// Tab zoom factor (default 1), maps tabId => float
+let zoom_factor = {};
+function get_zoom(tabId) {
+    return zoom_factor[tabId] ? zoom_factor[tabId] : 1;
+}
 // Maps tabId => true/untrue, based on whether the overlay has
 // finished loading (indicated by the reception of the need_css
 // message)
@@ -412,7 +417,7 @@ browser.runtime.onMessage.addListener(function(msg, sender) {
 				   flags, visit_time, visit2_time);
 	    if (prefix === "" && url === "" && postfix === "") {
 		// all elements empty => hide panel
-		browser.tabs.sendMessage(sender.tab.id, { show: false }).catch(e => {});
+		send_to_overlay(sender.tab.id, { show: false });
 		return;
 	    }
 	} else {
@@ -473,7 +478,8 @@ browser.runtime.onMessage.addListener(function(msg, sender) {
 			  mousey: msg.y,
 			  offsetx: prefs.mouseOffsetX,
 			  offsety: prefs.mouseOffsetY,
-			  origin: prefs.mouseOrigin });
+			  origin: prefs.mouseOrigin,
+                          zoom: get_zoom(sender.tab.id) });
     }
 
     function check_visited(flags) {
@@ -534,6 +540,13 @@ browser.runtime.onMessage.addListener(function(msg, sender) {
 });
 
 
+browser.tabs.onZoomChange.addListener(function(zoom) {
+    zoom_factor[zoom.tabId] = zoom.newZoomFactor;
+    // Reacting to zoom changes immediately is non-trivial with the
+    // current structure of overlay.js, so we are content to send the
+    // new zoom factor with the next "show" message.
+});
+
 browser.tabs.onUpdated.addListener(function(id, changeinfo, tab) {
     // reset overlay readiness and tab CSS status on page (re)load
     if (changeinfo.hasOwnProperty("status") && changeinfo.status === "loading")
@@ -548,4 +561,5 @@ browser.tabs.onRemoved.addListener(function(removedTabId) {
     delete css_inserted[removedTabId];
     delete overlay_ready[removedTabId];
     delete window_height[removedTabId];
+    delete zoom_factor[removedTabId];
 });

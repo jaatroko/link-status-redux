@@ -9,9 +9,11 @@ let overflow_begin = document.getElementById("overflow_begin");
 let overflow_end = document.getElementById("overflow_end");
 let postfix = document.getElementById("postfix");
 let generated_css = document.getElementById("generated_css");
+let zoom_css = document.getElementById("zoom_css");
 let user_css = document.getElementById("user_css");
 
 let initial_css = false;
+let scale = 1;
 
 
 wrapper.style.display = "none";
@@ -36,12 +38,34 @@ browser.runtime.onMessage.addListener(function(msg) {
 	wrapper.style.display = "none";
 	return;
     }
+
+    let floating = msg.mode === "float";
+
+    let new_scale = 1 / msg.zoom;
+    if (new_scale !== scale) {
+        scale = new_scale;
+        if (scale === 1) {
+            zoom_css.textContent = "";
+        } else {
+            let refx = "left";
+            let refy = "bottom";
+            if (floating) {
+                refy = "top";
+            }
+            zoom_css.textContent =
+                "#panel { transform: scale(" + scale
+                + "); transform-origin: " + refx + " " + refy + " 0; }";
+        }
+    }
+
+    /* scale to CSS pixels: */
+    msg.mousex *= scale;
+    msg.mousey *= scale;
     /* transform to document-relative coordinates: */
     msg.mousex -= window.mozInnerScreenX;
     msg.mousey -= window.mozInnerScreenY;
     
     wrapper.style.display = "";
-    let floating = msg.mode === "float";
 
     let classes = msg.mode;
     classes += msg.multiline ? " multiline" : " oneline";
@@ -61,6 +85,8 @@ browser.runtime.onMessage.addListener(function(msg) {
     // no access to window.top.innerHeight.)
     let win_w = document.documentElement.clientWidth;
     let win_h = document.documentElement.clientHeight;
+    // Compensate for zoom; scrollbar adjustment is not compensated:
+    msg.bottom *= scale;
     if (msg.mainwindow_height > win_h)
 	msg.bottom -= (msg.mainwindow_height - win_h);
     if (msg.bottom < 0) msg.bottom = 0;
@@ -69,8 +95,8 @@ browser.runtime.onMessage.addListener(function(msg) {
     let fx = 0;
     let fy = 0;
     if (floating) {
-	fx = msg.mousex + msg.offsetx;
-	fy = msg.mousey + msg.offsety;
+	fx = msg.mousex + scale * msg.offsetx;
+	fy = msg.mousey + scale * msg.offsety;
 	panel.style.left = "0px";
 	panel.style.top = "0px";
 	panel.style.bottom = "";
@@ -99,17 +125,18 @@ browser.runtime.onMessage.addListener(function(msg) {
 
     // move panel away from under the mouse pointer
     let evaded = false;
-    let w = panel.offsetWidth;
-    let h = panel.offsetHeight;
+    let rect = panel.getBoundingClientRect();
+    let w = rect.width;
+    let h = rect.height;
     if (floating) {
 	if (msg.offsety >= 0) {
 	    if (fy + h >= win_h) {
-		fy = msg.mousey - 20 - h;
+		fy = msg.mousey - 20*scale - h;
 		evaded = true;
 	    }
 	} else {
 	    if (fy < h) {
-		fy = msg.mousey + 30;
+		fy = msg.mousey + 30*scale;
 		evaded = true;
 	    } else
 		fy -= h;
@@ -127,12 +154,12 @@ browser.runtime.onMessage.addListener(function(msg) {
 	panel.style.left = fx + "px";
 	panel.style.top = fy + "px";
     } else {
-	let margin = 5;
+	let margin = 5*scale;
 	if (msg.mousex < w + margin
 	    && msg.mousey < win_h - msg.bottom + margin
 	    && msg.mousey > win_h - msg.bottom - h - margin)
 	{
-	    panel.style.bottom = win_h - msg.mousey + 20 + "px";
+	    panel.style.bottom = win_h - msg.mousey + 20*scale + "px";
 	    evaded = true;
 	}
     }
