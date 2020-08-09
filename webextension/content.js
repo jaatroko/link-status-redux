@@ -19,6 +19,9 @@ function create_overlay() {
             // shadow DOM; make the iframe ID descriptive for people
             // using the browser's inspector:
             iframe.id = "link_status_redux_popup_overlay";
+            // The "special" src value causes error messages in web
+            // console and is not needed with shadow DOM:
+            iframe.src = "";
             div.id = overlay_uuid;
             div.setAttribute("style", overlay_iframe_css_rules);
             shadowroot.appendChild(iframe);
