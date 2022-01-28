@@ -374,6 +374,143 @@ function send_to_overlay(id, msg) {
 }
 
 
+async function set_overlink(msg, sender) {
+    let bookmark_query;
+    /* https://bugzilla.mozilla.org/show_bug.cgi?id=1352835
+       we could use a string as the search query, but that would
+       also match descriptions and longer URLs, i.e. it would not
+       be exact => no bookmark search at all for file: URLs.
+    */
+    if (msg.url.substr(0, 5) === "file:") {
+        bookmark_query = Promise.reject(new Error("invalid bookmark URL"));
+    } else {
+        try {
+	    bookmark_query = browser.bookmarks.search({ url: msg.url });
+        } catch(e) {
+            bookmark_query =
+                Promise.reject(new Error("bookmark search failed"));
+        }
+    }
+
+    let visited_query = browser.history.getVisits({ url: msg.url });
+
+    const queries = [ bookmark_query, visited_query ];
+    const results = await Promise.allSettled(queries);
+
+    let flags = 0;
+    let visit_time = 0;
+    let visit2_time = 0;
+
+    // bookmark query:
+    if (results[0].status === "fulfilled") {
+        if (results[0].value.length > 0)
+            flags |= BOOKMARKED;
+    } else {
+        flags |= BOOKMARK_ERROR;
+    }
+
+    // visited query:
+    if (results[1].status === "fulfilled") {
+        let result = results[1].value;
+	if (result.length > 0) {
+	    flags |= VISITED;
+	    visit_time = result[0].visitTime;;
+	    let now = Date.now();
+	    let limit = prefs.lastVisitedOlderThan*1000;
+	    if (limit >= 1000 && now - result[0].visitTime < limit) {
+		flags |= RECENTLY_VISITED;
+		for (let i = 1; i < result.length; i++) {
+		    if (now - result[i].visitTime >= limit) {
+			visit2_time = result[i].visitTime;
+			flags |= VISITED2;
+			break;
+		    }
+		}
+	    }
+	}
+    } else {
+        flags |= HISTORY_ERROR;
+    }
+
+
+    let prefix = "";
+    let postfix = "";
+    let url = "";
+    let pretty_url = formatURL(msg.url);
+    if (prefs.useCustomFormat) {
+	prefix = formatCustom(prefs.customPrefix, pretty_url,
+			      flags, visit_time, visit2_time);
+	url = formatCustom(prefs.customURL, pretty_url,
+			   flags, visit_time, visit2_time);
+	postfix = formatCustom(prefs.customPostfix, pretty_url,
+			       flags, visit_time, visit2_time);
+	if (prefix === "" && url === "" && postfix === "") {
+	    // all elements empty => hide panel
+	    send_to_overlay(sender.tab.id, { show: false });
+	    return;
+	}
+    } else {
+	let timestr = "";
+	let spaces = "";
+	if (prefs.mode !== "left") {
+	    spaces = "  ";
+	    url = pretty_url;
+	} else if (!(flags & (VISITED | BOOKMARKED))) {
+	    // don't show empty panel (the URL part is hidden)
+	    send_to_overlay(sender.tab.id, { show: false });
+	    return;
+	}
+	if (flags & VISITED) {
+	    prefix = prefs.prefixVisited;
+	    let dt = new Date(visit_time);
+	    timestr = formatTime(dt); // latest time
+	    if (flags & VISITED2) {
+		dt = new Date(visit2_time); // older time
+		if (prefs.lastVisitedTwoDates)
+		    timestr += "; " + formatTime(dt);
+		else
+		    timestr = formatTime(dt);
+	    }
+	    timestr = "(" + timestr + ")";
+	    if (prefs.showLastVisited) {
+		if (prefs.lastVisitedInFront) {
+		    prefix += timestr + spaces;
+		} else {
+		    postfix = spaces + timestr;
+		}
+	    }
+	}
+	if (flags & BOOKMARKED) {
+	    prefix = prefs.prefixBookmarked;
+	    if (prefs.showLastVisited
+		&& prefs.lastVisitedInFront
+		&& (flags & VISITED))
+		prefix += timestr + spaces;
+	}
+    }
+    let bottom = 0;
+    if (prefs.mode === "left")
+	bottom = prefs.bottomOffset;
+    send_to_overlay(sender.tab.id,
+		    { show: true,
+		      mode: prefs.mode,
+		      visited: flags & VISITED,
+		      recently_visited: flags & RECENTLY_VISITED,
+		      two_visit_times: flags & VISITED2,
+		      bookmarked: flags & BOOKMARKED,
+		      prefix: prefix,
+		      url: url,
+		      multiline: prefs.maxLines > 1,
+		      postfix: postfix,
+		      bottom: bottom,
+		      mousex: msg.x,
+		      mousey: msg.y,
+		      offsetx: prefs.mouseOffsetX,
+		      offsety: prefs.mouseOffsetY,
+		      origin: prefs.mouseOrigin,
+                      zoom: get_zoom(sender.tab.id) });
+}
+
 browser.runtime.onMessage.addListener(function(msg, sender) {
     if (msg.win_h)
 	window_height[sender.tab.id] = msg.win_h;
@@ -402,141 +539,7 @@ browser.runtime.onMessage.addListener(function(msg, sender) {
     }
 
     // otherwise it's mouseover event:
-
-    function set_overlink(flags, visit_time, visit2_time) {
-	let prefix = "";
-	let postfix = "";
-	let url = "";
-	let pretty_url = formatURL(msg.url);
-	if (prefs.useCustomFormat) {
-	    prefix = formatCustom(prefs.customPrefix, pretty_url,
-				  flags, visit_time, visit2_time);
-	    url = formatCustom(prefs.customURL, pretty_url,
-			       flags, visit_time, visit2_time);
-	    postfix = formatCustom(prefs.customPostfix, pretty_url,
-				   flags, visit_time, visit2_time);
-	    if (prefix === "" && url === "" && postfix === "") {
-		// all elements empty => hide panel
-		send_to_overlay(sender.tab.id, { show: false });
-		return;
-	    }
-	} else {
-	    let timestr = "";
-	    let spaces = "";
-	    if (prefs.mode !== "left") {
-		spaces = "  ";
-		url = pretty_url;
-	    } else if (!(flags & (VISITED | BOOKMARKED))) {
-		// don't show empty panel (the URL part is hidden)
-		send_to_overlay(sender.tab.id, { show: false });
-		return;
-	    }
-	    if (flags & VISITED) {
-		prefix = prefs.prefixVisited;
-		let dt = new Date(visit_time);
-		timestr = formatTime(dt); // latest time
-		if (flags & VISITED2) {
-		    dt = new Date(visit2_time); // older time
-		    if (prefs.lastVisitedTwoDates)
-			timestr += "; " + formatTime(dt);
-		    else
-			timestr = formatTime(dt);
-		}
-		timestr = "(" + timestr + ")";
-		if (prefs.showLastVisited) {
-		    if (prefs.lastVisitedInFront) {
-			prefix += timestr + spaces;
-		    } else {
-			postfix = spaces + timestr;
-		    }
-		}
-	    }
-	    if (flags & BOOKMARKED) {
-		prefix = prefs.prefixBookmarked;
-		if (prefs.showLastVisited
-		    && prefs.lastVisitedInFront
-		    && (flags & VISITED))
-		    prefix += timestr + spaces;
-	    }
-	}
-	let bottom = 0;
-	if (prefs.mode === "left")
-	    bottom = prefs.bottomOffset;
-	send_to_overlay(sender.tab.id,
-			{ show: true,
-			  mode: prefs.mode,
-			  visited: flags & VISITED,
-			  recently_visited: flags & RECENTLY_VISITED,
-			  two_visit_times: flags & VISITED2,
-			  bookmarked: flags & BOOKMARKED,
-			  prefix: prefix,
-			  url: url,
-			  multiline: prefs.maxLines > 1,
-			  postfix: postfix,
-			  bottom: bottom,
-			  mousex: msg.x,
-			  mousey: msg.y,
-			  offsetx: prefs.mouseOffsetX,
-			  offsety: prefs.mouseOffsetY,
-			  origin: prefs.mouseOrigin,
-                          zoom: get_zoom(sender.tab.id) });
-    }
-
-    function check_visited(flags) {
-	let query = browser.history.getVisits({ url: msg.url });
-	query.then(
-	    function(result) {
-		let newflags = 0;
-		let t = 0;
-		let t2 = 0;
-		if (result.length > 0) {
-		    newflags = VISITED;
-		    t = result[0].visitTime;;
-		    let now = Date.now();
-		    let limit = prefs.lastVisitedOlderThan*1000;
-		    if (limit >= 1000
-			&& now - result[0].visitTime < limit) {
-			newflags |= RECENTLY_VISITED;
-			for (let i = 1; i < result.length; i++) {
-			    if (now - result[i].visitTime >= limit) {
-				t2 = result[i].visitTime;
-				newflags |= VISITED2;
-				break;
-			    }
-			}
-		    }
-		}
-		set_overlink(flags | newflags, t, t2);
-	    },
-	    function(error) {
-		set_overlink(flags | HISTORY_ERROR, 0, 0);
-	    }
-	);
-    }
-
-    try {
-	/* https://bugzilla.mozilla.org/show_bug.cgi?id=1352835
-	   we could use a string as the search query, but that would
-	   also match descriptions and longer URLs, i.e. it would not
-	   be exact => no bookmark search at all for file: URLs.
-	 */
-	if (msg.url.substr(0, 5) === "file:")
-	    check_visited(BOOKMARK_ERROR);
-	else {
-	    let query = browser.bookmarks.search({ url: msg.url });
-	    query.then(
-		function(result) {
-		    check_visited(result.length > 0 ? BOOKMARKED : 0);
-		},
-		function(error) {
-		    check_visited(BOOKMARK_ERROR);
-		}
-	    );
-	}
-    } catch(e) {
-	check_visited(BOOKMARK_ERROR);
-    }
-    
+    set_overlink(msg, sender);
 });
 
 

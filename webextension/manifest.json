@@ -10,7 +10,8 @@
     },
     "browser_specific_settings": {
 	"gecko": {
-	    "id": "linkstatus@jha.iki.fi"
+	    "id": "linkstatus@jha.iki.fi",
+            "strict_min_version": "71.0"
 	}
     },
     "permissions": [
