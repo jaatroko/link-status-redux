@@ -8,7 +8,7 @@
     "icons": {
 	"32": "icon.png"
     },
-    "applications": {
+    "browser_specific_settings": {
 	"gecko": {
 	    "id": "linkstatus@jha.iki.fi"
 	}
