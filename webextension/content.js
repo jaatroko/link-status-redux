@@ -29,7 +29,7 @@ function create_overlay() {
         } else {
             document.documentElement.appendChild(iframe);
         }
-	iframe.contentWindow.location = browser.extension.getURL("overlay.html");
+	iframe.contentWindow.location = browser.runtime.getURL("overlay.html");
     }
 }
 
