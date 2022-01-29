@@ -19,7 +19,7 @@
     "__lastVisitedTwoDates_label": {"message": "Afficher également l’âge de la dernière visite"},
 
     "__customFormat_h1": {"message": "Format personnalisé"},
-    "_customFormatDescription_html": {"message": "<p>Spécifiez ce qu’il faut afficher dans le panneau contextuel à l’aide de chaînes de style <i>printf</i> (passez la souris au-dessus des entrées pour voir les chaînes disponibles). Le panneau contextuel est divisé en trois parties : le préfixe, l’URL et le suffixe. Le préfixe et le suffixe sont d’une seule ligne et ne sont pas réductibles, l’URL est éventuellement multiligne et réductible. Normalement, l’URL ne doit contenir que <b>%u</b>.</p><p> Si vous aviez ajouté un texte personnalisé dans la version 2.8, il a été copié dans la chaîne de l’URL, le préfixe et le suffixe ont été effacés et le nombre maximum de lignes a été établi à 1 (voir ci-dessous). Vous devez déplacer dans le préfixe et le suffixe la partie adéquate et ajuster le nombre maximum de lignes à votre convenance.</p>"},
+    "_customFormatDescription_html": {"message": "<p>Spécifiez ce qu’il faut afficher dans le panneau contextuel à l’aide de chaînes de style <i>printf</i> (passez la souris au-dessus des entrées pour voir les chaînes disponibles). Le panneau contextuel est divisé en trois parties : le préfixe, l’URL et le suffixe. Le préfixe et le suffixe sont d’une seule ligne et ne sont pas réductibles, l’URL est éventuellement multiligne et réductible. Normalement, l’URL ne doit contenir que <b>%u</b>.</p>"},
     "__useCustomFormat_label": {"message": "Utiliser un format personnalisé"},
     "__customPrefix_label": {"message": "Format du préfixe :"},
     "__customURL_label": {"message": "Format de l’URL :"},

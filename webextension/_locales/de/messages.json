@@ -19,7 +19,7 @@
     "__lastVisitedTwoDates_label": {"message": "Zeige auch die vorletzte Besuchszeit"},
 
     "__customFormat_h1": {"message": "Individualisiertes Format"},
-    "_customFormatDescription_html": {"message": "<p>Geben Sie an, was im Popup-Fenster angezeigt werden soll mit Ersetzungen im <i>printf</i>-Stil ('hover'/schweben Sie über den Eingabe-Feldern um verfügbare Ersetzungen anzuzeigen). Das Popup-Feld ist in drei Bereiche gegliedert: Prefix, URL, und Postfix. Prefix und Postfix sind einzeilig und nicht schrumpfbar, URL ist (möglicherweise) mehrzeilig und schrumpfbar. Normalerweise sollte die URL  nur <b>%u</b> sein.</p><p>Falls Sie in Version 2.8 einen individualisierten Verweis-Text hatten, dann wurde dieser Eintrag in den Bereich des URL-Formats kopiert, Prefix- + Postfix-Feld sind ohne Inhalt, und die Zahl der maximalen Zeilen wurde auf 1 gesetzt (siehe unten). Sie sollten die entsprechenden Teile der Prefix und Postfix in die jeweiligen Felder verschieben und die Zahl der maximalen Zeilen Ihrem Bedarf anpassen.</p>"},
+    "_customFormatDescription_html": {"message": "<p>Geben Sie an, was im Popup-Fenster angezeigt werden soll mit Ersetzungen im <i>printf</i>-Stil ('hover'/schweben Sie über den Eingabe-Feldern um verfügbare Ersetzungen anzuzeigen). Das Popup-Feld ist in drei Bereiche gegliedert: Prefix, URL, und Postfix. Prefix und Postfix sind einzeilig und nicht schrumpfbar, URL ist (möglicherweise) mehrzeilig und schrumpfbar. Normalerweise sollte die URL  nur <b>%u</b> sein.</p>"},
     "__useCustomFormat_label": {"message": "Benutze folgende Formatierung:"},
     "__customPrefix_label": {"message": "Prefix Format:"},
     "__customURL_label": {"message": "URL Format:"},

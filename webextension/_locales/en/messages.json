@@ -10,7 +10,7 @@
     "__basicSettings_h1" : {"message": "Basic settings"},
     "__showLastVisited_label": {"message": "Show last visited date"},
     "__useISODate_label": {"message": "Use YYYY-MM-DD date format"},
-    "__lastVisitedInFront_label": {"message": "Show date before link adress"},
+    "__lastVisitedInFront_label": {"message": "Show date before link address"},
     "__prefixBookmarked_label": {"message": "Prefix for bookmarked links:"},
     "__prefixVisited_label": {"message": "Prefix for visited links:"},
 
@@ -19,7 +19,7 @@
     "__lastVisitedTwoDates_label": {"message": "Show also the latest visit time"},
 
     "__customFormat_h1": {"message": "Custom format"},
-    "_customFormatDescription_html": {"message": "<p>Specify what to show on the popup panel with <i>printf</i>-style expansions (hover over the inputs to see available expansions). The popup panel is divided into three parts: prefix, URL, and postfix. Prefix and postfix are one-line and non-shrinkable, URL is (possibly) multi-line and shrinkable. Normally the URL should contain just <b>%u</b>.</p><p> If you had a custom overlink text specified in version 2.8, then that was copied to the URL format and the prefix and postfix were cleared, and the maximum lines was set to 1 (see below). You should move the appropriate parts to prefix and postfix and adjust maximum lines according to your preference.</p>"},
+    "_customFormatDescription_html": {"message": "<p>Specify what to show on the popup panel with <i>printf</i>-style expansions (hover over the inputs to see available expansions). The popup panel is divided into three parts: prefix, URL, and postfix. Prefix and postfix are one-line and non-shrinkable, URL is (possibly) multi-line and shrinkable. Normally the URL should contain just <b>%u</b>.</p>"},
     "__useCustomFormat_label": {"message": "Use custom format"},
     "__customPrefix_label": {"message": "Prefix format:"},
     "__customURL_label": {"message": "URL format:"},

@@ -19,7 +19,7 @@
     "__lastVisitedTwoDates_label": {"message": "Näytä myös viimeisin vierailuaika"},
 
     "__customFormat_h1": {"message": "Oma muotoilu"},
-    "_customFormatDescription_html": {"message": "<p>Määritä mitä infopaneelissa näytetään <i>printf</i>-tyylisillä korvauksilla (vie hiiri tekstikentän päälle nähdäksesi mahdolliset korvaukset). Infopaneeli on jaettu kolmeen osaan: etuliite, URL, ja jälkiliite. Etu- ja jälkiliite ovat yksirivisiä eivätkä kutistu, URL on mahdollisesti monirivinen ja kutistuu vaakasuunnassa tarpeen vaatiessa. Normaalisti URL:ssa tulisi olla vain <b>%u</b>.</p><p>Jos sinulla oli määritelty oma linkin kohteen muoto versiossa 2.8, se kopioitiin URL:iin ja etu- ja jälkiliite tyhjennettiin, sekä maksimirivit asetettiin arvoon 1 (ks. alla). Siirrä soveltuvat osat etu- ja jälkiliitteeseen, ja säädä maksimirivit mieleiseksesi.</p>"},
+    "_customFormatDescription_html": {"message": "<p>Määritä mitä infopaneelissa näytetään <i>printf</i>-tyylisillä korvauksilla (vie hiiri tekstikentän päälle nähdäksesi mahdolliset korvaukset). Infopaneeli on jaettu kolmeen osaan: etuliite, URL, ja jälkiliite. Etu- ja jälkiliite ovat yksirivisiä eivätkä kutistu, URL on mahdollisesti monirivinen ja kutistuu vaakasuunnassa tarpeen vaatiessa. Normaalisti URL:ssa tulisi olla vain <b>%u</b>.</p>"},
     "__useCustomFormat_label": {"message": "Käytä omaa muotoilua"},
     "__customPrefix_label": {"message": "Etuliitteen muoto:"},
     "__customURL_label": {"message": "URL:n muoto:"},
