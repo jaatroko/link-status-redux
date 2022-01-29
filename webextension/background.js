@@ -12,7 +12,10 @@ const RECENTLY_VISITED = 0x04;
 // latest visit time below limit AND there exists a visit time above
 // limit (and it is set to be displayed):
 const VISITED2         = 0x08;
-// something went worng with lookup (not currently used anywhere):
+// link is currently open in a tab:
+const CURRENTLY_OPEN   = 0x10;
+// something went wrong with lookups (not currently used anywhere):
+const TABS_ERROR       = 0x20;
 const BOOKMARK_ERROR   = 0x40;
 const HISTORY_ERROR    = 0x80;
 
@@ -35,6 +38,10 @@ let regex = {
     visited2_markers: /%\+[\{\}]/g,
     visited2_block: /%\+\{.*?%\+\}/g,
     notvisited2_markers: /%-[\{\}]/g,
+    notcurrentlyopen_block: /%-\<.*?%-\>/g,
+    currentlyopen_markers: /%\+[\<\>]/g,
+    currentlyopen_block: /%\+\<.*?%\+\>/g,
+    notcurrentlyopen_markers: /%-[\<\>]/g,
 
     // Match ASCII control characters and bidirectional formatting
     // characters (RFC 3987 sections 3.2 and 4.1 paragraph 6) for
@@ -196,6 +203,7 @@ function formatCustom(customformat, url, flags, visit_time, visit2_time) {
        %u    Link URL
        %V    Visited indicator
        %B    Bookmarked indicator
+       %O    Currently open indicator
        
        %%    Literal % character
        
@@ -207,6 +215,8 @@ function formatCustom(customformat, url, flags, visit_time, visit2_time) {
        %-[ .. %-]  Display only when not bookmarked
        %+{ .. %+}  Display only when there is an older visit time
        %-{ .. %-}  Display only when there is not an older visit time
+       %+< .. %+>  Display only when currently open
+       %-< .. %->  Display only when not currently open
     */
 
     let customvisited = prefs.customDateDefault;
@@ -248,11 +258,19 @@ function formatCustom(customformat, url, flags, visit_time, visit2_time) {
         customformat = customformat.replace(regex.visited2_block, "");
         customformat = customformat.replace(regex.notvisited2_markers, "");
     }
+    if (flags & CURRENTLY_OPEN) {
+        customformat = customformat.replace(regex.notcurrentlyopen_block, "");
+        customformat = customformat.replace(regex.currentlyopen_markers, "");
+    } else {
+        customformat = customformat.replace(regex.currentlyopen_block, "");
+        customformat = customformat.replace(regex.notcurrentlyopen_markers, "");
+    }
     customformat = customformat.replace(regex.escaped_char, function(m, p1) {
 	switch(p1) {
 	case 'u': return url;
 	case 'V': return prefs.prefixVisited;
 	case 'B': return prefs.prefixBookmarked;
+	case 'O': return prefs.prefixCurrentlyOpen;
 	case '%': return "%";
 	case 'T':
 	case 't': {
@@ -394,7 +412,14 @@ async function set_overlink(msg, sender) {
 
     let visited_query = browser.history.getVisits({ url: msg.url });
 
-    const queries = [ bookmark_query, visited_query ];
+    /* Note: using <all_urls> as match pattern here, as using msg.url
+       as the match pattern won't match non-standard ports or fragment
+       identifiers. This is theoretically inefficient (and potentially
+       slow) but it shouldn't matter in practice.
+    */
+    let tabs_query = browser.tabs.query({url: "<all_urls>"});
+
+    const queries = [ bookmark_query, visited_query, tabs_query ];
     const results = await Promise.allSettled(queries);
 
     let flags = 0;
@@ -432,6 +457,19 @@ async function set_overlink(msg, sender) {
         flags |= HISTORY_ERROR;
     }
 
+    // tabs query:
+    if (results[2].status === "fulfilled") {
+        let tabs = results[2].value;
+        for (let tab of tabs) {
+            if (tab.url === msg.url) {
+                flags |= CURRENTLY_OPEN;
+                break;
+            }
+        }
+    } else {
+        flags |= TABS_ERROR;
+    }
+
 
     let prefix = "";
     let postfix = "";
@@ -450,18 +488,32 @@ async function set_overlink(msg, sender) {
 	    return;
 	}
     } else {
+        let currently_open =
+            prefs.showCurrentlyOpen && (flags & CURRENTLY_OPEN);
 	let timestr = "";
 	let spaces = "";
 	if (prefs.mode !== "left") {
 	    spaces = "  ";
 	    url = pretty_url;
-	} else if (!(flags & (VISITED | BOOKMARKED))) {
+	} else if (!(flags & (VISITED | BOOKMARKED)) && !currently_open) {
 	    // don't show empty panel (the URL part is hidden)
 	    send_to_overlay(sender.tab.id, { show: false });
 	    return;
 	}
+        if (currently_open) {
+            // This *should* be redundant as CURRENTLY_OPEN implies
+            // VISITED, which is handled below, but handle it here
+            // just in case. (Possible scenarios(?): 1) tab is
+            // unloaded (after session restore) but visits are erased
+            // from history. 2) tab is open but not finished loading.)
+            prefix = prefs.prefixCurrentlyOpen;
+        }
 	if (flags & VISITED) {
-	    prefix = prefs.prefixVisited;
+            // CURRENTLY_OPEN implies VISITED => only show one prefix:
+            if (currently_open)
+                prefix = prefs.prefixCurrentlyOpen;
+            else
+                prefix = prefs.prefixVisited;
 	    let dt = new Date(visit_time);
 	    timestr = formatTime(dt); // latest time
 	    if (flags & VISITED2) {
@@ -482,6 +534,10 @@ async function set_overlink(msg, sender) {
 	}
 	if (flags & BOOKMARKED) {
 	    prefix = prefs.prefixBookmarked;
+            // CURRENTLY_OPEN does not imply BOOKMARKED or vice versa
+            // => show both prefixes
+            if (currently_open)
+                prefix = prefs.prefixCurrentlyOpen + prefix;
 	    if (prefs.showLastVisited
 		&& prefs.lastVisitedInFront
 		&& (flags & VISITED))
@@ -498,6 +554,7 @@ async function set_overlink(msg, sender) {
 		      recently_visited: flags & RECENTLY_VISITED,
 		      two_visit_times: flags & VISITED2,
 		      bookmarked: flags & BOOKMARKED,
+                      currently_open: flags & CURRENTLY_OPEN,
 		      prefix: prefix,
 		      url: url,
 		      multiline: prefs.maxLines > 1,

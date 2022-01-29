@@ -26,8 +26,9 @@
 
     One of [multiline,oneline]: whether maxLines is 1 or not
 
-    Some of [visited,bookmarked,recently_visited,two_visit_times]:
-      visit and bookmarked status
+    Some of [visited,bookmarked,recently_visited,two_visit_times,
+             currently_open]:
+      visit, bookmarked and currently open status
 
     One or none of [evaded]: the panel was moved because the mouse
       pointer was too close

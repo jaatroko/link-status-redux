@@ -73,6 +73,7 @@ browser.runtime.onMessage.addListener(function(msg) {
     if (msg.recently_visited) classes += " recently_visited";
     if (msg.two_visit_times) classes += " two_visit_times";
     if (msg.bookmarked) classes += " bookmarked";
+    if (msg.currently_open) classes += " currently_open";
     wrapper.className = classes;
 
     // Compensate for the height of the horizontal scrollbar in the

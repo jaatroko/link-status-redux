@@ -23,7 +23,8 @@
 }
 
 
-/* Example 4: set background color according to visited/bookmarked/both */
+/* Example 4: set background color according to
+   visited/bookmarked/both/currently_open */
 .visited div {
     background: #aaf;
     border-color: #77c;
@@ -53,6 +54,16 @@
 }
 .visited.bookmarked #overflow_end {
     background: linear-gradient(to left, transparent, #faf);
+}
+.currently_open div {
+    background: #afa;
+    border-color: #7c7;
+}
+.currently_open #overflow_begin {
+    background: linear-gradient(to right, transparent, #afa);
+}
+.currently_open #overflow_end {
+    background: linear-gradient(to left, transparent, #afa);
 }
 
 
