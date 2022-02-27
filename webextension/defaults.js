@@ -6,7 +6,7 @@ let defaults = {
     prefixBookmarked: "⌘ ",
     lastVisitedOlderThan: 0,
     lastVisitedTwoDates: false,
-    showCurrentlyOpen: true,
+    showCurrentlyOpen: false,
     prefixCurrentlyOpen: "🗁 ",
     useCustomFormat: false,
     customPrefix: "%+[%+<%O%+>%B%+]%-[%+<%O%+>%-<%+(%V%+)%->%-]",

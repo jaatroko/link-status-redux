@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+<title id="__settingsTitle">Link Status Redux: Settings</title>
 <style>
   input[type=number] {
   width: 5em;
@@ -61,6 +62,54 @@
   <label for="lastVisitedTwoDates" id="__lastVisitedTwoDates_label">Show also the latest visit time</label>
 </div>
 
+<h2 id="__currentlyOpen_h2">Currently open links</h2>
+
+<div id="_currentlyOpenDescription_html" class="html_replace helptext">
+  <p>
+    <b>Note:</b> detecting whether a link is currently open in a tab
+    may not work the way you expect or desire. The issues are
+    mainly the following:
+    <ol>
+      <li>
+        Redirections: if the link target redirects to somewhere else,
+        then it will not show as currently open. Redirections can be
+        protocol (<code>http://site.tld/</code>
+        ↔ <code>https://site.tld/</code>), cross-page
+        (<code>https://site.tld/page1.html</code>
+        ↔ <code>https://site.tld/page2.html</code>), subdomain
+        (<code>https://www.site.tld/</code>
+        ↔ <code>https://site.tld/</code>) or cross-domain
+        (<code>https://site.tld/</code>
+        ↔ <code>https://anothersite.tld/</code>).
+      </li>
+      <li>
+        URI fragments (the address part after <code>#</code>): on
+        static pages all fragments are the same page at a different
+        view offset, but for web applications a different fragment may
+        result in a totally different content. Navigating within a
+        static page or using a webapp in a way that changes the
+        fragment will cause the original link to show as not currently
+        open.
+      </li>
+    </ol>
+  </p>
+  <p>
+    In other words: if the indicator is shown, it means that the link
+    is currently open; but if there is no indicator, it does
+    not <em>necessarily</em> mean that the link is <em>not</em>
+    currently open.
+  </p>
+</div>
+
+<div>
+  <input type="checkbox" id="showCurrentlyOpen">
+  <label for="showCurrentlyOpen" id="__showCurrentlyOpen_label">Show
+  indicator for links that are currently open in a tab</label>
+</div>
+<div>
+  <label for="prefixCurrentlyOpen" id="__prefixCurrentlyOpen_label">Prefix for currently open links:</label>
+  <input type="text" id="prefixCurrentlyOpen" style="width:5em;">
+</div>
 
 <h1 id="__customFormat_h1">Custom format</h1>
 
