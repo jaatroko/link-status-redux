@@ -7,6 +7,8 @@
     "hoursAgo": {"message": "0;$hoursAgo$時間前", "placeholders": {"hoursAgo": {"content": "$1"}}},
     "daysAgo": {"message": "0;$daysAgo$日前", "placeholders": {"daysAgo": {"content": "$1"}}},
 
+    "__settingsTitle": {"message": "Link Status Redux: Settings"},
+
     "__basicSettings_h1" : {"message": "基本設定"},
     "__showLastVisited_label": {"message": "最終訪問日を表示する"},
     "__useISODate_label": {"message": "YYYY-MM-DD形式の日付を使用する"},
@@ -17,6 +19,11 @@
     "__recentVisits_h2": {"message": "最近の訪問時刻を処理する方法"},
     "__lastVisitedOlderThen_label": {"message": "次の秒数より古い訪問時刻を優先:"},
     "__lastVisitedTwoDates_label": {"message": "最新の訪問時刻も表示する"},
+
+    "__currentlyOpen_h2": {"message": "Currently open links"},
+    "_currentlyOpenDescription_html": {"message": "<p><b>Note:</b> detecting whether a link is currently open in a tab may not work the way you expect or desire. The issues are mainly the following:<ol><li>Redirections: if the link target redirects to somewhere else, then it will not show as currently open. Redirections can be protocol (<code>http://site.tld/</code> ↔ <code>https://site.tld/</code>), cross-page (<code>https://site.tld/page1.html</code> ↔ <code>https://site.tld/page2.html</code>), subdomain (<code>https://www.site.tld/</code> ↔ <code>https://site.tld/</code>) or cross-domain (<code>https://site.tld/</code> ↔ <code>https://anothersite.tld/</code>).</li><li>URI fragments (the address part after <code>#</code>): on static pages all fragments are the same page at a different view offset, but for web applications a different fragment may result in a totally different content. Navigating within a static page or using a webapp in a way that changes the fragment will cause the original link to show as not currently open.</li></ol></p><p>In other words: if the indicator is shown, it means that the link is currently open; but if there is no indicator, it does not <em>necessarily</em> mean that the link is <em>not</em> currently open.</p>"},
+    "__showCurrentlyOpen_label": {"message": "Show indicator for links that are currently open in a tab"},
+    "__prefixCurrentlyOpen_label": {"message": "Prefix for currently open links:"},
 
     "__customFormat_h1": {"message": "カスタム書式"},
     "_customFormatDescription_html": {"message": "<p>ポップアップパネルに表示するものを<i>printf</i>方式で書式指定します(使用可能な書式指定を見るには入力欄にマウスカーソルを合わせます)。ポップアップパネルは3つの部分に分けられています: 接頭辞、URL、接尾辞です。接頭辞と接尾辞は一行のみで、短縮できません。URLは複数行になる場合があり、短縮できます。通常URLは<b>%u</b>だけを含むべきです。</p>"},
@@ -72,5 +79,10 @@
     "customDate3_default": {"message": "%1d日前(%a)"},
     "customDate4_default": {"message": ""},
     "customDate5_default": {"message": ""},
-    "customDate6_default": {"message": ""}
+    "customDate6_default": {"message": ""},
+
+
+    "__newsTitle": {"message": "Link Status Redux: News"},
+    "__news_h1": {"message": "Link Status Redux version 3.13"},
+    "_newsContent_html": {"message": "<p>This version adds a new feature: indicating links that are currently open in a tab. See the <a href='options.html'>settings page</a> for more information.</p>"}
 }

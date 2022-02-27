@@ -7,6 +7,8 @@
     "hoursAgo": {"message": "1;$hoursAgo$ tunti sitten;$hoursAgo$ tuntia sitten", "placeholders": {"hoursAgo": {"content": "$1"}}},
     "daysAgo": {"message": "1;$daysAgo$ päivä sitten;$daysAgo$ päivää sitten", "placeholders": {"daysAgo": {"content": "$1"}}},
 
+    "__settingsTitle": {"message": "Link Status Redux: Asetukset"},
+
     "__basicSettings_h1" : {"message": "Perusasetukset"},
     "__showLastVisited_label": {"message": "Näytä viimeisin vierailuaika"},
     "__useISODate_label": {"message": "Käytä VVVV-KK-PP päiväysmuotoa"},
@@ -17,6 +19,11 @@
     "__recentVisits_h2": {"message": "Miten äskettäiset vierailuajat käsitellään"},
     "__lastVisitedOlderThen_label": {"message": "Vierailuaika mieluiten vanhempi kuin:"},
     "__lastVisitedTwoDates_label": {"message": "Näytä myös viimeisin vierailuaika"},
+
+    "__currentlyOpen_h2": {"message": "Avoinna olevat linkit"},
+    "_currentlyOpenDescription_html": {"message": "<p><b>Huom:</b> välilehdessä avoinna olevien linkkien merkitseminen ei välttämättä toimi niin kuin odottaisit tai haluaisit. Ongelmat ovat lähinnä seuraavat:<ol><li>Uudelleenohjaukset: mikäli linkin kohde uudelleenohjaa jonnekin muualle, niin linkki ei näy merkittynä avoimeksi. Uudelleenohjauksia ovat protokollan muutos (<code>http://site.tld/</code> ↔ <code>https://site.tld/</code>), sivulta toiselle (<code>https://site.tld/page1.html</code> ↔ <code>https://site.tld/page2.html</code>), alidomain-ohjaus (<code>https://www.site.tld/</code> ↔ <code>https://site.tld/</code>) tai sivustolta toiselle (<code>https://site.tld/</code> ↔ <code>https://anothersite.tld/</code>).</li><li>URI-fragmentit (osoitteen <code>#</code>:n jälkeinen osa): staattisilla sivuilla kaikki fragmentit osoittavat eri kohtaan samalle sivulle, mutta web-sovelluksissa fragmentin muuttaminen voi tuottaa täysin erilaisen sisällön. Navigointi staattisen sivun sisällä tai web-sovelluksen käyttö fragmenttia muuttavalla tavalla johtaa siihen, että alkuperäinen linkki ei enää näy merkittynä avoimeksi.</li></ol></p><p>Toisin sanoen: mikäli merkintä näkyy, niin linkki on avoinna välilehdessä; mutta jos merkintä puuttuu, se ei <em>välttämättä</em> tarkoita että linkki <em>ei</em> ole avoinna.</p>"},
+    "__showCurrentlyOpen_label": {"message": "Merkitse linkit, jotka ovat avoinna välilehdessä"},
+    "__prefixCurrentlyOpen_label": {"message": "Etuliite avoinna oleville linkeille:"},
 
     "__customFormat_h1": {"message": "Oma muotoilu"},
     "_customFormatDescription_html": {"message": "<p>Määritä mitä infopaneelissa näytetään <i>printf</i>-tyylisillä korvauksilla (vie hiiri tekstikentän päälle nähdäksesi mahdolliset korvaukset). Infopaneeli on jaettu kolmeen osaan: etuliite, URL, ja jälkiliite. Etu- ja jälkiliite ovat yksirivisiä eivätkä kutistu, URL on mahdollisesti monirivinen ja kutistuu vaakasuunnassa tarpeen vaatiessa. Normaalisti URL:ssa tulisi olla vain <b>%u</b>.</p>"},
@@ -72,5 +79,10 @@
     "customDate3_default": {"message": "%a, %1d päivää sitten"},
     "customDate4_default": {"message": ""},
     "customDate5_default": {"message": ""},
-    "customDate6_default": {"message": ""}
+    "customDate6_default": {"message": ""},
+
+
+    "__newsTitle": {"message": "Link Status Redux: Uutta"},
+    "__news_h1": {"message": "Link Status Redux versio 3.13"},
+    "_newsContent_html": {"message": "<p>Uusi ominaisuus tässä versiossa: välilehdessä avoinna olevien linkkien merkintä. Lisätietoja <a href='options.html'>asetussivulla</a>.</p>"}
 }

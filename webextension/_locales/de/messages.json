@@ -7,6 +7,8 @@
     "hoursAgo": {"message": "1;vor $hoursAgo$ Stunde;vor $hoursAgo$ Stunden", "placeholders": {"hoursAgo": {"content": "$1"}}},
     "daysAgo": {"message": "1;vor $daysAgo$ Tag;vor $daysAgo$ Tagen", "placeholders": {"daysAgo": {"content": "$1"}}},
 
+    "__settingsTitle": {"message": "Link Status Redux: Settings"},
+
     "__basicSettings_h1" : {"message": "Basis Einstellungen"},
     "__showLastVisited_label": {"message": "Zeige Datum des letzten Besuchs"},
     "__useISODate_label": {"message": "Benutze JJJJ-MM-TT als Format für Besuchsdatum"},
@@ -17,6 +19,11 @@
     "__recentVisits_h2": {"message": "Behandlung von Zeiten früherer Besuche"},
     "__lastVisitedOlderThen_label": {"message": "Bevorzuge Besuche älter als:"},
     "__lastVisitedTwoDates_label": {"message": "Zeige auch die vorletzte Besuchszeit"},
+
+    "__currentlyOpen_h2": {"message": "Currently open links"},
+    "_currentlyOpenDescription_html": {"message": "<p><b>Note:</b> detecting whether a link is currently open in a tab may not work the way you expect or desire. The issues are mainly the following:<ol><li>Redirections: if the link target redirects to somewhere else, then it will not show as currently open. Redirections can be protocol (<code>http://site.tld/</code> ↔ <code>https://site.tld/</code>), cross-page (<code>https://site.tld/page1.html</code> ↔ <code>https://site.tld/page2.html</code>), subdomain (<code>https://www.site.tld/</code> ↔ <code>https://site.tld/</code>) or cross-domain (<code>https://site.tld/</code> ↔ <code>https://anothersite.tld/</code>).</li><li>URI fragments (the address part after <code>#</code>): on static pages all fragments are the same page at a different view offset, but for web applications a different fragment may result in a totally different content. Navigating within a static page or using a webapp in a way that changes the fragment will cause the original link to show as not currently open.</li></ol></p><p>In other words: if the indicator is shown, it means that the link is currently open; but if there is no indicator, it does not <em>necessarily</em> mean that the link is <em>not</em> currently open.</p>"},
+    "__showCurrentlyOpen_label": {"message": "Show indicator for links that are currently open in a tab"},
+    "__prefixCurrentlyOpen_label": {"message": "Prefix for currently open links:"},
 
     "__customFormat_h1": {"message": "Individualisiertes Format"},
     "_customFormatDescription_html": {"message": "<p>Geben Sie an, was im Popup-Fenster angezeigt werden soll mit Ersetzungen im <i>printf</i>-Stil ('hover'/schweben Sie über den Eingabe-Feldern um verfügbare Ersetzungen anzuzeigen). Das Popup-Feld ist in drei Bereiche gegliedert: Prefix, URL, und Postfix. Prefix und Postfix sind einzeilig und nicht schrumpfbar, URL ist (möglicherweise) mehrzeilig und schrumpfbar. Normalerweise sollte die URL  nur <b>%u</b> sein.</p>"},
@@ -72,5 +79,10 @@
     "customDate3_default": {"message": "vor %1d Tagen (%a)"},
     "customDate4_default": {"message": ""},
     "customDate5_default": {"message": ""},
-    "customDate6_default": {"message": ""}
+    "customDate6_default": {"message": ""},
+
+
+    "__newsTitle": {"message": "Link Status Redux: News"},
+    "__news_h1": {"message": "Link Status Redux version 3.13"},
+    "_newsContent_html": {"message": "<p>This version adds a new feature: indicating links that are currently open in a tab. See the <a href='options.html'>settings page</a> for more information.</p>"}
 }
