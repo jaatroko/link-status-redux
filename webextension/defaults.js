@@ -39,5 +39,7 @@ let defaults = {
     colorBackground: "#f0f0f0",
     colorBorder: "#cccccc",
     useCustomCSS: false,
-    customCSS: ""
+    customCSS: "",
+
+    featureLevel: 0
 };

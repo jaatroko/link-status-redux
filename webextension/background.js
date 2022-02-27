@@ -108,6 +108,19 @@ browser.storage.local.get(null, function(result) {
     generate_css();
     // initial broadcast of CSS to all tabs => also insert iframe CSS
     broadcast_css(true);
+
+    // Now that we have loaded the preferences, check whether we need
+    // to show the news page. The news page is only shown when a new
+    // (major) feature is added, indicated by the feature level
+    // preference value. As the feature level value we will use
+    // 10000*major+minor of the version number where the latest
+    // feature was added.
+    let featureLevel = 30013;
+    if (prefs["featureLevel"] < featureLevel) {
+        browser.tabs.create({url: browser.runtime.getURL("news.html")});
+        browser.storage.local.set({ "featureLevel": featureLevel });
+        prefs["featureLevel"] = featureLevel;
+    }
 });
 browser.storage.onChanged.addListener(function(changes, area) {
     for (let key of Object.keys(changes)) {
