@@ -13,6 +13,7 @@ iframe.js
 manifest.json
 options.html
 options.js
+translate.js
 overlay.css
 overlay.html
 overlay.js
