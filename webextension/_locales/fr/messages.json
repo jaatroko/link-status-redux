@@ -7,12 +7,12 @@
     "hoursAgo": {"message": "2;il y a $hoursAgo$ heure;il y a $hoursAgo$ heures", "placeholders": {"hoursAgo": {"content": "$1"}}},
     "daysAgo": {"message": "2;il y a $daysAgo$ jour;il y a $daysAgo$ jours", "placeholders": {"daysAgo": {"content": "$1"}}},
 
-    "__settingsTitle": {"message": "Link Status Redux: Settings"},
+    "__settingsTitle": {"message": "Link Status Redux · Options"},
 
     "__basicSettings_h1" : {"message": "Réglages de base"},
     "__showLastVisited_label": {"message": "Afficher la date de la dernière visite"},
     "__useISODate_label": {"message": "Utiliser le format de date AAAA-MM-JJ"},
-    "__lastVisitedInFront_label": {"message": "Afficher la date avant l’URL"},
+    "__lastVisitedInFront_label": {"message": "Afficher la date avant l’adresse du lien"},
     "__prefixBookmarked_label": {"message": "Préfixe pour les liens marqués :"},
     "__prefixVisited_label": {"message": "Préfixe pour les liens visités :"},
 
@@ -20,10 +20,10 @@
     "__lastVisitedOlderThen_label": {"message": "Âge de visite de préférence supérieur à :"},
     "__lastVisitedTwoDates_label": {"message": "Afficher également l’âge de la dernière visite"},
 
-    "__currentlyOpen_h2": {"message": "Currently open links"},
-    "_currentlyOpenDescription_html": {"message": "<p><b>Note:</b> detecting whether a link is currently open in a tab may not work the way you expect or desire. The issues are mainly the following:<ol><li>Redirections: if the link target redirects to somewhere else, then it will not show as currently open. Redirections can be protocol (<code>http://site.tld/</code> ↔ <code>https://site.tld/</code>), cross-page (<code>https://site.tld/page1.html</code> ↔ <code>https://site.tld/page2.html</code>), subdomain (<code>https://www.site.tld/</code> ↔ <code>https://site.tld/</code>) or cross-domain (<code>https://site.tld/</code> ↔ <code>https://anothersite.tld/</code>).</li><li>URI fragments (the address part after <code>#</code>): on static pages all fragments are the same page at a different view offset, but for web applications a different fragment may result in a totally different content. Navigating within a static page or using a webapp in a way that changes the fragment will cause the original link to show as not currently open.</li></ol></p><p>In other words: if the indicator is shown, it means that the link is currently open; but if there is no indicator, it does not <em>necessarily</em> mean that the link is <em>not</em> currently open.</p>"},
-    "__showCurrentlyOpen_label": {"message": "Show indicator for links that are currently open in a tab"},
-    "__prefixCurrentlyOpen_label": {"message": "Prefix for currently open links:"},
+    "__currentlyOpen_h2": {"message": "Liens actuellement ouverts"},
+    "_currentlyOpenDescription_html": {"message": "<p><b>Remarque :</b> Il se peut que la détection d’un lien actuellement ouvert dans un onglet ne fonctionne pas comme vous l’attendez ou le souhaitez. Les principaux obstacles sont les suivants.<ol><li>Redirections : si le lien cible est redirigé, il ne sera pas indiqué comme étant ouvert. Les redirections peuvent se faire à travers le protocole (<code>http://site.tld/</code> ↔ <code>https://site.tld/</code>), une page (<code>https://site.tld/page1.html</code> ↔ <code>https://site.tld/page2.html</code>), un sous-domaine (<code>https://www.site.tld/</code> ↔ <code>https://site.tld/</code>) ou un domaine (<code>https://site.tld/</code> ↔ <code>https://autresite.tld/</code>).</li><li>Fragments d’URI (la partie de l’adresse après <code>#</code>) : pour les pages statiques, tous les fragments concernent la même page affichée à différents endroits mais pour les applications web, un fragment différent peut mener à un contenu totalement différent. Si vous parcourez une page statique ou si vous utilisez une application web d’une façon qui modifie le fragment, le lien d’origine ne sera pas indiqué comme étant ouvert.</li></ol></p><p>Autrement dit, si l’indicateur apparaît, cela signifie que le lien est actuellement ouvert mais s’il n’apparaît pas, cela ne signifie pas <em>nécessairement</em> que le lien n’est <em>pas</em> actuellement ouvert.</p>"},
+    "__showCurrentlyOpen_label": {"message": "Afficher un indicateur pour les liens actuellement ouverts dans un onglet"},
+    "__prefixCurrentlyOpen_label": {"message": "Préfixe pour les liens actuellement ouverts :"},
 
     "__customFormat_h1": {"message": "Format personnalisé"},
     "_customFormatDescription_html": {"message": "<p>Spécifiez ce qu’il faut afficher dans le panneau contextuel à l’aide de chaînes de style <i>printf</i> (passez la souris au-dessus des entrées pour voir les chaînes disponibles). Le panneau contextuel est divisé en trois parties : le préfixe, l’URL et le suffixe. Le préfixe et le suffixe sont d’une seule ligne et ne sont pas réductibles, l’URL est éventuellement multiligne et réductible. Normalement, l’URL ne doit contenir que <b>%u</b>.</p>"},
@@ -82,7 +82,7 @@
     "customDate6_default": {"message": ""},
 
 
-    "__newsTitle": {"message": "Link Status Redux: News"},
+    "__newsTitle": {"message": "Link Status Redux · Nouveautés"},
     "__news_h1": {"message": "Link Status Redux version 3.13"},
-    "_newsContent_html": {"message": "<p>This version adds a new feature: indicating links that are currently open in a tab. See the <a href='options.html'>settings page</a> for more information.</p>"}
+    "_newsContent_html": {"message": "<p>Cette version ajoute une nouvelle fonctionnalité : indication des liens actuellement ouverts dans un onglet. Rendez-vous à la <a href='options.html'>page des options</a> pour plus d’informations.</p>"}
 }
