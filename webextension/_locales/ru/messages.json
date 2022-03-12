@@ -1,13 +1,13 @@
 {
     "translator": {"message": "Юрий Пронякин"},
 
-    "extensionDescription": {"message": "Выводит индикатор с адресом ссылки, который показывается при наведении курсора мыши на ранее посещённую или имеющуюся в закладках ссылку."},
+    "extensionDescription": {"message": "При наведении курсора мыши на ранее посещённую или имеющуюся в закладках ссылку выводит особый индикатор возле адреса этой ссылки."},
 
     "minutesAgo": {"message": "7;$minutesAgo$ минуту назад;$minutesAgo$ минуты назад;$minutesAgo$ минут назад", "placeholders": {"minutesAgo": {"content": "$1"}}},
     "hoursAgo": {"message": "7;$hoursAgo$ час назад;$hoursAgo$ часа назад;$hoursAgo$ часов назад", "placeholders": {"hoursAgo": {"content": "$1"}}},
     "daysAgo": {"message": "7;$daysAgo$ день назад;$daysAgo$ дня назад;$daysAgo$ дней назад", "placeholders": {"daysAgo": {"content": "$1"}}},
 
-    "__settingsTitle": {"message": "Link Status Redux: Settings"},
+    "__settingsTitle": {"message": "Link Status Redux: Настройки"},
 
     "__basicSettings_h1" : {"message": "Общие настройки"},
     "__showLastVisited_label": {"message": "Показывать дату последнего посещения"},
@@ -20,13 +20,13 @@
     "__lastVisitedOlderThen_label": {"message": "Предпочитать время старше чем:"},
     "__lastVisitedTwoDates_label": {"message": "Также показывать последнее посещение"},
 
-    "__currentlyOpen_h2": {"message": "Currently open links"},
-    "_currentlyOpenDescription_html": {"message": "<p><b>Note:</b> detecting whether a link is currently open in a tab may not work the way you expect or desire. The issues are mainly the following:<ol><li>Redirections: if the link target redirects to somewhere else, then it will not show as currently open. Redirections can be protocol (<code>http://site.tld/</code> ↔ <code>https://site.tld/</code>), cross-page (<code>https://site.tld/page1.html</code> ↔ <code>https://site.tld/page2.html</code>), subdomain (<code>https://www.site.tld/</code> ↔ <code>https://site.tld/</code>) or cross-domain (<code>https://site.tld/</code> ↔ <code>https://anothersite.tld/</code>).</li><li>URI fragments (the address part after <code>#</code>): on static pages all fragments are the same page at a different view offset, but for web applications a different fragment may result in a totally different content. Navigating within a static page or using a webapp in a way that changes the fragment will cause the original link to show as not currently open.</li></ol></p><p>In other words: if the indicator is shown, it means that the link is currently open; but if there is no indicator, it does not <em>necessarily</em> mean that the link is <em>not</em> currently open.</p>"},
-    "__showCurrentlyOpen_label": {"message": "Show indicator for links that are currently open in a tab"},
-    "__prefixCurrentlyOpen_label": {"message": "Prefix for currently open links:"},
+    "__currentlyOpen_h2": {"message": "Ссылки, открытые сейчас"},
+    "_currentlyOpenDescription_html": {"message": "<p><b>Внимание:</b> определение, открыта ли ссылка сейчас, может работать не так, как вам хочется. Проблемы, в основном, следующие:<ol><li>Перенаправления: если после перехода по ссылке произошло перенаправление куда-то дальше, то такая ссылка на будет показана открытой сейчас. Перенаправления могут быть между протоколами (<code>http://site.tld/</code> - <code>https://site.tld/</code>), страницами (<code>https://site.tld/page1.html</code> - <code>https://site.tld/page2.html</code>), поддоменами (<code>https://www.site.tld/</code> - <code>https://site.tld/</code>) или доменами (<code>https://site.tld/</code> - <code>https://anothersite.tld/</code>).</li><li>Части адреса после <code>#</code>: для статичной страницы они указывают на разные места этой самой страницы, но в веб-приложениях могут приводить к показу совершенно разного содержимого. Если в результате переходов внутри статичных страниц или веб-приложений произойдёт изменение этих частей адреса, то исходная ссылка не будет индицироваться как открытая сейчас.</li></ol></p><p>Иными словами: если знак показывается, то это означает, что ссылка сейчас открыта; но если знака нет, то это ещё <em>не значит</em>, что ссылка сейчас не открыта.</p>"},
+    "__showCurrentlyOpen_label": {"message": "Показывать знак для ссылок, открытых сейчас"},
+    "__prefixCurrentlyOpen_label": {"message": "Знак для ссылок, открытых сейчас:"},
 
     "__customFormat_h1": {"message": "Заказной формат"},
-    "_customFormatDescription_html": {"message": "<p>Задайте, что показывать во всплывающей панели (индикаторе) с применением макроподстановок в стиле <i>printf</i>. Панель состоит из трёх частей: префикса, URL и окончания. Префикс и окончание - однострочные и несокращаемые. URL - (возможно) многострочный и сокращаемый. Обычно в поле URL находится только <b>%u</b>.</p>"},
+    "_customFormatDescription_html": {"message": "<p>Задайте, что показывать во всплывающей панели (индикаторе), применяя макроподстановки в стиле <i>printf</i>. Панель состоит из трёх частей: префикса, URL и окончания. Префикс и окончание - однострочные и несокращаемые. URL - (возможно) многострочный и сокращаемый. Обычно в поле URL находится только <b>%u</b>.</p>"},
     "__useCustomFormat_label": {"message": "Использовать заказной формат"},
     "__customPrefix_label": {"message": "Формат префикса:"},
     "__customURL_label": {"message": "Формат URL:"},
@@ -83,7 +83,7 @@
     "customDate6_default": {"message": ""},
 
 
-    "__newsTitle": {"message": "Link Status Redux: News"},
-    "__news_h1": {"message": "Link Status Redux version 3.13"},
-    "_newsContent_html": {"message": "<p>This version adds a new feature: indicating links that are currently open in a tab. See the <a href='options.html'>settings page</a> for more information.</p>"}
+    "__newsTitle": {"message": "Link Status Redux: Что нового"},
+    "__news_h1": {"message": "Link Status Redux версия 3.13"},
+    "_newsContent_html": {"message": "<p>В этой версии добавлена новая возможность: индикация ссылок, открытых в данный момент. Дополнительную информацию смотрите на <a href='options.html'>странице настроек</a>.</p>"}
 }
