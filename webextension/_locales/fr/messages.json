@@ -68,7 +68,7 @@
 
     "__seconds_tooltip": {"message": "en secondes"},
     "__pixels_tooltip": {"message": "en pixels"},
-    "__textSubstitutions_tooltip": {"message": "Substitutions disponibles : %u %T %t %V %B %O %% (adresse du lien, âge de visite, âge de visite antérieure, symbole visité, symbole marqué, currently open indicator, symbole %) %+( %+) %-( %-) %+[ %+] %-[ %-] %+{ %+} %-{ %-} %+< %+> %-< %-> (blocs conditionnels : visité, non visité, marqué, non marqué, âge de visite antérieure défini, âge de visite antérieure non défini, currently open, not currently open)"},
+    "__textSubstitutions_tooltip": {"message": "Substitutions disponibles : %u %T %t %V %B %O %% (adresse du lien, âge de visite, âge de visite antérieure, indicateur lien visité, indicateur lien marqué, indicateur lien actuellement ouvert, symbole %) %+( %+) %-( %-) %+[ %+] %-[ %-] %+{ %+} %-{ %-} %+< %+> %-< %-> (blocs conditionnels : visité, non visité, marqué, non marqué, âge de visite antérieure défini, âge de visite antérieure non défini, actuellement ouvert, non actuellement ouvert)"},
     "__timeSubstitutions_tooltip": {"message": "Substitutions disponibles : %c %x %X %Y %y %m %b %a %d %H %k %I %l %p %P %z %M %S %% (voir strftime(3)) %Ns %Nm %Nh %Nd %Nw %NM %Ny (secondes,minutes,heures,jours,semaines,mois,ans, N nombre de décimales entre 0 et 9)"},
 
     "customWeekdayNames_default": {"message": "dim.,lun.,mar.,mer.,jeu.,ven.,sam."},
