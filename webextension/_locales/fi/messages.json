@@ -68,7 +68,7 @@
 
     "__seconds_tooltip": {"message": "Sekuntia"},
     "__pixels_tooltip": {"message": "Pikseliä"},
-    "__textSubstitutions_tooltip": {"message": "Sallitut korvaukset: %u %T %t %V %B %% (linkin URL, vierailuaika, vanhempi vierailuaika, vierailtu-merkki, kirjanmerkitty-merkki, %-merkki) %+( %+) %-( %-) %+[ %+] %-[ %-] %+{ %+} %-{ %-} (ehdolliset lohkot: vierailtu, ei vierailtu, kirjanmerkitty, ei kirjanmerkitty, vanhempi vierailuaika määritelty, vanhempi vierailuaika ei määritelty)"},
+    "__textSubstitutions_tooltip": {"message": "Sallitut korvaukset: %u %T %t %V %B %O %% (linkin URL, vierailuaika, vanhempi vierailuaika, vierailtu-merkki, kirjanmerkitty-merkki, avoinna-merkki, %-merkki) %+( %+) %-( %-) %+[ %+] %-[ %-] %+{ %+} %-{ %-} %+< %+> %-< %-> (ehdolliset lohkot: vierailtu, ei vierailtu, kirjanmerkitty, ei kirjanmerkitty, vanhempi vierailuaika määritelty, vanhempi vierailuaika ei määritelty, avoinna, ei avoinna)"},
     "__timeSubstitutions_tooltip": {"message": "Sallitut korvaukset: %c %x %X %Y %y %m %b %a %d %H %k %I %l %p %P %z %M %S %% (ks. strftime(3)) %Ns %Nm %Nh %Nd %Nw %NM %Ny (sekuntia,minuuttia,tuntia,päivää,viikkoa,kuukautta,vuotta sitten, N on desimaalien määrä 0..9)"},
 
     "customWeekdayNames_default": {"message": "su,ma,ti,ke,to,pe,la"},

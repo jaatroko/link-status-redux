@@ -68,7 +68,7 @@
 
     "__seconds_tooltip": {"message": "Seconds"},
     "__pixels_tooltip": {"message": "Pixels"},
-    "__textSubstitutions_tooltip": {"message": "Valid substitutions: %u %T %t %V %B %% (link URL, visit time, older visit time, visited indicator, bookmarked indicator, literal %) %+( %+) %-( %-) %+[ %+] %-[ %-] %+{ %+} %-{ %-} (conditional blocks: visited, not visited, bookmarked, not bookmarked, older visit time defined, older visit time not defined)"},
+    "__textSubstitutions_tooltip": {"message": "Valid substitutions: %u %T %t %V %B %O %% (link URL, visit time, older visit time, visited indicator, bookmarked indicator, currently open indicator, literal %) %+( %+) %-( %-) %+[ %+] %-[ %-] %+{ %+} %-{ %-} %+< %+> %-< %-> (conditional blocks: visited, not visited, bookmarked, not bookmarked, older visit time defined, older visit time not defined, currently open, not currently open)"},
     "__timeSubstitutions_tooltip": {"message": "Valid substitutions: %c %x %X %Y %y %m %b %a %d %H %k %I %l %p %P %z %M %S %% (see strftime(3)) %Ns %Nm %Nh %Nd %Nw %NM %Ny (seconds,minutes,hours,days,weeks,months,years ago, N is decimal places 0..9)"},
 
     "customWeekdayNames_default": {"message": "Sun,Mon,Tue,Wed,Thu,Fri,Sat"},
