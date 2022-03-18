@@ -68,7 +68,7 @@
 
     "__seconds_tooltip": {"message": "秒"},
     "__pixels_tooltip": {"message": "ピクセル"},
-    "__textSubstitutions_tooltip": {"message": "有効な書式指定: %u %T %t %V %B %O %% (リンクURL、訪問時刻、古い訪問時刻、訪問済みの印、ブックマーク済みの印、currently open indicator、%自体) %+( %+) %-( %-) %+[ %+] %-[ %-] %+{ %+} %-{ %-} %+< %+> %-< %-> (条件ブロック: 訪問済み、未訪問、ブックマーク済み、未ブックマーク、古い訪問時刻が存在、古い訪問時刻が未定義、currently open、not currently open)"},
+    "__textSubstitutions_tooltip": {"message": "有効な書式指定: %u %T %t %V %B %O %% (リンクURL、訪問時刻、古い訪問時刻、訪問済みの印、ブックマーク済みの印、現在開いているタブの印、%自体) %+( %+) %-( %-) %+[ %+] %-[ %-] %+{ %+} %-{ %-} %+< %+> %-< %-> (条件ブロック: 訪問済み、未訪問、ブックマーク済み、未ブックマーク、古い訪問時刻が存在、古い訪問時刻が未定義、現在開いている、現在開いていない)"},
     "__timeSubstitutions_tooltip": {"message": "有効な書式指定: %c %x %X %Y %y %m %b %a %d %H %k %I %l %p %P %z %M %S %% (strftime(3)を参照) %Ns %Nm %Nh %Nd %Nw %NM %Ny (秒前、分前、時間前、日前、週前、月前、年前、Nは十進桁数0..9)"},
 
     "customWeekdayNames_default": {"message": "日,月,火,水,木,金,土"},
