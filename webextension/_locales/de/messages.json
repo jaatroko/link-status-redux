@@ -68,7 +68,7 @@
 
     "__seconds_tooltip": {"message": "Sekunden"},
     "__pixels_tooltip": {"message": "Pixel"},
-    "__textSubstitutions_tooltip": {"message": "Valide Ersetzungen: %u %T %t %V %B %% (Verweis URL, Besuchszeit, Zweite Besuchszeit, Besuchs-Indikator, Lesezeichen-Indikator, literales %) %+( %+) %-( %-) %+[ %+] %-[ %-] %+{ %+} %-{ %-} (Bedingte Blöcke: Besucht, nicht Besucht, Lesezeichen, nicht Lesezeichen, Zweite Besuchszeit definiert, Zweite Besuchszeit nicht definiert)"},
+    "__textSubstitutions_tooltip": {"message": "Valide Ersetzungen: %u %T %t %V %B %O %% (Verweis URL, Besuchszeit, Zweite Besuchszeit, Besuchs-Indikator, Lesezeichen-Indikator, currently open indicator, literales %) %+( %+) %-( %-) %+[ %+] %-[ %-] %+{ %+} %-{ %-} %+< %+> %-< %-> (Bedingte Blöcke: Besucht, nicht Besucht, Lesezeichen, nicht Lesezeichen, Zweite Besuchszeit definiert, Zweite Besuchszeit nicht definiert, currently open, not currently open)"},
     "__timeSubstitutions_tooltip": {"message": "Valide Ersetzungen: %c %x %X %Y %y %m %b %a %d %H %k %I %l %p %P %z %M %S %% (siehe strftime(3)) %Ns %Nm %Nh %Nd %Nw %NM %Ny (Sekunden,Minuten,Stunden,Tage,Wochen,Monate,Jahre , N sind Dezimale Stellen 0..9)"},
 
     "customWeekdayNames_default": {"message": "So,Mo,Di,Mi,Do,Fr,Sa"},

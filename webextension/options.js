@@ -74,6 +74,7 @@ browser.storage.local.get(null, function(prefs) {
 	    switch (input.type) {
 	    case "text":
 	    case "color":
+	    case "hidden":
 		input.value = value;
 		break;
 	    case "number":
