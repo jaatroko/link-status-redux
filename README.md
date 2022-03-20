@@ -5,17 +5,18 @@ Add-ons](https://addons.mozilla.org/en-US/firefox/addon/link-status-redux/)
 site. For known issues, see the [issue
 tracker](https://github.com/jaatroko/link-status-redux/issues).
 
-Link Status Redux is a Firefox extension that shows an indicator on
-the status bar or status popup panel in front of the link address when
-the mouse cursor is over a link to a page you have bookmarked or
-visited before. It can also show the date you last visited the linked
-page.
+Link Status Redux is a Firefox extension that shows an indicator on a
+status popup panel next to the link address when the mouse cursor is
+over a link to a page you have bookmarked or visited before, or
+(disabled by default) if the link is currently open in a browser
+tab. It can also show the date you last visited the linked page.
 
 The indicator prefixes for visited and bookmarked links are arbitrary,
 user-configurable text strings. The defaults are a white star (`✩`,
-`U+2729`) for visited links and a place of interest sign (`⌘`,
-`U+2318`) for bookmarked links. Remember a trailing space if you want
-the indicator separated from the address.
+`U+2729`) for visited links, a place of interest sign (`⌘`, `U+2318`)
+for bookmarked links, and the open folder symbol (`🗁`, `U+1F5C1`) for
+currently open links. Remember a trailing space if you want the
+indicator separated from the other text.
 
 For the displayed visit date, you can choose to prefer visit times
 that are older than a configurable limit (specified in seconds). This
@@ -39,7 +40,7 @@ Custom formatting allows expert users to more freely specify the text
 that is shown when hovering the mouse over a link (the "link target
 text"). The specification is done with _printf_-style substitutions,
 and the following are valid for the link target text
-(prefix/URL/postfix in version 3.0):
+(prefix/URL/postfix):
 
 Code | Substitution
 -----|-------------
@@ -48,6 +49,7 @@ Code | Substitution
 **%t** | Custom-formatted older visit time, if it exists; empty string if it does not exist
 **%V** | The user-defined visited indicator
 **%B** | The user-defined bookmarked indicator
+**%O** | The user-defined currently open indicator
 **%%** | A literal % character
 
 In addition, the following conditional blocks can be used:
@@ -60,6 +62,8 @@ Code | Effect
 **%-[** .. **%-]** | Anything between is displayed only when the link is **not** bookmarked
 **%+{** .. **%+}** | Anything between is displayed only when the older visit time **%t** is defined
 **%-{** .. **%-}** | Anything between is displayed only when the older visit time **%t** is **not** defined
+**%+<** .. **%+>** | Anything between is displayed only when the link is currently open
+**%-<** .. **%->** | Anything between is displayed only when the link is **not** currently open
 
 For the visit time(s), several formats can be defined, which are used
 when the visit time is more recent than the corresponding time
@@ -96,13 +100,8 @@ Code | Substitution
 **%Ny** | # years ago with _N_ decimals
 **%%** | A literal % character
 
-## WebExtension for Firefox 57 and later
 
-The following is only applicable to the WebExtension version (version
-3.0 and later) of the extension.
-
-In addition to the features in the legacy version, version 3.0 adds
-appearance customization options. You can:
+There are also several appearance customization options. You can:
 
 * Choose where the overlink popup is shown: bottom-left corner (see
   caveat below), above the browser's native popup, or offset from the
@@ -115,42 +114,13 @@ appearance customization options. You can:
 The WebExtension API does not allow creating proper UI elements or
 changing existing ones. This means that the browser's native overlink
 popup cannot be modified or hidden by the extension. For this reason,
-the default mode of 3.0 is to show an additional popup above the
-browser's native one, that shows only the visited/bookmarked
-indicators and visit time(s). You can configure the extension popup to
-show "normally" at the bottom-left corner, but you will then have to
-hide the browser's native popup by editing your
+the default mode is to show an additional popup above the browser's
+native one, that shows only the visited/bookmarked indicators and
+visit time(s). You can configure the extension popup to contain the
+link URL and show "normally" at the bottom-left corner, but you will
+then have to hide the browser's native popup by editing your
 [userChrome.css](http://kb.mozillazine.org/index.php?title=UserChrome.css). In
 addition to this, there are other
 [issues](https://github.com/jaatroko/link-status-redux/issues?utf8=%E2%9C%93&q=is%3Aissue%20label%3Awebextension%20label%3A%22known%20issue%22)
-which make the WebExtension version not as good functionally as the
-legacy version. This is why version 3.0 is marked as requiring Firefox
-57 or later on
-[AMO](https://addons.mozilla.org/en-US/firefox/addon/link-status-redux/):
-for Firefox 57 users it is better than nothing, but in the author's
-opinion the legacy version is the better one for earlier Firefox
-versions. (You can still force-install 3.0 on an earlier Firefox if
-you want.)
-
-## Legacy version for Firefox 56 and earlier
-
-The following is only applicable to the legacy version (version 2.x)
-of the extension, and is mainly included here for completeness.
-
-In Firefox 3.5 or later, you can choose to stop Firefox from rendering
-visited links differently. To do so, turn on the "Disable visited link
-styling" option in the extension preferences. This can prevent a web
-server from abusing this feature of Firefox to probe which pages you
-have visited ([See bug
-report](https://bugzilla.mozilla.org/show_bug.cgi?id=147777)). This
-issue appears to have been fixed in Firefox 4.0 and later and in
-Seamonkey 2.1 and later.
-
-This extension is a successor to the [Link Status extension by
-_fcp_](https://addons.mozilla.org/en-US/firefox/addon/link-status),
-and is based on its code. The main difference is the use of a text
-prefix instead of an image as the indicator, and that Link Status
-Redux also works with Firefox version 4 and later. It also works with
-the
-[Status-4-Evar](https://addons.mozilla.org/en-US/firefox/addon/status-4-evar/)
-extension.
+which make the WebExtension version lacking in functionality in some
+areas compared to the legacy version (2.x).
