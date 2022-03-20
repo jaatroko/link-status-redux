@@ -11,12 +11,12 @@ examples.css
 icon.png
 iframe.js
 manifest.json
+news.html
 options.html
 options.js
-translate.js
-news.html
 overlay.css
 overlay.html
 overlay.js
 plurals.js
+translate.js
 userChrome.css
