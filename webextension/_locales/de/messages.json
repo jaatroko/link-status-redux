@@ -7,7 +7,7 @@
     "hoursAgo": {"message": "1;vor $hoursAgo$ Stunde;vor $hoursAgo$ Stunden", "placeholders": {"hoursAgo": {"content": "$1"}}},
     "daysAgo": {"message": "1;vor $daysAgo$ Tag;vor $daysAgo$ Tagen", "placeholders": {"daysAgo": {"content": "$1"}}},
 
-    "__settingsTitle": {"message": "Link Status Redux: Settings"},
+    "__settingsTitle": {"message": "Link Status Redux: Einstellungen"},
 
     "__basicSettings_h1" : {"message": "Basis Einstellungen"},
     "__showLastVisited_label": {"message": "Zeige Datum des letzten Besuchs"},
@@ -83,6 +83,6 @@
 
 
     "__newsTitle": {"message": "Link Status Redux: News"},
-    "__news_h1": {"message": "Link Status Redux version 3.13"},
+    "__news_h1": {"message": "Link Status Redux Version 3.13"},
     "_newsContent_html": {"message": "<p>Diese Version bringt eine neue Funktion: Vorherhebung von Links die gerade geöffnet sind. Siehe <a href='options.html'>Einstellungen</a> für mehr Informationen.</p>"}
 }
