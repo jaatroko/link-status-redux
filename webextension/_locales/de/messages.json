@@ -1,5 +1,5 @@
 {
-    "translator": {"message": "Michael Förster"},
+    "translator": {"message": "Robin van Dyck"},
 
     "extensionDescription": {"message": "Zeigt einen zusätzlichen Indikator in einem Popup-Feld zusammen mit der Linkadresse an, wenn der Maus-Zeiger über einem Link ist den Sie als Lesezeichen gesetzt, oder bereits früher besucht haben."},
 
@@ -21,7 +21,7 @@
     "__lastVisitedTwoDates_label": {"message": "Zeige auch die vorletzte Besuchszeit"},
 
     "__currentlyOpen_h2": {"message": "Aktuell offene Links"},
-    "_currentlyOpenDescription_html": {"message": "<p><b>Achtung:</b> Die Erkennung ob ein Link gerade geöffnet ist funktioniert vielleicht nicht so wie du es dir vorstellst oder wünscht. Folgende Gründe könnten das Problem sein:<ol><li>Weitereitungen: Wenn der Link auf etwas anderes weiterleitet, wird er nicht als aktuell offen angezeigt. Es gibt folgene Weiterleitungen: Protokoll (<code>http://site.tld/</code> ↔ <code>https://site.tld/</code>), Seitenübergreifend (<code>https://site.tld/page1.html</code> ↔ <code>https://site.tld/page2.html</code>), Subdomain (<code>https://www.site.tld/</code> ↔ <code>https://site.tld/</code>) oder Domänenübergreifend (<code>https://site.tld/</code> ↔ <code>https://anothersite.tld/</code>).</li><li>URI-Fragmente (Argumente im Link die nach einem <code>#</code> stehen): Auf statischen Seiten sind verweisen Fragmente auf die selbe Seite mit möglichen Positions unterschieden. Bei Web-Applikationen jedoch kann ein unterscheidliches Fragment einen komplett anderen Inhalt hervorrufen. Das Navigieren in einer statischen Website oder das Benutzen einer Web-Applikation, das das Fragment verändert, führt dazu, dass die Seite als aktuell geschlossen angezeigt wird.</li></ol></p><p>Mit anderen Worten: Mit anderen Worten: Wenn der Indikator angezeigt wird, heißt das, dass die Website gerade offen ist. Wird er jedoch nicht angezeigt, heißt das nicht <em>notwendigerweise</em>, dass der Link gerade <em>nicht offen</em> ist.</p>"},
+    "_currentlyOpenDescription_html": {"message": "<p><b>Achtung:</b> Die Erkennung ob ein Link gerade geöffnet ist funktioniert vielleicht nicht so wie du es dir vorstellst oder wünscht. Folgende Gründe könnten das Problem sein:<ol><li>Weitereitungen: Wenn der Link auf etwas anderes weiterleitet, wird er nicht als aktuell offen angezeigt. Es gibt folgene Weiterleitungen: Protokoll (<code>http://site.tld/</code> ↔ <code>https://site.tld/</code>), Seitenübergreifend (<code>https://site.tld/page1.html</code> ↔ <code>https://site.tld/page2.html</code>), Subdomain (<code>https://www.site.tld/</code> ↔ <code>https://site.tld/</code>) oder Domänenübergreifend (<code>https://site.tld/</code> ↔ <code>https://anothersite.tld/</code>).</li><li>URI-Fragmente (Argumente im Link die nach einem <code>#</code> stehen): Auf statischen Seiten sind verweisen Fragmente auf die selbe Seite mit möglichen Positions unterschieden. Bei Web-Applikationen jedoch kann ein unterscheidliches Fragment einen komplett anderen Inhalt hervorrufen. Das Navigieren in einer statischen Website oder das Benutzen einer Web-Applikation, dass das Fragment verändert, führt dazu, dass die Seite als aktuell geschlossen angezeigt wird.</li></ol></p><p>Mit anderen Worten: Wenn der Indikator angezeigt wird, heißt das, dass die Website gerade offen ist. Wird er jedoch nicht angezeigt, heißt das nicht <em>notwendigerweise</em>, dass der Link gerade <em>nicht offen</em> ist.</p>"},
     "__showCurrentlyOpen_label": {"message": "Indikator für aktuell in einem Tab geöffnete Links anzeigen"},
     "__prefixCurrentlyOpen_label": {"message": "Präfix für aktuell offene Links:"},
 
@@ -82,7 +82,7 @@
     "customDate6_default": {"message": ""},
 
 
-    "__newsTitle": {"message": "Link Status Redux: News"},
+    "__newsTitle": {"message": "Link Status Redux: Neuigkeiten"},
     "__news_h1": {"message": "Link Status Redux Version 3.13"},
     "_newsContent_html": {"message": "<p>Diese Version bringt eine neue Funktion: Vorherhebung von Links die gerade geöffnet sind. Siehe <a href='options.html'>Einstellungen</a> für mehr Informationen.</p>"}
 }
