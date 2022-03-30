@@ -1,5 +1,5 @@
 {
-    "translator": {"message": "Michael Förster"},
+    "translator": {"message": "Robin van Dyck"},
 
     "extensionDescription": {"message": "Zeigt einen zusätzlichen Indikator in einem Popup-Feld zusammen mit der Linkadresse an, wenn der Maus-Zeiger über einem Link ist den Sie als Lesezeichen gesetzt, oder bereits früher besucht haben."},
 
@@ -7,39 +7,39 @@
     "hoursAgo": {"message": "1;vor $hoursAgo$ Stunde;vor $hoursAgo$ Stunden", "placeholders": {"hoursAgo": {"content": "$1"}}},
     "daysAgo": {"message": "1;vor $daysAgo$ Tag;vor $daysAgo$ Tagen", "placeholders": {"daysAgo": {"content": "$1"}}},
 
-    "__settingsTitle": {"message": "Link Status Redux: Settings"},
+    "__settingsTitle": {"message": "Link Status Redux: Einstellungen"},
 
     "__basicSettings_h1" : {"message": "Basis Einstellungen"},
     "__showLastVisited_label": {"message": "Zeige Datum des letzten Besuchs"},
-    "__useISODate_label": {"message": "Benutze JJJJ-MM-TT als Format für Besuchsdatum"},
-    "__lastVisitedInFront_label": {"message": "Zeige Datum vor Verweis"},
-    "__prefixBookmarked_label": {"message": "Prefix für Lesezeichen-Verweise:"},
-    "__prefixVisited_label": {"message": "Prefix für besuchte Verweise:"},
+    "__useISODate_label": {"message": "JJJJ-MM-TT als Format für Besuchsdatum verwenden"},
+    "__lastVisitedInFront_label": {"message": "Zeige Datum vor Adresse"},
+    "__prefixBookmarked_label": {"message": "Präfix für Lesezeichen:"},
+    "__prefixVisited_label": {"message": "Präfix für besuchte Links:"},
 
     "__recentVisits_h2": {"message": "Behandlung von Zeiten früherer Besuche"},
     "__lastVisitedOlderThen_label": {"message": "Bevorzuge Besuche älter als:"},
     "__lastVisitedTwoDates_label": {"message": "Zeige auch die vorletzte Besuchszeit"},
 
-    "__currentlyOpen_h2": {"message": "Currently open links"},
-    "_currentlyOpenDescription_html": {"message": "<p><b>Note:</b> detecting whether a link is currently open in a tab may not work the way you expect or desire. The issues are mainly the following:<ol><li>Redirections: if the link target redirects to somewhere else, then it will not show as currently open. Redirections can be protocol (<code>http://site.tld/</code> ↔ <code>https://site.tld/</code>), cross-page (<code>https://site.tld/page1.html</code> ↔ <code>https://site.tld/page2.html</code>), subdomain (<code>https://www.site.tld/</code> ↔ <code>https://site.tld/</code>) or cross-domain (<code>https://site.tld/</code> ↔ <code>https://anothersite.tld/</code>).</li><li>URI fragments (the address part after <code>#</code>): on static pages all fragments are the same page at a different view offset, but for web applications a different fragment may result in a totally different content. Navigating within a static page or using a webapp in a way that changes the fragment will cause the original link to show as not currently open.</li></ol></p><p>In other words: if the indicator is shown, it means that the link is currently open; but if there is no indicator, it does not <em>necessarily</em> mean that the link is <em>not</em> currently open.</p>"},
-    "__showCurrentlyOpen_label": {"message": "Show indicator for links that are currently open in a tab"},
-    "__prefixCurrentlyOpen_label": {"message": "Prefix for currently open links:"},
+    "__currentlyOpen_h2": {"message": "Aktuell offene Links"},
+    "_currentlyOpenDescription_html": {"message": "<p><b>Achtung:</b> Die Erkennung ob ein Link gerade geöffnet ist funktioniert vielleicht nicht so wie du es dir vorstellst oder wünscht. Folgende Gründe könnten das Problem sein:<ol><li>Weitereitungen: Wenn der Link auf etwas anderes weiterleitet, wird er nicht als aktuell offen angezeigt. Es gibt folgene Weiterleitungen: Protokoll (<code>http://site.tld/</code> ↔ <code>https://site.tld/</code>), Seitenübergreifend (<code>https://site.tld/page1.html</code> ↔ <code>https://site.tld/page2.html</code>), Subdomain (<code>https://www.site.tld/</code> ↔ <code>https://site.tld/</code>) oder Domänenübergreifend (<code>https://site.tld/</code> ↔ <code>https://anothersite.tld/</code>).</li><li>URI-Fragmente (Argumente im Link die nach einem <code>#</code> stehen): Auf statischen Seiten sind verweisen Fragmente auf die selbe Seite mit möglichen Positions unterschieden. Bei Web-Applikationen jedoch kann ein unterscheidliches Fragment einen komplett anderen Inhalt hervorrufen. Das Navigieren in einer statischen Website oder das Benutzen einer Web-Applikation, dass das Fragment verändert, führt dazu, dass die Seite als aktuell geschlossen angezeigt wird.</li></ol></p><p>Mit anderen Worten: Wenn der Indikator angezeigt wird, heißt das, dass die Website gerade offen ist. Wird er jedoch nicht angezeigt, heißt das nicht <em>notwendigerweise</em>, dass der Link gerade <em>nicht offen</em> ist.</p>"},
+    "__showCurrentlyOpen_label": {"message": "Indikator für aktuell in einem Tab geöffnete Links anzeigen"},
+    "__prefixCurrentlyOpen_label": {"message": "Präfix für aktuell offene Links:"},
 
     "__customFormat_h1": {"message": "Individualisiertes Format"},
-    "_customFormatDescription_html": {"message": "<p>Geben Sie an, was im Popup-Fenster angezeigt werden soll mit Ersetzungen im <i>printf</i>-Stil ('hover'/schweben Sie über den Eingabe-Feldern um verfügbare Ersetzungen anzuzeigen). Das Popup-Feld ist in drei Bereiche gegliedert: Prefix, URL, und Postfix. Prefix und Postfix sind einzeilig und nicht schrumpfbar, URL ist (möglicherweise) mehrzeilig und schrumpfbar. Normalerweise sollte die URL  nur <b>%u</b> sein.</p>"},
+    "_customFormatDescription_html": {"message": "<p>Geben Sie an, was im Popup-Fenster angezeigt werden soll mit Ersetzungen im <i>printf</i>-Stil ('hover'/schweben Sie über den Eingabe-Feldern um verfügbare Ersetzungen anzuzeigen). Das Popup-Feld ist in drei Bereiche gegliedert: Präfix, URL, und Postfix. Präfix und Postfix sind einzeilig und nicht schrumpfbar, URL ist (möglicherweise) mehrzeilig und schrumpfbar. Normalerweise sollte die URL  nur <b>%u</b> sein.</p>"},
     "__useCustomFormat_label": {"message": "Benutze folgende Formatierung:"},
-    "__customPrefix_label": {"message": "Prefix Format:"},
+    "__customPrefix_label": {"message": "Präfix Format:"},
     "__customURL_label": {"message": "URL Format:"},
-    "__customPostfix_label": {"message": "Postfix format:"},
-    "__customDateDefault_label": {"message": "Standard Datum format:"},
-    "__customWeekdayNames_label": {"message": "Wochentag Namen:"},
-    "__customMonthNames_label": {"message": "Monats namen:"},
+    "__customPostfix_label": {"message": "Postfix Format:"},
+    "__customDateDefault_label": {"message": "Standard Datum Format:"},
+    "__customWeekdayNames_label": {"message": "Format für Wochentage:"},
+    "__customMonthNames_label": {"message": "Format für Monate:"},
 
     "__dateLimitsAndFormats_h2": {"message": "Datums Altersgrenzen und Formate (aufsteigende Ordnung)"},
     "__customLimit_th": {"message": "Limit"},
     "__customFormat_th": {"message": "Format"},
-    
-    "__appearance_h1": {"message": "Erscheinung"},
+
+    "__appearance_h1": {"message": "Aussehen"},
     "__position_h2": {"message": "Position des Popups"},
     "__modeCorner_label": {"message": "Ecke links unten"},
     "_modeCornerNotes_html": {"message": "Die native Browser Link Anzeige sollte deaktivert werden via <a href='userChrome.css'>userChrome.css</a>, anderfalls wird das Popup der Erweiteung verdeckt."},
@@ -62,9 +62,9 @@
     "__colorBorder_label": {"message": "Rand:"},
 
     "__customCSS_h2": {"message": "Individualisiertes CSS"},
-    "_customCSSDescription_html": {"message": "<p>Sie können eigene CSS Regeln zusätzlich zu dem <a href='overlay.css'>eingebauten CSS</a> festlegen (siehe Kopf der Datei für wichtige Hinweise). Es gibt auch einige <a href='examples.css'>Beispiele</a> von denen Sie kopieren können. Vielleicht möchten Sie auch einen Blick auf die Struktur der <a href='overlay.html'>overlay HTML Datei</a> werfen (Wählen sie <i>Seitenquelltext anzeigen</i> aus dem Kontext-Menü).</p>"},
+    "_customCSSDescription_html": {"message": "<p>Sie können eigene CSS Regeln zusätzlich zu dem <a href='overlay.css'>eingebauten CSS</a> festlegen (siehe Kopf der Datei für wichtige Hinweise). Es gibt auch einige <a href='examples.css'>Beispiele</a> von denen Sie kopieren können. Vielleicht möchten Sie auch einen Blick auf die Struktur der <a href='overlay.html'>overlay HTML Datei</a> werfen (Wählen Sie <i>Seitenquelltext anzeigen</i> aus dem Kontext-Menü).</p>"},
     "__useCustomCSS_label": {"message": "Benutze folgendes CSS:"},
-    "_customCSSWarning_html": {"message": "<b>Hinweis:</b> Nach Veränderungen müssen sie außerhalb des Text-Feldes klicken um die Veränderungen zu speichern und anzuwenden. Auch wird der Code in keiner Weise geprüft bevor er in das Überlagerungs-Dokument eingefügt wird."},
+    "_customCSSWarning_html": {"message": "<b>Hinweis:</b> Nach Veränderungen müssen Sie außerhalb des Text-Feldes klicken um die Veränderungen zu speichern und anzuwenden. Auch wird der Code in keiner Weise geprüft bevor er in das Überlagerungs-Dokument eingefügt wird."},
 
     "__seconds_tooltip": {"message": "Sekunden"},
     "__pixels_tooltip": {"message": "Pixel"},
@@ -82,7 +82,7 @@
     "customDate6_default": {"message": ""},
 
 
-    "__newsTitle": {"message": "Link Status Redux: News"},
-    "__news_h1": {"message": "Link Status Redux version 3.13"},
-    "_newsContent_html": {"message": "<p>This version adds a new feature: indicating links that are currently open in a tab. See the <a href='options.html'>settings page</a> for more information.</p>"}
+    "__newsTitle": {"message": "Link Status Redux: Neuigkeiten"},
+    "__news_h1": {"message": "Link Status Redux Version 3.13"},
+    "_newsContent_html": {"message": "<p>Diese Version bringt eine neue Funktion: Vorherhebung von Links die gerade geöffnet sind. Siehe <a href='options.html'>Einstellungen</a> für mehr Informationen.</p>"}
 }
