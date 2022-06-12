@@ -115,7 +115,7 @@ browser.storage.local.get(null, function(result) {
     // preference value. As the feature level value we will use
     // 10000*major+minor of the version number where the latest
     // feature was added.
-    let featureLevel = 30013;
+    let featureLevel = defaults.featureLevel;
     if (prefs["featureLevel"] < featureLevel) {
         browser.tabs.create({url: browser.runtime.getURL("news.html")});
         browser.storage.local.set({ "featureLevel": featureLevel });

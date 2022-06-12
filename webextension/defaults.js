@@ -41,5 +41,5 @@ let defaults = {
     useCustomCSS: false,
     customCSS: "",
 
-    featureLevel: 0
+    featureLevel: 30013
 };
