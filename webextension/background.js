@@ -114,12 +114,21 @@ browser.storage.local.get(null, function(result) {
     // (major) feature is added, indicated by the feature level
     // preference value. As the feature level value we will use
     // 10000*major+minor of the version number where the latest
-    // feature was added.
-    let featureLevel = defaults.featureLevel;
-    if (prefs["featureLevel"] < featureLevel) {
-        browser.tabs.create({url: browser.runtime.getURL("news.html")});
-        browser.storage.local.set({ "featureLevel": featureLevel });
-        prefs["featureLevel"] = featureLevel;
+    // feature was added. It is saved negated so that it won't get
+    // removed from storage due to being equal to the default value.
+    let user_featureLevel = prefs.featureLevel; // negative if not new install
+    let addon_featureLevel = defaults.featureLevel; // positive
+    if (user_featureLevel < 0) {
+        // non-default value => possible upgrade => check if changed
+        if (-user_featureLevel < addon_featureLevel) {
+            browser.tabs.create({url: browser.runtime.getURL("news.html")});
+            prefs.featureLevel = -addon_featureLevel;
+            browser.storage.local.set({ "featureLevel": prefs.featureLevel });
+        }
+    } else {
+        // default value => new install => do not show news
+        prefs.featureLevel = -addon_featureLevel;
+        browser.storage.local.set({ "featureLevel": prefs.featureLevel });
     }
 });
 browser.storage.onChanged.addListener(function(changes, area) {
