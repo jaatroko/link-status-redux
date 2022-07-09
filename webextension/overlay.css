@@ -35,7 +35,9 @@
 */
 
 :root {
-    color-scheme: light dark;
+    /* This is the default, but put it here explicitly as it is a part of
+       a bugfix/workaround: */
+    color-scheme: normal;
 }
 
 * {

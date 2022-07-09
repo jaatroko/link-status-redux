@@ -19,7 +19,7 @@ let overlay_iframe_css_rules =
     "margin: 0 !important;" +
     "padding: 0 !important;" +
     "pointer-events: none !important;" +
-    "color-scheme: light dark !important;" +
+    "color-scheme: light !important;" +
     "z-index: 2147483647 !important;";
 
 let overlay_iframe_css = "#" + overlay_uuid
