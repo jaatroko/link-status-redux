@@ -63,6 +63,7 @@ div {
     display: flex;
     align-items: flex-start;
     padding: 3px;
+    box-sizing: border-box;
     max-width: 100%;
 }
 .affix {
