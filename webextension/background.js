@@ -62,7 +62,7 @@ function generate_css() {
 	+ "to left, transparent, " + prefs.colorBackground + "); }\n";
     // max lines for URL
     css += ".multiline #url_begin { max-height: "
-	+ (1.2 * prefs.maxLines)
+	+ (1.3 * prefs.maxLines)
 	+ "em; }\n";
     generated_css = css;
 }
