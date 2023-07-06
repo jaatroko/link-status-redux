@@ -35,9 +35,9 @@ let defaults = {
     mouseOffsetX: 0,
     mouseOffsetY: 30,
     maxLines: 2,
-    colorText: "#333333",
-    colorBackground: "#f0f0f0",
-    colorBorder: "#cccccc",
+    colorText: "#444444",
+    colorBackground: "#f9f9fa",
+    colorBorder: "#e3e3e3",
     useCustomCSS: false,
     customCSS: "",
 
