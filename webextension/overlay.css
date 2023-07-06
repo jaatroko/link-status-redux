@@ -62,7 +62,10 @@ div {
     position: fixed;
     display: flex;
     align-items: flex-start;
-    padding: 3px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
     box-sizing: border-box;
     max-width: 100%;
 }
