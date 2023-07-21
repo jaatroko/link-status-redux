@@ -33,11 +33,6 @@
 	    "all_frames": true
 	}
     ],
-    "web_accessible_resources": [
-	"overlay.css",
-	"overlay.html",
-	"overlay.js"
-    ],
     "options_ui": {
 	"page": "options.html",
 	"open_in_tab": true,
