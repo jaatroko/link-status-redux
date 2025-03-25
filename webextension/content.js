@@ -1,4 +1,5 @@
 let anchor = null;
+let overlay_enabled = false;
 
 function create_overlay() {
     let overlay = document.getElementById(overlay_uuid);
@@ -45,7 +46,16 @@ function destroy_overlay() {
 destroy_overlay();
 
 if (self === top && document instanceof HTMLDocument) {
-    create_overlay();
+    browser.runtime.onMessage.addListener(function(msg, sender) {
+        if (msg.type === "top:create_overlay") {
+            create_overlay();
+            overlay_enabled = true;
+        } else if (msg.type === "top:destroy_overlay") {
+            destroy_overlay();
+            overlay_enabled = false;
+        }
+    });
+
     self.addEventListener("resize", function(e) {
 	browser.runtime.sendMessage({ type: "top:resize",
                                       win_h: self.innerHeight }).catch(e => {});
@@ -70,7 +80,7 @@ document.addEventListener("mouseover", function(e) {
         browser.runtime.sendMessage({ type: "tab:mouseout" }).catch(e => {});
         return;
     }
-    if (self === top && document instanceof HTMLDocument)
+    if (self === top && document instanceof HTMLDocument && overlay_enabled)
 	create_overlay();
     let win_h = 0;
     if (self === top)

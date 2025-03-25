@@ -604,10 +604,17 @@ browser.runtime.onMessage.addListener(function(msg, sender) {
 	window_height[sender.tab.id] = msg.win_h;
 
     } else if (msg.type === "tab:mouseover") {
+        if (!overlay_ready[sender.tab.id])
+            browser.tabs.sendMessage(sender.tab.id,
+                                     { type: "top:create_overlay" }
+                                    ).catch(e => {});
         set_overlink(msg, sender);
 
     } else if (msg.type === "tab:mouseout") {
 	send_to_overlay(sender.tab.id, { type: "ovl:hide" });
+
+    } else if (msg.type === "ovl:hello") {
+	overlay_ready[sender.tab.id] = true;
 
     } else if (msg.type === "ovl:need_css") {
 	// Content script requesting CSS data == no CSS sent to the

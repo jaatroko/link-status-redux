@@ -29,6 +29,12 @@ browser.runtime.onMessage.addListener(function(msg) {
 	    initial_css = true;
         }
         return;
+
+    } else if (msg.type === "top:create_overlay") {
+        // If we "overhear" this message, it (probably) means that the
+        // background script does not know we exists, so let it know:
+        browser.runtime.sendMessage({ type: "ovl:hello" });
+        return;
     }
 
     if (!initial_css)
