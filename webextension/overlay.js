@@ -19,25 +19,26 @@ let scale = 1;
 wrapper.style.display = "none";
 
 browser.runtime.onMessage.addListener(function(msg) {
-    if (msg.hasOwnProperty("generated_css")) {
-	generated_css.textContent = msg.generated_css;
-	initial_css = true;
+    if (msg.type === "ovl:css") {
+        if (msg.hasOwnProperty("generated_css")) {
+	    generated_css.textContent = msg.generated_css;
+	    initial_css = true;
+        }
+        if (msg.hasOwnProperty("user_css")) {
+	    user_css.textContent = msg.user_css;
+	    initial_css = true;
+        }
+        return;
     }
-    if (msg.hasOwnProperty("user_css")) {
-	user_css.textContent = msg.user_css;	
-	initial_css = true;
-    }
-    if (msg.hasOwnProperty("generated_css") || msg.hasOwnProperty("user_css")) {
-	// CSS messages do not contain any show commands
-	return;
-    }
-    if (!initial_css)
-	browser.runtime.sendMessage({ overlay_need_css: true });
 
-    if (!msg.show) {
-	wrapper.style.display = "none";
-	return;
-    }
+    if (!initial_css)
+	browser.runtime.sendMessage({ type: "ovl:need_css" });
+
+    if (msg.type === "ovl:hide") {
+        wrapper.style.display = "none";
+        return;
+    } else if (msg.type !== "ovl:show")
+        return;
 
     let floating = msg.mode === "float";
 
@@ -175,4 +176,4 @@ browser.runtime.onMessage.addListener(function(msg) {
 
 // this might not get there, mostly on add-on load time, that's why we
 // have the initial_css variable:
-browser.runtime.sendMessage({ overlay_need_css: true });
+browser.runtime.sendMessage({ type: "ovl:need_css" });
